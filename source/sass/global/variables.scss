@@ -7,11 +7,18 @@
 :root {
   /* Color */
   --basic-black: #161616;
+  --second-black: #262d33;
   --basic-white: #ffffff;
   --basic-gray: #bdbdbd;
+  --second-gray: #818181;
+  --basic-red: #ff4f52;
   --line-gray: rgba(255, 255, 255, 0.4);
 
   /* Padding */
   --mobile-padding: 15px;
   --desktop-padding: 100px;
+
+  /* Fonts */
+  --main-font: "HeliosExtC", "Arial", "Helvetica", sans-serif;
+  --second-font: "HeliosC", "Arial", "Helvetica", sans-serif;
 }
