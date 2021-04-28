@@ -1,0 +1,166 @@
+<script>
+  (function () {
+    let pathMenu = "/static/build/other/menuv.json";
+
+    function createMenu(arr, cb) {
+      let listEl = arr;
+      let count = arr.length;
+
+      let listStr = arr.map((item) => {
+        let templateItem = `
+      <li class="post-menu__item">
+        <a href="${item.url}" class="post-menu__link">${item.title}</a>
+      </li>`;
+
+        return templateItem;
+      }).join("");
+
+      let navContent = `
+      <nav class="post-menu">
+      <div class="post-menu__menu">
+        <div class="post-menu__btn post-menu__btn--open js-post-menu-open">⫶⫶⫶</div>
+        <div class="post-menu__btn post-menu__btn--close js-post-menu-close">✖</div>
+      </div>
+      <div class="post-menu__box">
+        <div class="container">
+          <h3>Сверстанные страницы ${count}</h3>
+          <ul style="padding: 0 0 60px;" class="post-menu__list">
+            ${listStr}
+          </ul>
+        </div>
+      </div>
+      </nav>
+    `;
+
+      var nav = document.createElement("nav");
+      nav.innerHTML = navContent;
+      document.body.append(nav);
+      cb();
+    }
+
+    function setAction() {
+      let option = {
+        btnOpenTag: ".js-post-menu-open",
+        btnCloseTag: ".js-post-menu-close",
+        bodyClass: "is-post-menu-open"
+      }
+
+      // открытие и закрытие меню
+      if (document.querySelector(option.btnOpenTag)) {
+
+        // переменные
+        let btnOpenEl = document.querySelector(option.btnOpenTag);
+        let btnCloseEl = document.querySelector(option.btnCloseTag);
+        let linkCloseListNode;
+        let bodyClass = option.bodyClass || "is-menu-open";
+
+        // функции
+        let openFn = () => {
+          document.body.classList.add(bodyClass);
+          // console.log("mobile-menu open");
+        }
+
+        let closeFn = () => {
+          document.body.classList.remove(bodyClass);
+          // console.log("mobile-menu close");
+        }
+
+        btnOpenEl.addEventListener("click", openFn);
+        btnCloseEl.addEventListener("click", closeFn);
+      }
+    }
+
+    fetch(pathMenu)
+      .then(response => response.json())
+      .then(arr => createMenu(arr, setAction));
+
+  })();
+</script>
+
+
+
+<style>
+  .post-menu {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 200;
+  }
+
+  .post-menu__box {
+    display: none;
+    background-color: #fff;
+    padding: 10px;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
+  }
+
+  .is-post-menu-open .post-menu__box {
+    display: block;
+  }
+
+  .post-menu__btn {
+    justify-content: center;
+    -ms-align-items: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    background-color: #fff;
+    cursor: pointer;
+    opacity: 0.5;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+  }
+
+  .post-menu__btn--open {
+    display: flex;
+  }
+
+  .is-post-menu-open .post-menu__btn--open {
+    display: none;
+  }
+
+  .post-menu__btn--close {
+    display: none;
+  }
+
+  .is-post-menu-open .post-menu__btn--close {
+    display: flex;
+  }
+
+  .post-menu__btn:hover {
+    opacity: 1;
+  }
+
+  @media screen and (min-width: 640px) {
+    .post-menu__list {
+      columns: 3;
+    }
+  }
+
+  @media screen and (min-width: 1150px) {
+    .post-menu__list {
+      columns: 4;
+    }
+  }
+
+  @media screen and (max-width: 640px) {
+    .post-menu {
+      display: none;
+    }
+  }
+
+  .post-menu__item {
+    display: block;
+    list-style-type: none;
+    margin-bottom: 1em;
+    min-width: 220px;
+  }
+
+  .post-menu__link {
+    border: none;
+    text-decoration: underline;
+  }
+</style>

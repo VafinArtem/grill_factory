@@ -9,8 +9,7 @@ const resolveUrl = require('gulp-resolve-url');
 const sync = require("browser-sync").create();
 const csso = require("gulp-csso");
 const rename = require("gulp-rename");
-const htmlmin = require("gulp-htmlmin");
-const uglify = require("gulp-uglify-es").default;
+const fileInclude = require('gulp-file-include');
 const imagemin = require("gulp-imagemin");
 const svgstore = require("gulp-svgstore");
 const webp = require("gulp-webp");
@@ -94,8 +93,11 @@ exports.copy = copy;
 // HTML
 
 const html = () => {
-  return gulp.src("source/*.html")
-    .pipe(htmlmin({ collapseWhitespace: true }))
+  return gulp.src("source/html/[^_]*.html")
+    .pipe(fileInclude({
+      prefix: '@@',
+      basepath: '@file'
+    }))
     .pipe(gulp.dest("build"))
     .pipe(sync.stream())
 }
@@ -170,7 +172,7 @@ exports.server = server;
 const watcher = () => {
   gulp.watch("source/sass/**/*.scss", gulp.series("styles"));
   gulp.watch("source/js/*.js", gulp.series("js"));
-  gulp.watch("source/*.html", gulp.series("html"));
+  gulp.watch("source/html/**/*.html", gulp.series("html"));
 }
 
 exports.default = gulp.series(
