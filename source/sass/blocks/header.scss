@@ -24,12 +24,6 @@
   }
 }
 
-.header__link {
-  &--reservation {
-    display: none;
-  }
-}
-
 .header__burger {
   display: flex;
   width: 31px;
@@ -57,10 +51,26 @@
   .header__wrapper {
     min-height: 103px;
   }
+
+  .header__links {
+    display: flex;
+  }
+
+  .header__link {
+    &--reserv {
+      margin-right: 66px;
+    }
+  }
 }
 
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
+  .header__wrapper {
+    &::after {
+      padding-left: var(--desktop-padding);
+      padding-right: var(--desktop-padding);
+    }
+  }
 }
 
 // X-Large devices (large desktops, 1200px and up)
