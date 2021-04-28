@@ -13,10 +13,12 @@ body {
   min-height: 100%;
   margin: 0;
   padding: 0;
-  font-family: "Roboto", "Tahoma", sans-serif;
+  font-family: "HelveticaNeueCyr", "Arial", "Helvetica", sans-serif;
+  font-size: 16px;
   font-style: normal;
   font-weight: normal;
-  color: $basic-black;
+  color: var(--basic-white);
+  background-color: var(--basic-black);
   display: grid;
   grid-template-rows: min-content 1fr min-content;
 }

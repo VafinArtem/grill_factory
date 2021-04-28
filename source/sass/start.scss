@@ -1,14 +1,7 @@
-.container {
-  margin: 0 auto;
+@media (min-width: 320px) {
 }
 
 // Small devices (landscape phones, 576px and up)
-@media (min-width: 320px) {
-  .container {
-    padding-left: var(--mobile-padding);
-  }
-}
-
 @media (min-width: 576px) {
 }
 
