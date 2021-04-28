@@ -20,6 +20,7 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  width: 100%;
   padding-bottom: 29px;
 }
 
@@ -74,6 +75,51 @@
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
+  .main {
+    margin-top: -103px;
+  }
+
+  .main__link {
+    display: none;
+  }
+
+  .main__header {
+    min-height: 802px;
+    max-height: 802px;
+    height: 100%;
+    margin-bottom: 58px;
+
+    &--index {
+      background-image: url("/img/pages/index/head-index-desk.jpg");
+    }
+  }
+
+  .main__header-wrap {
+    padding-bottom: 100px;
+  }
+
+  .main__title {
+    margin-bottom: 0;
+    font-size: 48px;
+  }
+
+  .main__cathegories {
+    padding-bottom: 49px;
+    margin-bottom: 72px;
+  }
+
+  .main__promo {
+    margin-bottom: 110px;
+  }
+
+  .main__advantages {
+    padding-bottom: 57px;
+    margin-bottom: 73px;
+  }
+
+  .main__actions {
+    margin-bottom: 141px;
+  }
 }
 
 // Large devices (desktops, 992px and up)

@@ -9,6 +9,11 @@
   flex-direction: column;
 }
 
+.promo__inner {
+  display: flex;
+  flex-direction: column;
+}
+
 .promo__title {
   margin-top: 0;
   margin-bottom: 25px;
@@ -60,10 +65,49 @@
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
+  .promo__list {
+    display: flex;
+    justify-content: center;
+  }
+
+  .promo__item {
+    flex-direction: row;
+    max-width: 1235px;
+  }
+
+  .promo__inner {
+    order: 2;
+    width: 40%;
+  }
+
+  .promo__img-box {
+    order: 1;
+    width: 60%;
+    margin-right: 30px;
+  }
 }
 
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
+  .promo__img-box {
+    height: 444px;
+    margin-right: 60px;
+  }
+
+  .promo__title {
+    font-size: 14px;
+    margin-bottom: 30px;
+  }
+
+  .promo__text {
+    margin-bottom: 45px;
+    font-size: 17px;
+  }
+
+  .promo__link {
+    margin-bottom: 0;
+    font-size: 14px;
+  }
 }
 
 // X-Large devices (large desktops, 1200px and up)

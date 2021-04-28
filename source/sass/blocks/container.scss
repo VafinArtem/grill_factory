@@ -18,6 +18,7 @@
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
   .container {
+    max-width: 1440px;
     padding-left: var(--desktop-padding);
     padding-right: var(--desktop-padding);
   }

@@ -94,6 +94,11 @@
 }
 
 @media (min-width: 320px) {
+  .cathegories__item {
+    &:nth-child(n + 4) {
+      display: none;
+    }
+  }
 }
 
 // Small devices (landscape phones, 576px and up)
@@ -102,6 +107,14 @@
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
+  .cathegories__item {
+    &:nth-child(n + 4) {
+      display: flex;
+    }
+    &:nth-child(n + 5) {
+      display: none;
+    }
+  }
 }
 
 // Large devices (desktops, 992px and up)
@@ -112,12 +125,45 @@
       padding-right: var(--desktop-padding);
     }
   }
+
+  .cathegories__item {
+    width: 180px;
+    min-height: 234px;
+  }
+
+  .cathegories__icon-box {
+    width: 118px;
+    height: 118px;
+  }
+
+  .cathegories__title {
+    font-size: 18px;
+  }
+
+  .cathegories__amount {
+    width: 42px;
+    height: 42px;
+    font-size: 16px;
+  }
 }
 
 // X-Large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
+  .cathegories__item {
+    &:nth-child(n + 5) {
+      display: flex;
+    }
+    &:nth-child(n + 6) {
+      display: none;
+    }
+  }
 }
 
 // XX-Large devices (larger desktops, 1400px and up)
 @media (min-width: 1400px) {
+  .cathegories__item {
+    &:nth-child(n + 6) {
+      display: flex;
+    }
+  }
 }

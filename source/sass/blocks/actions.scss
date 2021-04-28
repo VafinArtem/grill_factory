@@ -50,10 +50,45 @@
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
+  .actions__text {
+    align-self: center;
+    max-width: 660px;
+    font-size: 32px;
+    text-align: center;
+  }
+
+  .actions__inner {
+    flex-direction: row;
+  }
+
+  .actions__link {
+    &:not(:last-child) {
+      margin-bottom: 0;
+      margin-right: 29px;
+    }
+  }
 }
 
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
+  .actions__link {
+    height: 354px;
+    padding-left: 48px;
+    padding-bottom: 30px;
+    font-size: 20px;
+
+    &--delivery {
+      background-image: url("/img/pages/index/action-delivery-desk.jpg");
+    }
+
+    &--reserv {
+      background-image: url("/img/pages/index/action-rezerv-desk.jpg");
+    }
+
+    &:not(:last-child) {
+      margin-right: 58px;
+    }
+  }
 }
 
 // X-Large devices (large desktops, 1200px and up)

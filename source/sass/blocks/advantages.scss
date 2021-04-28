@@ -71,6 +71,36 @@
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
+  .advantages {
+    display: flex;
+    justify-content: center;
+  }
+
+  .advantages__list {
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 88%;
+    width: 100%;
+  }
+
+  .advantages__termin {
+    font-size: 17px;
+  }
+
+  .advantages__definition {
+    font-size: 24px;
+
+    &::after {
+      bottom: -8px;
+      height: 18px;
+    }
+  }
+
+  .advantages__item {
+    &:not(:last-child) {
+      margin-bottom: 0;
+    }
+  }
 }
 
 // Large devices (desktops, 992px and up)
@@ -89,4 +119,8 @@
 
 // XX-Large devices (larger desktops, 1400px and up)
 @media (min-width: 1400px) {
+  .advantages__list {
+    max-width: none;
+    width: 1096px;
+  }
 }
