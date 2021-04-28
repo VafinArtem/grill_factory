@@ -3,7 +3,7 @@
 }
 
 .link {
-  font-size: 13px;
+  font-size: 15px;
   color: var(--basic-white);
 }
 
@@ -23,13 +23,16 @@
   .below-mobile {
     display: none;
   }
+
+  .link {
+    font-size: 13px;
+  }
 }
 
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
   .link {
     font-size: 14px;
-    color: var(--basic-white);
   }
 }
 

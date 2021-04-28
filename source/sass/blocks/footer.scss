@@ -1,3 +1,16 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-bottom: 49px;
+  padding-top: 41px;
+}
+
+.footer__social {
+  padding-bottom: 34px;
+  margin-bottom: 28px;
+}
+
 @media (min-width: 320px) {
 }
 

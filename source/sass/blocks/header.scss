@@ -18,7 +18,7 @@
     padding-left: var(--mobile-padding);
     padding-right: var(--mobile-padding);
     height: 1px;
-    background-color: transparentize(#fff, 0.6);
+    background-color: var(--line-gray);
     background-clip: content-box;
     transform: translate(-50%, 0);
   }
