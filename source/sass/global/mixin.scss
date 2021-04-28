@@ -7,6 +7,23 @@
   color: var(--basic-white);
 }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0 0 0 0);
+}
+
+.container {
+  margin: 0 auto;
+  padding-left: var(--mobile-padding);
+  padding-right: var(--mobile-padding);
+}
+
 @media (min-width: 320px) {
 }
 
@@ -33,6 +50,12 @@
 @media (min-width: 992px) {
   .link {
     font-size: 14px;
+  }
+
+  .container {
+    max-width: 1440px;
+    padding-left: var(--desktop-padding);
+    padding-right: var(--desktop-padding);
   }
 }
 
