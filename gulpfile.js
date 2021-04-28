@@ -31,7 +31,7 @@ const styles = () => {
     .pipe(csso())
     .pipe(rename("styles.min.css"))
     .pipe(sourcemap.write("."))
-    .pipe(gulp.dest("build/css"))
+    .pipe(gulp.dest("build/sources/css"))
     .pipe(sync.stream())
 }
 
@@ -131,8 +131,7 @@ const js = () => {
         devtool: 'source-map',
       })
     )
-    .pipe(gulp.dest("build/js"))
-    .pipe(gulp.dest("build/js"))
+    .pipe(gulp.dest("build/sources/js"))
     .pipe(sync.stream());
 }
 
