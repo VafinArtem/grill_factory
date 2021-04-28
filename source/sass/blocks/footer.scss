@@ -20,10 +20,44 @@
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
+  .footer {
+    position: relative;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 110px;
+    padding-top: 0;
+    padding-bottom: 0;
+
+    &::before {
+      position: absolute;
+      bottom: 100%;
+      left: 50%;
+      content: "";
+      width: 100%;
+      padding-left: var(--mobile-padding);
+      padding-right: var(--mobile-padding);
+      height: 1px;
+      background-color: var(--line-gray);
+      background-clip: content-box;
+      transform: translate(-50%, 0);
+    }
+  }
+
+  .footer__social {
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
 }
 
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
+  .footer {
+    &::before {
+      padding-left: var(--desktop-padding);
+      padding-right: var(--desktop-padding);
+    }
+  }
 }
 
 // X-Large devices (large desktops, 1200px and up)

@@ -47,6 +47,26 @@
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
+  .social {
+    border-bottom: none;
+  }
+
+  .social__item {
+    &:not(:last-child) {
+      margin-right: 15px;
+    }
+  }
+
+  .social__link {
+    width: 17px;
+    height: 17px;
+
+    &--vk {
+      width: 22px;
+      height: 13px;
+      background-image: url("/img/icon-vk.svg");
+    }
+  }
 }
 
 // Large devices (desktops, 992px and up)
