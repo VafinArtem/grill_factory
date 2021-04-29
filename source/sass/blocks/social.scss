@@ -24,17 +24,17 @@
   background-size: contain;
 
   &--fb {
-    background-image: url("/img/icon-facebook.svg");
+    background-image: url("/img/common/icon-facebook.svg");
   }
 
   &--vk {
     width: 27px;
     height: 16px;
-    background-image: url("/img/icon-vk.svg");
+    background-image: url("/img/common/icon-vk.svg");
   }
 
   &--inst {
-    background-image: url("/img/icon-instagramm.svg");
+    background-image: url("/img/common/icon-instagramm.svg");
   }
 }
 
@@ -64,7 +64,6 @@
     &--vk {
       width: 22px;
       height: 13px;
-      background-image: url("/img/icon-vk.svg");
     }
   }
 }
