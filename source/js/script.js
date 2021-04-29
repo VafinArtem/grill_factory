@@ -22,3 +22,11 @@ const swiper = new Swiper('.swiper-container', {
     },
   }
 });
+
+const swiperPromo = new Swiper('.swiper-container-promo', {
+  effect: 'fade',
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+});
