@@ -19,12 +19,15 @@ const swiper = new Swiper('.swiper-container', {
     },
     768: {
       freeMode: true,
+      spaceBetween: 30,
     },
   }
 });
 
 const swiperPromo = new Swiper('.swiper-container-promo', {
   effect: 'fade',
+  slidesPerView: '1',
+  autoHeight: true,
   navigation: {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
