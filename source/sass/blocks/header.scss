@@ -21,6 +21,7 @@
     background-color: var(--line-gray);
     background-clip: content-box;
     transform: translate(-50%, 0);
+    z-index: 6;
   }
 }
 
@@ -34,10 +35,12 @@
   background-image: url("/img/common/icon-burger-m.svg");
   background-repeat: no-repeat;
   border: none;
+  z-index: 6;
 }
 
 .header__links {
   margin-left: auto;
+  z-index: 6;
 }
 
 @media (min-width: 320px) {

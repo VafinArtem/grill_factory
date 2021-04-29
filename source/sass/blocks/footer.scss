@@ -9,6 +9,11 @@
 .footer__social {
   padding-bottom: 34px;
   margin-bottom: 28px;
+
+  &--navigation {
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
 }
 
 @media (min-width: 320px) {

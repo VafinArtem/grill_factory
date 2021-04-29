@@ -1,5 +1,9 @@
 .social {
   border-bottom: 1px solid var(--line-gray);
+
+  &--navigation {
+    border-bottom: none;
+  }
 }
 
 .social__list {
@@ -13,6 +17,12 @@
 .social__item {
   &:not(:last-child) {
     margin-right: 31px;
+  }
+
+  &--navigation {
+    &:not(:last-child) {
+      margin-right: 15px;
+    }
   }
 }
 
@@ -35,6 +45,18 @@
 
   &--inst {
     background-image: url("/img/common/icon-instagramm.svg");
+  }
+
+  &--navigation {
+    &.social__link {
+      width: 17px;
+      height: 17px;
+
+      &--vk {
+        width: 22px;
+        height: 13px;
+      }
+    }
   }
 }
 

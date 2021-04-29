@@ -9,6 +9,7 @@ html {
 }
 
 body {
+  position: relative;
   min-width: 320px;
   min-height: 100%;
   margin: 0;
@@ -22,6 +23,10 @@ body {
   background-color: var(--basic-black);
   display: grid;
   grid-template-rows: min-content 1fr min-content;
+
+  &.menu-open {
+    overflow: hidden;
+  }
 }
 
 img {

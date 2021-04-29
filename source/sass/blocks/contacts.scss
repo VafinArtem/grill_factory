@@ -3,6 +3,10 @@
     display: flex;
     flex-direction: column;
   }
+
+  &--navigation {
+    display: none;
+  }
 }
 
 .contacts__list {
@@ -46,6 +50,12 @@
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
+  .contacts {
+    &--navigation {
+      display: flex;
+    }
+  }
+
   .contacts__list {
     display: flex;
 
@@ -73,11 +83,11 @@
         margin-bottom: 0;
       }
     }
+  }
 
-    .contacts__link {
-      &--footer {
-        font-size: 13px;
-      }
+  .contacts__link {
+    &--footer {
+      font-size: 13px;
     }
   }
 
