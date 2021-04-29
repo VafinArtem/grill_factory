@@ -16,6 +16,7 @@
 }
 
 .actions__link {
+  position: relative;
   display: flex;
   align-items: flex-end;
   width: 100%;
@@ -25,8 +26,29 @@
   font-weight: bold;
   font-size: 14px;
   text-transform: uppercase;
+  overflow: hidden;
+
+  &:not(:last-child) {
+    margin-bottom: 17px;
+  }
+
+  &:hover {
+    .actions__bg {
+      transform: scale(1.05);
+    }
+  }
+}
+
+.actions__bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
   background-repeat: no-repeat;
   background-size: cover;
+  z-index: -1;
+  transition: all 0.3s ease-in-out;
 
   &--delivery {
     background-image: url("/img/pages/index/action-delivery-mob.jpg");
@@ -34,10 +56,6 @@
 
   &--reserv {
     background-image: url("/img/pages/index/action-rezerv-mob.jpg");
-  }
-
-  &:not(:last-child) {
-    margin-bottom: 17px;
   }
 }
 
@@ -77,16 +95,18 @@
     padding-bottom: 30px;
     font-size: 20px;
 
+    &:not(:last-child) {
+      margin-right: 58px;
+    }
+  }
+
+  .actions__bg {
     &--delivery {
       background-image: url("/img/pages/index/action-delivery-desk.jpg");
     }
 
     &--reserv {
       background-image: url("/img/pages/index/action-rezerv-desk.jpg");
-    }
-
-    &:not(:last-child) {
-      margin-right: 58px;
     }
   }
 }
