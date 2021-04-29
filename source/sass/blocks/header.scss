@@ -62,7 +62,21 @@
 
   .header__link {
     &--reserv {
+      position: relative;
       margin-right: 40px;
+
+      &::after {
+        position: absolute;
+        content: "";
+        bottom: 3px;
+        right: -17px;
+        width: 13px;
+        height: 10px;
+        background-image: url("/img/common/icon-arrow-current.svg");
+        background-repeat: no-repeat;
+        background-size: contain;
+        transform: rotate(-45deg);
+      }
     }
   }
 }
