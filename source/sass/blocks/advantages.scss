@@ -107,14 +107,20 @@
 @media (min-width: 992px) {
   .advantages {
     &::after {
-      padding-left: var(--desktop-padding);
-      padding-right: var(--desktop-padding);
+      padding-left: var(--tablet-padding);
+      padding-right: var(--tablet-padding);
     }
   }
 }
 
 // X-Large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
+  .advantages {
+    &::after {
+      padding-left: var(--desktop-padding);
+      padding-right: var(--desktop-padding);
+    }
+  }
 }
 
 // XX-Large devices (larger desktops, 1400px and up)

@@ -7,7 +7,7 @@ MenuOpen();
 // Инициализируем swiper
 
 const swiper = new Swiper('.swiper-container', {
-  slidesPerView: 'auto',
+  slidesPerView: '3',
   watchOverflow: true,
   pagination: {
     el: '.swiper-pagination',
@@ -18,8 +18,8 @@ const swiper = new Swiper('.swiper-container', {
       spaceBetween: 20,
     },
     768: {
+      slidesPerView: 'auto',
       freeMode: true,
-      spaceBetween: 30,
     },
   }
 });
