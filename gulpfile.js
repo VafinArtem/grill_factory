@@ -32,8 +32,8 @@ const styles = () => {
     .pipe(rename("styles.min.css"))
     .pipe(sourcemap.write("."))
     .pipe(gulp.dest("build/sources/css"))
-    .pipe(sync.stream())
-}
+    .pipe(sync.stream());
+};
 
 exports.styles = styles;
 
@@ -44,8 +44,8 @@ const stylesBlocks = () => {
     .pipe(postcss([
       autoprefixer()
     ]))
-    .pipe(gulp.dest("build/sources/css"))
-}
+    .pipe(gulp.dest("build/sources/css"));
+};
 
 exports.stylesBlocks = stylesBlocks;
 
@@ -56,8 +56,8 @@ const stylesGlobal = () => {
     .pipe(postcss([
       autoprefixer()
     ]))
-    .pipe(gulp.dest("build/sources/css"))
-}
+    .pipe(gulp.dest("build/sources/css"));
+};
 
 exports.stylesGlobal = stylesGlobal;
 
@@ -74,8 +74,8 @@ const images = () => {
         ]
       })
     ]))
-    .pipe(gulp.dest("source/img"))
-}
+    .pipe(gulp.dest("source/img"));
+};
 
 exports.images = images;
 
@@ -85,8 +85,8 @@ const sprite = () => {
   return gulp.src("source/img/**/icon-*.svg")
     .pipe(svgstore())
     .pipe(rename("sprite.svg"))
-    .pipe(gulp.dest("build/img"))
-}
+    .pipe(gulp.dest("build/img"));
+};
 
 exports.sprite = sprite;
 
@@ -95,8 +95,8 @@ exports.sprite = sprite;
 const iwebp = () => {
   return gulp.src("source/img/**/*.{png,jpg}")
     .pipe(webp({ quality: 90 }))
-    .pipe(gulp.dest("source/img"))
-}
+    .pipe(gulp.dest("source/img"));
+};
 
 exports.webp = iwebp;
 
@@ -105,14 +105,28 @@ exports.webp = iwebp;
 const copy = () => {
   return gulp.src([
     "source/fonts/**/*.{woff,woff2}",
-    "source/img/**"
+    "source/img/**",
+    "source/js/plugins/**",
   ], {
     base: "source"
   })
-    .pipe(gulp.dest("build"))
-}
+    .pipe(gulp.dest("build"));
+};
 
 exports.copy = copy;
+
+// Copy Plugins
+
+const copyPlugins = () => {
+  return gulp.src([
+    "source/js/plugins/**",
+  ], {
+    base: "source"
+  })
+    .pipe(gulp.dest("build/sources"));
+};
+
+exports.copyPlugins = copyPlugins;
 
 // HTML
 
@@ -123,8 +137,8 @@ const html = () => {
       basepath: '@file'
     }))
     .pipe(gulp.dest("build"))
-    .pipe(sync.stream())
-}
+    .pipe(sync.stream());
+};
 
 exports.html = html;
 
@@ -157,7 +171,7 @@ const js = () => {
     )
     .pipe(gulp.dest("build/sources/js"))
     .pipe(sync.stream());
-}
+};
 
 exports.js = js;
 
@@ -165,7 +179,7 @@ exports.js = js;
 
 const clean = () => {
   return del("build");
-}
+};
 
 exports.clean = clean;
 
@@ -186,7 +200,7 @@ const server = (done) => {
     ui: false,
   });
   done();
-}
+};
 
 exports.server = server;
 
@@ -196,7 +210,7 @@ const watcher = () => {
   gulp.watch("source/sass/**/*.scss", gulp.series("styles"));
   gulp.watch("source/js/*.js", gulp.series("js"));
   gulp.watch("source/html/**/*.html", gulp.series("html"));
-}
+};
 
 exports.default = gulp.series(
   build, server, watcher
