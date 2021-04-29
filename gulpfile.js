@@ -37,6 +37,30 @@ const styles = () => {
 
 exports.styles = styles;
 
+const stylesBlocks = () => {
+  return gulp.src("source/sass/blocks/*.scss")
+    .pipe(plumber())
+    .pipe(sass())
+    .pipe(postcss([
+      autoprefixer()
+    ]))
+    .pipe(gulp.dest("build/sources/css"))
+}
+
+exports.stylesBlocks = stylesBlocks;
+
+const stylesGlobal = () => {
+  return gulp.src("source/sass/global/*.scss")
+    .pipe(plumber())
+    .pipe(sass())
+    .pipe(postcss([
+      autoprefixer()
+    ]))
+    .pipe(gulp.dest("build/sources/css"))
+}
+
+exports.stylesGlobal = stylesGlobal;
+
 // Images
 
 const images = () => {
