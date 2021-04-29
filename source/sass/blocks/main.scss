@@ -33,6 +33,7 @@
 }
 
 .main__link {
+  position: relative;
   align-self: flex-start;
   display: flex;
   align-items: center;
@@ -46,6 +47,19 @@
   color: var(--second-black);
   background-color: var(--basic-white);
   box-shadow: 4px 30px rgba(0, 0, 0, 0.25);
+
+  &::after {
+    position: absolute;
+    right: 27px;
+    top: 20px;
+    content: "";
+    width: 13px;
+    height: 10px;
+    background-image: url("/img/common/icon-arrow-current-orange.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    transform: rotate(-45deg);
+  }
 }
 
 .main__cathegories {
