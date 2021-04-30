@@ -44,11 +44,9 @@
 .promo__link {
   align-self: start;
   display: block;
-  // margin-bottom: 82px;
   font-weight: bold;
   font-size: 12px;
   text-transform: uppercase;
-  border-bottom: 1px solid var(--basic-white);
 }
 
 .promo__img-box {
@@ -97,6 +95,7 @@
 
   .promo__link {
     margin-bottom: 0;
+    margin-left: -15px;
   }
 
   .promo__inner {
