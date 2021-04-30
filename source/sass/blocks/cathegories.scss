@@ -134,50 +134,6 @@
   }
 }
 
-/*Drawing white lines*/
-@keyframes color-lines {
-  from {
-    stroke-dashoffset: 320;
-    stroke: var(--basic-red);
-  }
-  to {
-    stroke-dashoffset: 0;
-    stroke: var(--basic-red);
-  }
-}
-
-/*SVG bounce checked*/
-@keyframes bounce {
-  0% {
-    transform: scale(1);
-    transform: translate(0px, 0px);
-  }
-  50% {
-    transform: scale(1.4);
-    transform: translate(0px, -10px);
-  }
-  100% {
-    transform: scale(1);
-    transform: translate(0px, 0px);
-  }
-}
-
-/*SVG bounce un checked*/
-@keyframes bounce-back {
-  0% {
-    transform: scale(1);
-    transform: translate(0px, 0px);
-  }
-  50% {
-    transform: scale(1.4);
-    transform: translate(0px, 10px);
-  }
-  100% {
-    transform: scale(1);
-    transform: translate(0px, 0px);
-  }
-}
-
 @media (min-width: 320px) {
 }
 

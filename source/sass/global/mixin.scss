@@ -62,19 +62,6 @@
   padding-right: var(--mobile-padding);
 }
 
-@keyframes draw {
-  0% {
-    stroke-dasharray: 140 540;
-    stroke-dashoffset: -474;
-    stroke-width: 8px;
-  }
-  100% {
-    stroke-dasharray: 760;
-    stroke-dashoffset: 0;
-    stroke-width: 2px;
-  }
-}
-
 @media (min-width: 320px) {
 }
 
