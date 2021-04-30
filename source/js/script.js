@@ -1,5 +1,6 @@
 // Общий файл скриптов
 import MenuOpen from './menu-open';
+import displacementSlider from './displacementSlider';
 
 // Открытие меню
 MenuOpen();

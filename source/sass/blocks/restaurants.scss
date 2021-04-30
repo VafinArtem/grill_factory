@@ -11,6 +11,7 @@
   font-size: 12px;
   text-transform: uppercase;
   opacity: 0.7;
+  z-index: 3;
 }
 
 .restaurants__list {
@@ -45,6 +46,102 @@
 
 .restaurants__link {
   font-size: 16px;
+}
+
+#slider {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto;
+  width: 100%;
+  height: 100%;
+  max-width: 100vw;
+  overflow: hidden;
+  justify-content: center;
+  margin: 0 auto;
+  position: relative;
+
+  canvas {
+    grid-column: 1/-1;
+    grid-row: 1/-1;
+    width: 150%;
+    height: 150%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+  }
+
+  img {
+    grid-column: 1/-1;
+    grid-row: 1/-1;
+    // width: 100%;
+    max-width: none !important;
+    height: 460px;
+    object-fit: cover;
+    position: relative;
+    z-index: 0;
+  }
+}
+
+.slider-inner {
+  grid-column: 1/-1;
+  grid-row: 1/-1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 100vw;
+  height: 100%;
+  margin: 0 auto;
+  z-index: 5;
+}
+
+#slider-content {
+  text-align: center;
+
+  span {
+    display: none;
+  }
+}
+
+#pagination {
+  grid-column: 1/-1;
+  grid-row: 1/-1;
+  align-self: end;
+  justify-self: center;
+  display: flex;
+  max-width: 55px;
+  height: fit-content;
+  margin-bottom: 55px;
+  z-index: 6;
+
+  button {
+    display: block;
+    appearance: none;
+    border: 0;
+    width: 9px;
+    height: 9px;
+    background-color: #ffffff;
+    border-radius: 50px;
+    padding: 0;
+    margin: 0;
+    margin-right: 6px;
+    cursor: pointer;
+    position: relative;
+    opacity: 0.6;
+    transition: opacity 0.2s ease-in-out;
+    outline: none;
+
+    &:hover {
+      opacity: 0.5;
+    }
+
+    &.active {
+      opacity: 1;
+    }
+  }
 }
 
 @media (min-width: 320px) {
@@ -84,4 +181,13 @@
 
 // XX-Large devices (larger desktops, 1400px and up)
 @media (min-width: 1400px) {
+  #slider {
+    max-width: 100vw;
+    overflow: visible;
+
+    img {
+      width: 100vw;
+      max-width: 100% !important;
+    }
+  }
 }

@@ -46,6 +46,7 @@
       background-color: var(--line-gray);
       background-clip: content-box;
       transform: translate(-50%, 0);
+      z-index: 2;
     }
   }
 

@@ -199,19 +199,24 @@
   </section>
   <section class="main__restaurants restaurants">
     <h2 class="restaurants__title">наши рестораны</h2>
-    <ul class="restaurants__list">
-      <li class="restaurants__item restaurants__item--nevsky">
-        <p class="restaurants__addres">Невский пр. 48</p>
-        <a href="tel:+78124078000" class="restaurants__link link">+7 (812) 407-80-00 </a>
-      </li>
-      <!-- <li class="restaurants__item">
-        <p class="restaurants__addres">ул. Адмирала Трибуца 6 </p>
-        <a href="tel:+78124078000" class="restaurants__link link">+7 (812) 407-80-00</a>
-      </li>
-      <li class="restaurants__item">
-        <p class="restaurants__addres">Кадетская линия В.О. 25</p>
-        <a href="tel:+78124078000" class="restaurants__link link">+7 (812) 407-80-00</a>
-      </li> -->
-    </ul>
+    <div id="slider">
+      <div class="slider-inner container">
+        <div id="slider-content">
+          <p class="restaurants__addres" id="slide-title">Невский пр. 48</p>
+          <span data-slide-title="0">Невский пр. 48</span>
+          <span data-slide-title="1">ул. Адмирала Трибуца 6</span>
+          <span data-slide-title="2">Кадетская линия В.О. 25</span>
+          <a href="tel:+78124078000" class="restaurants__link link">+7 (812) 407-80-00 </a>
+        </div>
+      </div>
+      <img src="/img/pages/index/restaraunt-1.jpg" width="1438" />
+      <img src="/img/pages/index/restaraunt-2.jpg" width="1438" />
+      <img src="/img/pages/index/restaraunt-3.jpg" width="1438" />
+      <div id="pagination">
+        <button class="active" data-slide="0"></button>
+        <button data-slide="1"></button>
+        <button data-slide="2"></button>
+      </div>
+    </div>
   </section>
 </main>
