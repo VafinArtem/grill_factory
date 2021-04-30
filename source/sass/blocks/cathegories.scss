@@ -107,6 +107,77 @@
   color: var(--basic-white);
 }
 
+// Animations
+
+.cls-1 {
+  stroke: var(--second-black);
+  stroke-width: 1px;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-miterlimit: 10;
+  stroke-dasharray: 320;
+  stroke-dashoffset: 0;
+}
+
+.cathegories__item {
+  &:hover {
+    & .cls-1 {
+      animation: color-lines 1.5s;
+      animation-fill-mode: both;
+    }
+
+    & .cathegories__icon {
+      animation: bounce 0.3s;
+      animation-fill-mode: forwards;
+    }
+  }
+}
+
+/*Drawing white lines*/
+@keyframes color-lines {
+  from {
+    stroke-dashoffset: 320;
+    stroke: var(--basic-red);
+  }
+  to {
+    stroke-dashoffset: 0;
+    stroke: var(--basic-red);
+  }
+}
+
+/*SVG bounce checked*/
+@keyframes bounce {
+  0% {
+    transform: scale(1);
+    transform: translate(0px, 0px);
+  }
+  50% {
+    transform: scale(1.4);
+    transform: translate(0px, -10px);
+  }
+  100% {
+    transform: scale(1);
+    transform: translate(0px, 0px);
+  }
+}
+
+/*SVG bounce un checked*/
+@keyframes bounce-back {
+  0% {
+    transform: scale(1);
+    transform: translate(0px, 0px);
+  }
+  50% {
+    transform: scale(1.4);
+    transform: translate(0px, 10px);
+  }
+  100% {
+    transform: scale(1);
+    transform: translate(0px, 0px);
+  }
+}
+
 @media (min-width: 320px) {
 }
 
