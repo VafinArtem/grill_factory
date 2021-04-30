@@ -48,6 +48,13 @@
       transform: translate(-50%, 0);
       z-index: 2;
     }
+
+    &--navigation {
+      &::before {
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
   }
 
   .footer__social {
@@ -63,6 +70,13 @@
       padding-left: var(--tablet-padding);
       padding-right: var(--tablet-padding);
     }
+
+    &--navigation {
+      &::before {
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
   }
 }
 
@@ -72,6 +86,13 @@
     &::before {
       padding-left: var(--desktop-padding);
       padding-right: var(--desktop-padding);
+    }
+
+    &--navigation {
+      &::before {
+        padding-left: 0;
+        padding-right: 0;
+      }
     }
   }
 }
