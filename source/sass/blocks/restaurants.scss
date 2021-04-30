@@ -14,29 +14,6 @@
   z-index: 3;
 }
 
-.restaurants__list {
-  display: flex;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.restaurants__item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  height: 460px;
-  padding-top: 190px;
-  background-repeat: no-repeat;
-  background-position: 81% center;
-
-  &--nevsky {
-    background-image: url("/img/pages/index/restaraunt-1.jpg");
-  }
-}
-
 .restaurants__addres {
   margin-top: 0;
   margin-bottom: 20px;
@@ -51,7 +28,7 @@
 #slider {
   display: grid;
   grid-template-columns: auto;
-  grid-template-rows: auto;
+  grid-template-rows: 460px;
   width: 100%;
   height: 100%;
   max-width: 100vw;
@@ -65,10 +42,6 @@
     grid-row: 1/-1;
     width: 150%;
     height: 150%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     z-index: 2;
   }
 
@@ -87,14 +60,15 @@
 .slider-inner {
   grid-column: 1/-1;
   grid-row: 1/-1;
+  justify-self: start;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
   max-width: 100vw;
-  height: 100%;
-  margin: 0 auto;
+  height: 460px;
+  // margin: 0 auto;
   z-index: 5;
 }
 
@@ -156,10 +130,6 @@
   .restaurants__title {
     margin-bottom: -70px;
     font-size: 16px;
-  }
-
-  .restaurants__item {
-    background-size: cover;
   }
 
   .restaurants__addres {
