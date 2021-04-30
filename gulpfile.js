@@ -145,10 +145,10 @@ exports.html = html;
 // JS
 
 const js = () => {
-  return gulp.src("source/js/*.js")
+  return gulp.src("source/js/script.js")
     .pipe(
       webpack({
-        mode: 'production',
+        mode: 'development',
         module: {
           rules: [
             {
