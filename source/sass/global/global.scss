@@ -11,6 +11,8 @@ html {
 body {
   position: relative;
   min-width: 320px;
+  width: 100vw;
+  max-width: 100%;
   min-height: 100%;
   margin: 0;
   padding: 0;
@@ -23,6 +25,7 @@ body {
   background-color: var(--basic-black);
   display: grid;
   grid-template-rows: min-content 1fr min-content;
+  overflow-x: hidden;
 
   &.menu-open {
     overflow: hidden;
