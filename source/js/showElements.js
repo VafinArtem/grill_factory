@@ -15,10 +15,10 @@ const ShowElements = () => {
   showedElements.forEach((element) => {
     const ELEMENT_COORDINATES_Y = getCoordinates(element);
     window.addEventListener("scroll", () => {
-      showElement(element, ELEMENT_COORDINATES_Y)
+      showElement(element, ELEMENT_COORDINATES_Y);
     });
     window.addEventListener("load", () => {
-      showElement(element, ELEMENT_COORDINATES_Y)
+      showElement(element, ELEMENT_COORDINATES_Y);
     });
   });
 };

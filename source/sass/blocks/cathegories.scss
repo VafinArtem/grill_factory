@@ -107,33 +107,6 @@
   color: var(--basic-white);
 }
 
-// Animations
-
-.cls-1 {
-  stroke: var(--second-black);
-  stroke-width: 1px;
-  fill: none;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-miterlimit: 10;
-  stroke-dasharray: 320;
-  stroke-dashoffset: 0;
-}
-
-.cathegories__item {
-  &:hover {
-    & .cls-1 {
-      animation: color-lines 1.5s;
-      animation-fill-mode: both;
-    }
-
-    & .cathegories__icon {
-      animation: bounce 0.3s;
-      animation-fill-mode: forwards;
-    }
-  }
-}
-
 @media (min-width: 320px) {
 }
 
