@@ -1,6 +1,7 @@
 // Общий файл скриптов
 import MenuOpen from './menu-open';
 import displacementSlider from './displacementSlider';
+import ShowElements from './showElements';
 
 // Открытие меню
 MenuOpen();
@@ -34,3 +35,5 @@ const swiperPromo = new Swiper('.swiper-container-promo', {
     prevEl: '.swiper-button-prev',
   },
 });
+
+ShowElements();

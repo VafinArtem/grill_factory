@@ -37,3 +37,12 @@ img {
 a {
   text-decoration: none;
 }
+
+.play-animation {
+  transform: translate3d(0, 3em, 0);
+  animation: enter 500ms 900ms ease-out forwards;
+}
+
+.js-show {
+  opacity: 0;
+}
