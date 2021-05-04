@@ -109,12 +109,14 @@
   transform: translate(-50%, -50%);
   width: 100%;
 }
+
 .navigation__list {
   position: relative;
   padding: 0;
   margin: 0;
   z-index: 2;
 }
+
 .navigation__item {
   position: relative;
   display: block;
@@ -206,7 +208,11 @@
   }
 
   .navigation__list {
-    padding-left: 150px;
+    padding-left: 0;
+  }
+
+  .navigation__item {
+    text-align: center;
   }
 
   .navigation__link {
@@ -233,10 +239,6 @@
     width: 100vw;
     max-width: 100%;
     padding-top: 215px;
-  }
-
-  .navigation__list {
-    padding-left: 150px;
   }
 
   .navigation__link {

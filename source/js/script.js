@@ -37,3 +37,8 @@ const swiperPromo = new Swiper('.swiper-container-promo', {
 });
 
 ShowElements();
+
+// var feed = new Instafeed({
+//   accessToken: 'IGQVJYUUtpTTVvZAm9LMW8wWkVXSUZAqRGV6ekJfbDdSOTBrRlBXcFljQ3dOV0NIcXp6MEs2VllSb3dKQ3dKeWVJMVJoNHVOTG95TFZAlRUR2QUZAsWG9BTklaVUJWRjZAtUnFjS09INFluVmZARTFJabEtTcERVb3MxUjB4b2ZAZA'
+// });
+// feed.run();
