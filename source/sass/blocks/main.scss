@@ -76,10 +76,6 @@
     background-size: cover;
     transform: rotate(-45deg);
   }
-
-  &--center {
-    margin: 0 auto;
-  }
 }
 
 .main__cathegories {
@@ -130,6 +126,11 @@
 
     &--index {
       background-image: url("/img/pages/index/head-index-desk.jpg");
+    }
+
+    &--about {
+      background-image: url("/img/pages/about/head-about-desk.jpg");
+      margin-bottom: 109px;
     }
   }
 
