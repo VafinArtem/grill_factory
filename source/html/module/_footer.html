@@ -1,38 +1,63 @@
-<footer class="footer container">
-  <section class="footer__social social">
-    <h2 class="visually-hidden">
-      Мы в социальных сетях
-    </h2>
-    <ul class="social__list">
-      <li class="social__item">
-        <a href="" class="social__link social__link--fb" aria-label="Facebook" target="_blank" rel="noreferrer"></a>
-      </li>
-      <li class="social__item">
-        <a href="" class="social__link social__link--vk" aria-label="В Контакте" target="_blank" rel="noreferrer"></a>
-      </li>
-      <li class="social__item">
-        <a href="" class="social__link social__link--inst" aria-label="Instagramm" target="_blank" rel="noreferrer"></a>
-      </li>
-    </ul>
+<footer class="footer">
+  <section class="footer__restaurants restaurants js-show">
+    <h2 class="restaurants__title">наши рестораны</h2>
+    <div id="slider">
+      <div class="slider-inner container">
+        <div id="slider-content">
+          <p class="restaurants__addres" id="slide-title">Невский пр. 48</p>
+          <span data-slide-title="0">Невский пр. 48</span>
+          <span data-slide-title="1">ул. Адмирала Трибуца 6</span>
+          <span data-slide-title="2">Кадетская линия В.О. 25</span>
+          <a href="tel:+78124078000" class="restaurants__link link">+7 (812) 407-80-00 </a>
+        </div>
+      </div>
+      <img src="/img/pages/index/restaraunt-1.jpg" width="1438" />
+      <img src="/img/pages/index/restaraunt-2.jpg" width="1438" />
+      <img src="/img/pages/index/restaraunt-3.jpg" width="1438" />
+      <div id="pagination">
+        <button class="active" data-slide="0"></button>
+        <button data-slide="1"></button>
+        <button data-slide="2"></button>
+      </div>
+    </div>
   </section>
-  <section class="footer__contacts contacts contacts--footer">
-    <h2 class="visually-hidden">
-      Как с нами связяться
-    </h2>
-    <ul class="contacts__list contacts__list--footer">
-      <li class="contacts__item contacts__item--footer">
-        <p class="contacts__label">e-mail</p>
-        <a href="mailto:service@chekhovdelivery.ru"
-          class="contacts__link contacts__link--footer link">service@chekhovdelivery.ru</a>
-      </li>
-      <li class="contacts__item contacts__item--footer">
-        <p class="contacts__label">рестораны</p>
-        <a href="tel:+78124078000 " class="contacts__link contacts__link--footer link">+7 (812) 407-80-00 </a>
-      </li>
-      <li class="contacts__item contacts__item--footer">
-        <p class="contacts__label">Доставка</p>
-        <a href="tel:+78125048000" class="contacts__link contacts__link--footer link">+7 (812) 504-80-00 </a>
-      </li>
-    </ul>
-  </section>
+  <div class="footer__wrapper container">
+    <section class="footer__social social">
+      <h2 class="visually-hidden">
+        Мы в социальных сетях
+      </h2>
+      <ul class="social__list">
+        <li class="social__item">
+          <a href="" class="social__link social__link--fb" aria-label="Facebook" target="_blank" rel="noreferrer"></a>
+        </li>
+        <li class="social__item">
+          <a href="" class="social__link social__link--vk" aria-label="В Контакте" target="_blank" rel="noreferrer"></a>
+        </li>
+        <li class="social__item">
+          <a href="" class="social__link social__link--inst" aria-label="Instagramm" target="_blank"
+            rel="noreferrer"></a>
+        </li>
+      </ul>
+    </section>
+    <section class="footer__contacts contacts contacts--footer">
+      <h2 class="visually-hidden">
+        Как с нами связяться
+      </h2>
+      <ul class="contacts__list contacts__list--footer">
+        <li class="contacts__item contacts__item--footer">
+          <p class="contacts__label">e-mail</p>
+          <a href="mailto:service@chekhovdelivery.ru"
+            class="contacts__link contacts__link--footer link">service@chekhovdelivery.ru</a>
+        </li>
+        <li class="contacts__item contacts__item--footer">
+          <p class="contacts__label">рестораны</p>
+          <a href="tel:+78124078000 " class="contacts__link contacts__link--footer link">+7 (812) 407-80-00 </a>
+        </li>
+        <li class="contacts__item contacts__item--footer">
+          <p class="contacts__label">Доставка</p>
+          <a href="tel:+78125048000" class="contacts__link contacts__link--footer link">+7 (812) 504-80-00 </a>
+        </li>
+      </ul>
+    </section>
+  </div>
 </footer>

@@ -1,6 +1,11 @@
 .footer {
   display: flex;
   flex-direction: column;
+}
+
+.footer__wrapper {
+  display: flex;
+  flex-direction: column;
   width: 100%;
   padding-bottom: 49px;
   padding-top: 41px;
@@ -25,7 +30,7 @@
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
-  .footer {
+  .footer__wrapper {
     position: relative;
     flex-direction: row;
     align-items: center;
