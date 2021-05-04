@@ -47,12 +47,12 @@
   margin-left: 0;
   margin-bottom: 30px;
   font-weight: bold;
-  font-size: 30px;
+  font-size: 26px;
   text-transform: uppercase;
 
   &::after {
     position: absolute;
-    bottom: -3px;
+    bottom: -8px;
     content: "";
     display: block;
     width: 100%;
@@ -79,7 +79,7 @@
   .advantages__list {
     flex-direction: row;
     justify-content: space-between;
-    max-width: 88%;
+    max-width: 90%;
     width: 100%;
   }
 
@@ -91,8 +91,7 @@
     font-size: 24px;
 
     &::after {
-      bottom: -8px;
-      height: 18px;
+      bottom: -6px;
     }
   }
 
@@ -109,6 +108,14 @@
     &::after {
       padding-left: var(--tablet-padding);
       padding-right: var(--tablet-padding);
+    }
+  }
+
+  .advantages__definition {
+    font-size: 30px;
+
+    &::after {
+      bottom: -3px;
     }
   }
 }

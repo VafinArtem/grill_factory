@@ -37,8 +37,13 @@
 }
 
 .link-outline {
-  &:hover,
-  &:focus-visible {
+  &:hover {
+    .link-outline__shape {
+      animation: 0.5s draw linear forwards;
+    }
+  }
+
+  &:focus {
     .link-outline__shape {
       animation: 0.5s draw linear forwards;
     }
