@@ -6,6 +6,10 @@
     opacity: 0;
     transition: all 0.3s;
   }
+
+  &--about {
+    margin-bottom: 50px;
+  }
 }
 
 .main__header {
@@ -49,6 +53,7 @@
   align-self: flex-start;
   display: flex;
   align-items: center;
+  max-width: 208px;
   padding-top: 18px;
   padding-bottom: 18px;
   padding-left: 31px;
@@ -58,7 +63,6 @@
   text-transform: uppercase;
   color: var(--second-black);
   background-color: var(--basic-white);
-  box-shadow: 4px 30px rgba(0, 0, 0, 0.25);
 
   &::after {
     position: absolute;
@@ -71,6 +75,10 @@
     background-repeat: no-repeat;
     background-size: cover;
     transform: rotate(-45deg);
+  }
+
+  &--center {
+    margin: 0 auto;
   }
 }
 
@@ -90,6 +98,11 @@
 
 .main__actions {
   margin-bottom: 121px;
+}
+
+.main__about {
+  padding-bottom: 76px;
+  margin-bottom: 62px;
 }
 
 @media (min-width: 320px) {
