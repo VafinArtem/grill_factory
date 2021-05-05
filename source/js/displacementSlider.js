@@ -148,29 +148,6 @@ const displacementSlider = function(opts) {
                   });
               }
           });
-
-          // TweenLite.fromTo( slideStatusEl, 0.5,
-          //   {
-          //     autoAlpha: 1,
-          //     filter: 'blur(0px)',
-          //     y: 0
-          //   },
-          //   {
-          //     autoAlpha: 0,
-          //     filter: 'blur(10px)',
-          //     y: 20,
-          //     ease: 'Expo.easeIn',
-          //     onComplete: function () {
-          //       slideStatusEl.innerHTML = nextSlideStatus;
-
-          //       TweenLite.to( slideStatusEl, 0.5, {
-          //           autoAlpha: 1,
-          //           filter: 'blur(0px)',
-          //           y: 0,
-          //           delay: 0.1,
-          //       });
-          //     }
-          // });
         }
       });
     });
@@ -192,11 +169,13 @@ const displacementSlider = function(opts) {
 
 (() => {
   const el = document.getElementById('slider');
-  const imgs = Array.from(el.querySelectorAll('img'));
-  new displacementSlider({
-      parent: el,
-      images: imgs
-  });
+  if (el) {
+    const imgs = Array.from(el.querySelectorAll('img'));
+    new displacementSlider({
+        parent: el,
+        images: imgs
+    });
+  }
 })();
 
 export default displacementSlider;
