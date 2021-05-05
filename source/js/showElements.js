@@ -4,7 +4,7 @@ const getCoordinates = (element) => {
 };
 
 const showElement = (element, coordinateY) => {
-  if(window.pageYOffset > coordinateY) {
+  if(window.pageYOffset >= coordinateY) {
     element.classList.add(`play-animation`);
   }
 };
