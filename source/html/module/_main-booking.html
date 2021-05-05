@@ -6,26 +6,28 @@
   </header>
   <section class="main__booking booking container">
     <form action="/" class="booking__form">
-      <fieldset class="booking__inner">
-        <label for="date" class="booking__label">Дата</label>
-        <input type="date" name="date" id="date" class="booking__input booking__input--date">
-      </fieldset>
-      <fieldset class="booking__inner">
-        <label for="time" class="booking__label">время</label>
-        <select name="time" id="time" class="booking__input">
-          <option class="booking__option" value="18-00">18:00</option>
-          <option class="booking__option" value="19-00" selected>19:00</option>
-          <option class="booking__option" value="20-00">20:00</option>
-        </select>
-      </fieldset>
-      <fieldset class="booking__inner">
-        <label for="visitors" class="booking__label">Гости</label>
-        <select name="visitors" id="visitors" class="booking__input">
-          <option class="booking__option" value="1">1 человек</option>
-          <option class="booking__option" value="2" selected>2 человека</option>
-          <option class="booking__option" value="3">3 человека</option>
-        </select>
-      </fieldset>
+      <div class="booking__wrapper">
+        <fieldset class="booking__inner">
+          <label for="date" class="booking__label">Дата</label>
+          <input type="date" name="date" id="date" class="booking__input booking__input--date">
+        </fieldset>
+        <fieldset class="booking__inner">
+          <label for="time" class="booking__label">время</label>
+          <select name="time" id="time" class="booking__input">
+            <option class="booking__option" value="18-00">18:00</option>
+            <option class="booking__option" value="19-00" selected>19:00</option>
+            <option class="booking__option" value="20-00">20:00</option>
+          </select>
+        </fieldset>
+        <fieldset class="booking__inner">
+          <label for="visitors" class="booking__label">Гости</label>
+          <select name="visitors" id="visitors" class="booking__input">
+            <option class="booking__option" value="1">1 человек</option>
+            <option class="booking__option" value="2" selected>2 человека</option>
+            <option class="booking__option" value="3">3 человека</option>
+          </select>
+        </fieldset>
+      </div>
       <button type="submit" class="booking__submit link-reserv">забронировать</button>
     </form>
   </section>

@@ -13,7 +13,6 @@
 
   &--booking {
     padding-bottom: 93px;
-    padding-left: 13px;
     background-image: url("/img/pages/booking/booking-bg-mob.jpg");
     background-repeat: no-repeat;
     background-size: cover;
@@ -85,6 +84,7 @@
   }
 
   &--booking {
+    padding-left: 13px;
     margin-bottom: 0;
   }
 }
@@ -145,6 +145,11 @@
     &--about {
       margin-bottom: 50px;
     }
+
+    &--booking {
+      background-image: url("/img/pages/booking/booking-bg-desk.jpg");
+      margin-bottom: -110px;
+    }
   }
 
   .main__header {
@@ -177,11 +182,16 @@
 
   .main__title {
     margin-bottom: 0;
-    font-size: 56px;
+    font-size: 48px;
     line-height: 1.2;
 
     &--index {
       font-size: 56px;
+    }
+
+    &--booking {
+      font-size: 60px;
+      padding-left: 0;
     }
   }
 

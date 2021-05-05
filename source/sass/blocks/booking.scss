@@ -1,9 +1,15 @@
+.booking__form {
+  padding-left: 13px;
+}
+
 .booking__inner {
   display: flex;
   flex-direction: column;
+  width: 100%;
   max-width: 272px;
   padding: 0;
   margin-bottom: 44px;
+  margin-left: 0;
   border: none;
   border-bottom: 1px solid var(--line-gray);
 
@@ -64,6 +70,27 @@
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
+  .booking__form {
+    padding-left: 0;
+  }
+
+  .booking__wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 272px);
+    grid-template-rows: auto;
+    column-gap: 110px;
+    row-gap: 62px;
+    margin-bottom: 62px;
+  }
+
+  .booking__inner {
+    margin-bottom: 0px;
+    margin-right: 0;
+  }
+
+  .booking__submit {
+    margin-top: 0;
+  }
 }
 
 // Large devices (desktops, 992px and up)
