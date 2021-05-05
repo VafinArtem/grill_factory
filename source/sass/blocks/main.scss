@@ -61,37 +61,6 @@
   z-index: 2;
 }
 
-.main__link {
-  position: relative;
-  align-self: flex-start;
-  display: flex;
-  align-items: center;
-  max-width: 208px;
-  padding-top: 18px;
-  padding-bottom: 18px;
-  padding-left: 31px;
-  padding-right: 45px;
-  font-weight: bold;
-  font-size: 12px;
-  text-transform: uppercase;
-  color: var(--second-black);
-  background-color: var(--basic-white);
-  z-index: 2;
-
-  &::after {
-    position: absolute;
-    right: 27px;
-    top: 20px;
-    content: "";
-    width: 13px;
-    height: 10px;
-    background-image: url("/img/common/icon-arrow-current-orange.svg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    transform: rotate(-45deg);
-  }
-}
-
 .main__cathegories {
   padding-bottom: 29px;
   margin-bottom: 36px;
@@ -135,10 +104,6 @@
     &--about {
       margin-bottom: 50px;
     }
-  }
-
-  .main__link {
-    display: none;
   }
 
   .main__header {
