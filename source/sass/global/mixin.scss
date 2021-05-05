@@ -63,12 +63,14 @@
   padding-bottom: 18px;
   padding-left: 31px;
   padding-right: 45px;
+  font-family: var(--main-font);
   font-weight: bold;
   font-size: 12px;
   text-transform: uppercase;
   color: var(--second-black);
   background-color: var(--basic-white);
   transition: all 500ms ease;
+  cursor: pointer;
   z-index: 2;
 
   &::after {
