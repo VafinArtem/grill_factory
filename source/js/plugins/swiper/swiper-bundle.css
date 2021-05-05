@@ -29,6 +29,7 @@
   grid-template-columns: auto;
   grid-template-rows: 1fr 261px;
   gap: 17px;
+  overflow: visible;
 }
 
 @media (min-width: 768px) {
