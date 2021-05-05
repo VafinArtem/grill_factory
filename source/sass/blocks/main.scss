@@ -29,7 +29,7 @@
 
   &--about {
     background-image: url("/img/pages/about/head-about-mob.jpg");
-    margin-bottom: 74px;
+    margin-bottom: 45px;
   }
 }
 
@@ -131,6 +131,10 @@
 @media (min-width: 768px) {
   .main {
     margin-top: -103px;
+
+    &--about {
+      margin-bottom: 50px;
+    }
   }
 
   .main__link {
@@ -149,7 +153,6 @@
 
     &--about {
       background-image: url("/img/pages/about/head-about-desk.jpg");
-      margin-bottom: 109px;
     }
   }
 
@@ -184,6 +187,15 @@
 
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
+  .main__header {
+    &--about {
+      margin-bottom: 109px;
+    }
+  }
+
+  .main__instagramm {
+    max-width: 1440px;
+  }
 }
 
 // X-Large devices (large desktops, 1200px and up)

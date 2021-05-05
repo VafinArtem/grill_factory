@@ -75,5 +75,11 @@
         background-color: transparent;
       }
     }
+
+    &.vjs-youtube-mobile {
+      & .vjs-big-play-button {
+        display: block;
+      }
+    }
   }
 }
