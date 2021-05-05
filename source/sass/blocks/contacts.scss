@@ -79,7 +79,7 @@
       align-items: flex-end;
 
       &:not(:last-child) {
-        margin-right: 56px;
+        margin-right: 15px;
         margin-bottom: 0;
       }
     }
@@ -104,6 +104,12 @@
       &:not(:first-child) {
         margin-left: 22px;
         padding-left: 22px;
+      }
+    }
+
+    &--footer {
+      &:not(:last-child) {
+        margin-right: 56px;
       }
     }
   }
