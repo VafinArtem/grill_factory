@@ -38,7 +38,9 @@ const swiperPromo = new Swiper('.swiper-container-promo', {
 
 ShowElements();
 
-// var feed = new Instafeed({
-//   accessToken: 'IGQVJYUUtpTTVvZAm9LMW8wWkVXSUZAqRGV6ekJfbDdSOTBrRlBXcFljQ3dOV0NIcXp6MEs2VllSb3dKQ3dKeWVJMVJoNHVOTG95TFZAlRUR2QUZAsWG9BTklaVUJWRjZAtUnFjS09INFluVmZARTFJabEtTcERVb3MxUjB4b2ZAZA'
-// });
-// feed.run();
+var feed = new Instafeed({
+  accessToken: 'IGQVJVeDhQaXFLTWZAEWWVFbHFwVzlFR2JSY1dlVTZAnYWtHcjV5NGp2SjZAMNnlUSUlocnVmc3dwTlV1ZA29aaW5TVU5ZAR3dTXy04VW00Y0VvQUxScXBndmdVTkdBVndVSHR6WldsM1Jn',
+  limit: 3,
+  template: '<div class="instagramm__item"><a href="{{link}}" class="instagramm__link"><header class="instagramm__header"><div class="instagramm__logo-box"><img src="/img/pages/about/logo_inst.jpg" alt="Логотип Grill Factory" class="instagramm__logo"></div><p class="instagramm__author">{{model.username}}</p></header><img src="{{image}}" alt="{{caption}}" class="instagramm__img"><p class="instagramm__text"><span class="instagramm__author">{{model.username}}</span> {{caption}}</p></a></div>',
+});
+feed.run();

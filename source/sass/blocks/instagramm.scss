@@ -4,6 +4,80 @@
   font-size: 24px;
 }
 
+.instagramm__list {
+  display: flex;
+}
+
+.instagramm__item {
+  position: relative;
+  min-width: 251px;
+  max-width: 251px;
+  height: 386px;
+  padding-top: 43px;
+  padding-left: 17px;
+  padding-right: 17px;
+  overflow: hidden;
+  &:first-child {
+    background-image: url("/img/pages/about/icon-iphone.svg");
+    background-repeat: no-repeat;
+    background-size: 110%;
+    background-position-x: center;
+  }
+}
+
+.instagramm__img {
+  display: flex;
+  width: 213px;
+  height: auto;
+}
+
+.instagramm__link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: var(--inst-font);
+}
+
+.instagramm__text {
+  font-size: 12px;
+  color: var(--basic-black);
+
+  .instagramm__item:not(:first-child) & {
+    display: none;
+  }
+}
+
+.instagramm__author {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 12px;
+  font-weight: bold;
+  color: var(--basic-black);
+}
+
+.instagramm__header {
+  display: flex;
+  width: 100%;
+  margin-bottom: 7px;
+
+  .instagramm__item:not(:first-child) & {
+    visibility: hidden;
+  }
+}
+
+.instagramm__logo-box {
+  align-self: start;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 33px;
+  height: 33px;
+  margin-right: 7px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.0975);
+  overflow: hidden;
+}
+
 @media (min-width: 320px) {
 }
 
@@ -19,6 +93,19 @@
 @media (min-width: 992px) {
   .instagramm__title {
     font-size: 42px;
+  }
+
+  .instagramm__item {
+    width: 360px;
+    max-width: none;
+    height: 555px;
+    padding-top: 86px;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .instagramm__img {
+    width: 313px;
   }
 }
 
