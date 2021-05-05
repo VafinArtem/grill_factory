@@ -44,7 +44,7 @@ const stylesBlocks = () => {
     .pipe(postcss([
       autoprefixer()
     ]))
-    .pipe(gulp.dest("build/sources/css"));
+    .pipe(gulp.dest("build/sources/css/pages/"));
 };
 
 exports.stylesBlocks = stylesBlocks;
@@ -56,7 +56,7 @@ const stylesGlobal = () => {
     .pipe(postcss([
       autoprefixer()
     ]))
-    .pipe(gulp.dest("build/sources/css"));
+    .pipe(gulp.dest("build/sources/css/global/"));
 };
 
 exports.stylesGlobal = stylesGlobal;

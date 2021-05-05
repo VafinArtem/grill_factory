@@ -11,6 +11,7 @@ const showElement = (element, coordinateY) => {
 
 const ShowElements = () => {
   const showedElements = document.querySelectorAll(`.js-show`);
+  const showedTitleElements = document.querySelectorAll(`.js-head-show`);
 
   showedElements.forEach((element) => {
     const ELEMENT_COORDINATES_Y = getCoordinates(element);
@@ -19,6 +20,11 @@ const ShowElements = () => {
     });
     window.addEventListener("load", () => {
       showElement(element, ELEMENT_COORDINATES_Y);
+    });
+  });
+  showedTitleElements.forEach((element) => {
+    window.addEventListener("load", () => {
+      element.classList.add(`play-animation-title`);
     });
   });
 };

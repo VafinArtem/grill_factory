@@ -46,6 +46,17 @@ a {
   animation: enter 300ms 500ms ease-out forwards;
 }
 
+.play-animation-title {
+  animation-name: fadeInRight;
+  animation-duration: 1.5s;
+  animation-fill-mode: both;
+}
+
 .js-show {
+  opacity: 0;
+}
+
+.js-head-show {
+  display: block;
   opacity: 0;
 }

@@ -119,7 +119,6 @@
 
 .navigation__item {
   position: relative;
-  display: block;
   transition-delay: 0.8s;
   opacity: 0;
   overflow: hidden;
@@ -212,6 +211,8 @@
   }
 
   .navigation__item {
+    display: flex;
+    justify-content: center;
     text-align: center;
   }
 
