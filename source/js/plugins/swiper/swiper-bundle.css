@@ -45,7 +45,6 @@
     display: grid;
     grid-template-columns: auto;
     grid-template-rows: 1fr 261px;
-    gap: 17px;
     overflow: visible;
   }
 
@@ -508,7 +507,7 @@ button.swiper-pagination-bullet {
   transition-property: opacity;
   opacity: 0 !important;
   transform: translate3d(0px, 0px, 0px) !important;
-  transition-duration: 0ms !important;
+  transition-duration: 700ms !important;
   grid-column: 1/-1;
   grid-row: 1/-1;
 }
@@ -519,7 +518,6 @@ button.swiper-pagination-bullet {
 .swiper-container-fade .swiper-slide-active .swiper-slide-active {
   pointer-events: auto;
   opacity: 1 !important;
-  transition-duration: 700ms !important;
 }
 .swiper-container-cube {
   overflow: visible;

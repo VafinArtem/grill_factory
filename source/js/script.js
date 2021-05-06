@@ -50,6 +50,18 @@ if (mobileDetect.phone()) {
   });
 }
 
+if (mobileDetect.phone()) {
+  const sliderContainer = document.querySelector(`.swiper-container-promo-page`);
+  if (sliderContainer) {
+    sliderContainer.classList.add(`js-show`);
+  }
+} else {
+  const sliderItems = document.querySelectorAll(`.promo__item--page`);
+  if (sliderItems) {
+    sliderItems.forEach((element) => element.classList.add(`js-show`));
+  }
+}
+
 ShowElements();
 
 if (document.querySelector(`#instafeed`)) {

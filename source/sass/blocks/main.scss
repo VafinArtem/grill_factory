@@ -54,6 +54,10 @@
     max-height: 176px;
     margin-bottom: 59px;
   }
+
+  &--promo {
+    margin-bottom: 0;
+  }
 }
 
 .main__header-gradient {
@@ -79,8 +83,8 @@
   }
 
   &--promo {
-    padding-top: 60px;
-    padding-bottom: 60px;
+    padding-top: 45px;
+    padding-bottom: 55px;
   }
 }
 
@@ -99,6 +103,10 @@
 
   &--booking {
     padding-left: 13px;
+    margin-bottom: 0;
+  }
+
+  &--promo {
     margin-bottom: 0;
   }
 }
