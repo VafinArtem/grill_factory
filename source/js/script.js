@@ -3,6 +3,8 @@ import MenuOpen from './menu-open';
 import displacementSlider from './displacementSlider';
 import ShowElements from './showElements';
 
+const mobileDetect = new MobileDetect(window.navigator.userAgent);
+
 // Открытие меню
 MenuOpen();
 
@@ -35,6 +37,18 @@ const swiperPromo = new Swiper('.swiper-container-promo', {
     prevEl: '.swiper-button-prev',
   },
 });
+
+if (mobileDetect.phone()) {
+  const swiperPromoPage = new Swiper('.swiper-container-promo-page', {
+    effect: 'fade',
+    slidesPerView: '1',
+    autoHeight: true,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  });
+}
 
 ShowElements();
 

@@ -85,6 +85,10 @@
   .promo__list {
     display: flex;
     justify-content: center;
+
+    &--page {
+      flex-direction: column;
+    }
   }
 
   .promo__item {
@@ -94,8 +98,34 @@
     gap: 0;
     max-width: 1235px;
 
-    &--rtl {
-      grid-template-columns: 45% 55%;
+    &--page {
+      position: relative;
+
+      &:nth-child(2n) {
+        grid-template-columns: 45% 55%;
+      }
+
+      & .promo__text {
+        margin-bottom: 0;
+      }
+
+      &:not(:last-child) {
+        padding-bottom: 111px;
+        margin-bottom: 100px;
+
+        &::after {
+          position: absolute;
+          top: 100%;
+          left: 50%;
+          content: "";
+          width: 100%;
+          height: 1px;
+          background-color: var(--line-gray);
+          background-clip: content-box;
+          transform: translate(-50%, 0);
+          z-index: 6;
+        }
+      }
     }
   }
 
@@ -107,8 +137,12 @@
   .promo__inner {
     order: 2;
 
-    &--rtl {
+    .promo__item--page:nth-child(2n) & {
       order: 1;
+    }
+
+    &--page {
+      justify-content: center;
     }
   }
 
@@ -130,19 +164,17 @@
         opacity: 0.5;
         border: 1px solid var(--basic-white);
       }
-
-      &.promo__img-box--rtl {
-        &::after {
-          left: auto;
-          right: -15px;
-        }
-      }
     }
 
-    &--rtl {
+    .promo__item--page:nth-child(2n) & {
       order: 2;
       margin-right: 0;
       margin-left: 30px;
+
+      &::after {
+        left: auto;
+        right: -15px;
+      }
     }
   }
 
@@ -153,34 +185,13 @@
     align-self: end;
     z-index: 1;
 
-    &--rtl {
-      grid-column: 1/2;
+    .promo__slider--page & {
+      display: none;
     }
   }
 
   .promo__text {
     max-width: 88%;
-  }
-
-  .promo__slider {
-    position: relative;
-    &:not(:last-child) {
-      padding-bottom: 111px;
-      margin-bottom: 100px;
-
-      &::after {
-        position: absolute;
-        top: 100%;
-        left: 50%;
-        content: "";
-        width: 100%;
-        height: 1px;
-        background-color: var(--line-gray);
-        background-clip: content-box;
-        transform: translate(-50%, 0);
-        z-index: 6;
-      }
-    }
   }
 }
 
@@ -207,7 +218,7 @@
   .promo__img-box {
     margin-right: 60px;
 
-    &--rtl {
+    .promo__item--page:nth-child(2n) & {
       margin-left: 60px;
       margin-right: 0;
     }
