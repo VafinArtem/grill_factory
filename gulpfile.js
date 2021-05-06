@@ -185,7 +185,7 @@ exports.clean = clean;
 
 // Build
 
-const build = (done) => gulp.series(clean, copy, styles, html, js, sprite)(done);
+const build = (done) => gulp.series(clean, copy, copyPlugins, styles, html, js, sprite)(done);
 exports.build = build;
 
 // Server

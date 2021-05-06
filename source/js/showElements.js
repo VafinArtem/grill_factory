@@ -18,9 +18,7 @@ const ShowElements = () => {
     window.addEventListener("scroll", () => {
       showElement(element, ELEMENT_COORDINATES_Y);
     });
-    window.addEventListener("load", () => {
-      showElement(element, ELEMENT_COORDINATES_Y);
-    });
+    showElement(element, ELEMENT_COORDINATES_Y);
   });
   showedTitleElements.forEach((element) => {
     window.addEventListener("load", () => {
