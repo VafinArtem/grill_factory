@@ -165,8 +165,13 @@
     }
 
     &--booking {
-      background-image: url("/img/pages/booking/booking-bg-desk.jpg");
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
       margin-bottom: -110px;
+      padding-top: 113px;
+      padding-bottom: 120px;
+      background-image: url("/img/pages/booking/booking-bg-desk.jpg");
     }
 
     &--promo {
@@ -194,8 +199,8 @@
     }
 
     &--booking {
-      min-height: 291px;
-      max-height: 291px;
+      min-height: auto;
+      max-height: none;
     }
 
     &--promo {
