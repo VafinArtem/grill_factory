@@ -1,48 +1,145 @@
-<main class="main main--about">
-  <header class="main__header main__header--about">
-    <div class="main__header-wrap container">
-      <h1 class="main__title main__title--about">О ресторане</h1>
+<main class="main main--promo main--promo-page">
+  <header class="main__header main__header--promo">
+    <div class="main__header-wrap main__header-wrap--promo container">
+      <h1 class="main__title main__title--promo">акции</h1>
     </div>
-    <div class="main__header-gradient"></div>
   </header>
-  <section class="main__about about container">
-    <h2 class="visually-hidden">Подробности</h2>
-    <p class="about__description js-show">
-      <span class="about__count">4</span><br>
-      ресторана
-      в спб
-    </p>
-    <div class="about__wrapper">
-      <div class="about__video video js-show">
-        <div class="video__preview">
-          <picture>
-            <source media="(min-width: 768px)" srcset="/img/pages/about/video-preview-desk.jpg">
-            <img src="/img/pages/about/video-preview-mob.jpg" alt="" width="385" height="285" class="video__img">
+  <section class="main__promo main__promo--page promo container js-show">
+    <h2 class="visually-hidden">Все предложения</h2>
+    <div class="promo__slider swiper-container-promo js-show">
+      <ul class="promo__list swiper-wrapper">
+        <li class="promo__item swiper-slide">
+          <div class="promo__inner">
+            <h3 class="promo__title">
+              Акция
+            </h3>
+            <p class="promo__label">Ролл в подарок!<br>
+              при заказе от 1200 руб.</p>
+            <p class="promo__text">Скидка по&nbsp;данной акции не&nbsp;суммируется
+              с&nbsp;другими скидками (например со&nbsp;скидкой накопительной системы, скидкой за&nbsp;самовывоз,
+              подарок
+              и&nbsp;т.д.) Акция
+              действует только с&nbsp;понедельника по&nbsp;четверг и&nbsp;не&nbsp;действует в&nbsp;праздничные дни.</p>
+          </div>
+          <picture class="promo__img-box promo__img-box--page">
+            <source media="(min-width: 768px)" srcset="/img/pages/index/sushi-promo-desktop.jpg">
+            <img src="/img/pages/index/sushi-promo-mob.jpg" width="384" height="261" alt="Сет из трех видов роллов"
+              class="promo__img">
           </picture>
-          <button class="video__play" aria-label=""></button>
-        </div>
-        <video id="vid1" class="video__video video-js" controls poster="/img/pages/about/video-preview-desk.jpg"
-          data-setup='{ "techOrder": ["youtube"], "sources": [{ "type": "video/youtube", "src": "https://www.youtube.com/watch?v=Hk3ry-qmOzM"}], "youtube": { "iv_load_policy": 1 } }'>
-        </video>
+        </li>
+        <li class="promo__item swiper-slide">
+          <div class="promo__inner">
+            <h3 class="promo__title">
+              Акция
+            </h3>
+            <p class="promo__label">Берем с собой!</p>
+            <p class="promo__text">Закажите еду, заберите ее из ресторана сами, и получите скидку 15%! Чтобы получить
+              скидку, введите в корзине промокод: TAKEAWAY.
+
+              Скидка по данной акции не суммируется с другими скидками (например со скидкой накопительной системы,
+              скидкой за самовывоз, подарок и т.д.). </p>
+          </div>
+          <picture class="promo__img-box promo__img-box--page">
+            <source media="(min-width: 768px)" srcset="/img/pages/index/sushi-promo-desktop.jpg">
+            <img src="/img/pages/index/sushi-promo-mob.jpg" width="384" height="261" alt="Сет из трех видов роллов"
+              class="promo__img">
+          </picture>
+        </li>
+      </ul>
+      <div class="promo__button-box">
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
       </div>
-      <h3 class="about__title js-show">Мы всегда ждем вас в&nbsp;гости!</h3>
-      <p class="about__text js-show">В&nbsp;нашем меню вы&nbsp;найдете классику итальянской и&nbsp;европейской кухни,
-        блюда
-        на&nbsp;гриле, пиццу и&nbsp;роллы. Для гурманов блюда от&nbsp;нашего шефа. И&nbsp;все это по&nbsp;демократичным
-        ценам! Мы&nbsp;гуляем с&nbsp;размахом ваши дни рождения и&nbsp;праздники, устраиваем вечеринки
-        и&nbsp;корпоративы.
-        В&nbsp;фокусе вы&nbsp;&mdash; наши гости
-        и&nbsp;ваше отличное настроение.</p>
-      <picture class="about__img-box js-show">
-        <source media="(min-width: 768px)" srcset="/img/pages/about/about-img-desk.jpg">
-        <img src="/img/pages/about/about-img-mob.jpg" alt="" width="385" height="271" class="about__img">
-      </picture>
-      <a href="#" class="about__btn link-reserv js-show">забронировать</a>
     </div>
-  </section>
-  <section class="main__instagramm instagramm container">
-    <h2 class="instagramm__title js-show">Мы в социальных сетях</h2>
-    <div id="instafeed" class="instagramm__list js-show">
+    <div class="promo__slider swiper-container-promo js-show">
+      <ul class="promo__list swiper-wrapper">
+        <li class="promo__item swiper-slide promo__item--rtl">
+          <div class="promo__inner promo__inner--rtl">
+            <h3 class="promo__title">
+              Акция
+            </h3>
+            <p class="promo__label">Ролл в подарок!<br>
+              при заказе от 1200 руб.</p>
+            <p class="promo__text">Скидка по&nbsp;данной акции не&nbsp;суммируется
+              с&nbsp;другими скидками (например со&nbsp;скидкой накопительной системы, скидкой за&nbsp;самовывоз,
+              подарок
+              и&nbsp;т.д.) Акция
+              действует только с&nbsp;понедельника по&nbsp;четверг и&nbsp;не&nbsp;действует в&nbsp;праздничные дни.</p>
+          </div>
+          <picture class="promo__img-box promo__img-box--page promo__img-box--rtl">
+            <source media="(min-width: 768px)" srcset="/img/pages/index/sushi-promo-desktop.jpg">
+            <img src="/img/pages/index/sushi-promo-mob.jpg" width="384" height="261" alt="Сет из трех видов роллов"
+              class="promo__img">
+          </picture>
+        </li>
+        <li class="promo__item swiper-slide promo__item--rtl">
+          <div class="promo__inner promo__inner--rtl">
+            <h3 class="promo__title">
+              Акция
+            </h3>
+            <p class="promo__label">Берем с собой!</p>
+            <p class="promo__text">Закажите еду, заберите ее из ресторана сами, и получите скидку 15%! Чтобы получить
+              скидку, введите в корзине промокод: TAKEAWAY.
+
+              Скидка по данной акции не суммируется с другими скидками (например со скидкой накопительной системы,
+              скидкой за самовывоз, подарок и т.д.). </p>
+          </div>
+          <picture class="promo__img-box promo__img-box--page promo__img-box--rtl">
+            <source media="(min-width: 768px)" srcset="/img/pages/index/sushi-promo-desktop.jpg">
+            <img src="/img/pages/index/sushi-promo-mob.jpg" width="384" height="261" alt="Сет из трех видов роллов"
+              class="promo__img">
+          </picture>
+        </li>
+      </ul>
+      <div class="promo__button-box promo__button-box--rtl js-show">
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+    </div>
+    <div class="promo__slider swiper-container-promo">
+      <ul class="promo__list swiper-wrapper">
+        <li class="promo__item swiper-slide">
+          <div class="promo__inner">
+            <h3 class="promo__title">
+              Акция
+            </h3>
+            <p class="promo__label">Ролл в подарок!<br>
+              при заказе от 1200 руб.</p>
+            <p class="promo__text">Скидка по&nbsp;данной акции не&nbsp;суммируется
+              с&nbsp;другими скидками (например со&nbsp;скидкой накопительной системы, скидкой за&nbsp;самовывоз,
+              подарок
+              и&nbsp;т.д.) Акция
+              действует только с&nbsp;понедельника по&nbsp;четверг и&nbsp;не&nbsp;действует в&nbsp;праздничные дни.</p>
+          </div>
+          <picture class="promo__img-box promo__img-box--page">
+            <source media="(min-width: 768px)" srcset="/img/pages/index/sushi-promo-desktop.jpg">
+            <img src="/img/pages/index/sushi-promo-mob.jpg" width="384" height="261" alt="Сет из трех видов роллов"
+              class="promo__img">
+          </picture>
+        </li>
+        <li class="promo__item swiper-slide">
+          <div class="promo__inner">
+            <h3 class="promo__title">
+              Акция
+            </h3>
+            <p class="promo__label">Берем с собой!</p>
+            <p class="promo__text">Закажите еду, заберите ее из ресторана сами, и получите скидку 15%! Чтобы получить
+              скидку, введите в корзине промокод: TAKEAWAY.
+
+              Скидка по данной акции не суммируется с другими скидками (например со скидкой накопительной системы,
+              скидкой за самовывоз, подарок и т.д.). </p>
+          </div>
+          <picture class="promo__img-box promo__img-box--page">
+            <source media="(min-width: 768px)" srcset="/img/pages/index/sushi-promo-desktop.jpg">
+            <img src="/img/pages/index/sushi-promo-mob.jpg" width="384" height="261" alt="Сет из трех видов роллов"
+              class="promo__img">
+          </picture>
+        </li>
+      </ul>
+      <div class="promo__button-box">
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
     </div>
   </section>
 </main>

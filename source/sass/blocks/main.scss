@@ -18,24 +18,33 @@
     background-size: cover;
     background-position: bottom;
   }
+
+  &--promo {
+    margin-top: 0;
+  }
+
+  &--promo-page {
+    padding-bottom: 145px;
+  }
 }
 
 .main__header {
   position: relative;
   display: flex;
-  min-height: 512px;
-  max-height: 512px;
-  height: 100%;
   margin-bottom: 26px;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: bottom;
 
   &--index {
+    min-height: 512px;
+    max-height: 512px;
     background-image: url("/img/pages/index/head-index-mob.jpg");
   }
 
   &--about {
+    min-height: 512px;
+    max-height: 512px;
     background-image: url("/img/pages/about/head-about-mob.jpg");
     margin-bottom: 45px;
   }
@@ -67,6 +76,11 @@
 
   &--booking {
     padding-bottom: 0;
+  }
+
+  &--promo {
+    padding-top: 60px;
+    padding-bottom: 60px;
   }
 }
 
@@ -109,6 +123,10 @@
 
 .main__promo {
   margin-bottom: 70px;
+
+  &--page {
+    margin-bottom: 0;
+  }
 }
 
 .main__advantages {
@@ -150,15 +168,22 @@
       background-image: url("/img/pages/booking/booking-bg-desk.jpg");
       margin-bottom: -110px;
     }
+
+    &--promo {
+      margin-top: 0;
+    }
+
+    &--promo-page {
+      padding-bottom: 210px;
+    }
   }
 
   .main__header {
-    min-height: 802px;
-    max-height: 802px;
-    height: 100%;
     margin-bottom: 48px;
 
     &--index {
+      min-height: 802px;
+      max-height: 802px;
       background-image: url("/img/pages/index/head-index-desk.jpg");
     }
 
@@ -172,6 +197,10 @@
       min-height: 291px;
       max-height: 291px;
     }
+
+    &--promo {
+      margin-bottom: 0;
+    }
   }
 
   .main__header-wrap {
@@ -179,6 +208,11 @@
 
     &--booking {
       padding-bottom: 0;
+    }
+
+    &--promo {
+      padding-top: 94px;
+      padding-bottom: 73px;
     }
   }
 
@@ -204,6 +238,10 @@
 
   .main__promo {
     margin-bottom: 110px;
+
+    &--page {
+      margin-bottom: 0;
+    }
   }
 
   .main__advantages {
