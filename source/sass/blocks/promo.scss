@@ -135,7 +135,7 @@
 
 .promo__button-box {
   position: relative;
-  top: -28px;
+  top: -33px;
   grid-column: 1/-1;
   grid-row: 2/3;
   align-self: start;
@@ -172,7 +172,7 @@
   .promo__item {
     display: grid;
     grid-template-columns: 55% 45%;
-    grid-template-rows: auto;
+    grid-template-rows: min-content;
     gap: 0;
     max-width: 1235px;
 
