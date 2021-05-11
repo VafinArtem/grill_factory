@@ -16,6 +16,72 @@
   grid-template-columns: auto;
   gap: 17px;
   background: var(--basic-black);
+
+  &--main {
+    &.swiper-slide {
+      & .promo__title {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 1s ease-in-out;
+        transition-delay: 1.5s;
+      }
+
+      & .promo__label {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 1s ease-in-out;
+        transition-delay: 1.2s;
+      }
+
+      & .promo__text {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 1s ease-in-out;
+        transition-delay: 0.8s;
+      }
+
+      & .promo__link {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 1s ease-in-out;
+        transition-delay: 0.5s;
+      }
+
+      & .promo__img {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 1s ease-in-out;
+        transition-delay: 0.5s;
+      }
+    }
+
+    &.swiper-slide-active {
+      & .promo__title {
+        max-height: 500px;
+        transition-delay: 2.3s;
+      }
+
+      & .promo__label {
+        max-height: 500px;
+        transition-delay: 2.5s;
+      }
+
+      & .promo__text {
+        max-height: 500px;
+        transition-delay: 2.8s;
+      }
+
+      & .promo__link {
+        max-height: 500px;
+        transition-delay: 3.1s;
+      }
+
+      & .promo__img {
+        max-height: 1000px;
+        transition-delay: 2.3s;
+      }
+    }
+  }
 }
 
 .promo__inner {
