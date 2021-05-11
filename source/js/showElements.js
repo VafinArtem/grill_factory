@@ -1,10 +1,10 @@
 const getCoordinates = (element) => {
   const node = element.getBoundingClientRect();
-  return node.top + window.pageYOffset - document.documentElement.clientHeight;
+  return node.top + window.scrollY - document.documentElement.clientHeight;
 };
 
 const showElement = (element, coordinateY) => {
-  if(window.pageYOffset >= coordinateY) {
+  if(window.scrollY > coordinateY) {
     element.classList.add(`play-animation`);
   }
 };
