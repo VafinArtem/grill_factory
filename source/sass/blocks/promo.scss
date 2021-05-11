@@ -20,65 +20,65 @@
   &--main {
     &.swiper-slide {
       & .promo__title {
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 1s ease-in-out;
-        transition-delay: 1.5s;
+        transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+        transform: translate3d(100%, 0, 0);
+        opacity: 0;
       }
 
       & .promo__label {
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 1s ease-in-out;
-        transition-delay: 1.2s;
+        transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+        transform: translate3d(100%, 0, 0);
+        opacity: 0;
+        transition-delay: 0.1s;
       }
 
       & .promo__text {
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 1s ease-in-out;
-        transition-delay: 0.8s;
+        transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+        transform: translate3d(100%, 0, 0);
+        opacity: 0;
+        transition-delay: 0.15s;
       }
 
       & .promo__link {
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 1s ease-in-out;
-        transition-delay: 0.5s;
+        transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+        transform: translate3d(100%, 0, 0);
+        opacity: 0;
+        transition-delay: 0.2s;
       }
 
-      & .promo__img {
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 1s ease-in-out;
-        transition-delay: 0.5s;
+      & .promo__img-box {
+        transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+        transform: translate3d(-100%, 0, 0);
+        opacity: 0;
+        transition-delay: 0.25s;
       }
     }
 
     &.swiper-slide-active {
       & .promo__title {
-        max-height: 500px;
-        transition-delay: 2.3s;
+        transform: none;
+        opacity: 1;
       }
 
       & .promo__label {
-        max-height: 500px;
-        transition-delay: 2.5s;
+        transform: none;
+        opacity: 1;
       }
 
       & .promo__text {
-        max-height: 500px;
-        transition-delay: 2.8s;
+        transform: none;
+        opacity: 1;
       }
 
       & .promo__link {
-        max-height: 500px;
-        transition-delay: 3.1s;
+        transform: none;
+        opacity: 1;
+        transition-delay: 0.2s;
       }
 
-      & .promo__img {
-        max-height: 1000px;
-        transition-delay: 2.3s;
+      & .promo__img-box {
+        transform: none;
+        opacity: 1;
       }
     }
   }
