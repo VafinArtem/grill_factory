@@ -175,6 +175,8 @@ const displacementSlider = function(opts) {
 
     slider.addEventListener(`touchstart`, (evt) => {
       touchState.start = evt.targetTouches[0].screenX;
+    }, {
+      passive: true
     });
     slider.addEventListener(`touchend`, (evt) => {
       touchState.end = evt.changedTouches[0].screenX;
@@ -183,6 +185,8 @@ const displacementSlider = function(opts) {
       } else if (touchState.end < touchState.start) {
         changeSlide(isAnimating, touchState, pagButtons, `rtl`);
       }
+    }, {
+      passive: true
     });
 
     pagButtons.forEach( (el) => {

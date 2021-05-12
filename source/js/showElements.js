@@ -19,6 +19,8 @@ const ShowElements = () => {
       showElement(element, ELEMENT_COORDINATES_Y);
     });
     showElement(element, ELEMENT_COORDINATES_Y);
+  }, {
+    passive: true
   });
   showedTitleElements.forEach((element) => {
     window.addEventListener("load", () => {

@@ -217,6 +217,7 @@
 
   .promo__inner {
     order: 2;
+    padding-bottom: 0;
 
     .promo__item--page:nth-child(2n) & {
       order: 1;
@@ -233,6 +234,7 @@
     margin-right: 30px;
 
     &--page {
+      min-height: 366px;
       position: relative;
 
       &::after {
