@@ -39,7 +39,7 @@ const displacementSlider = function(opts) {
     });
   };
 
-  const changeSlide = (isAnimatingStatus, state, paginations, direction) => {
+  const changeSlide = (isAnimatingStatus, slideId, paginations, direction) => {
     if(!isAnimatingStatus) {
       isAnimatingStatus = true;
 
@@ -47,22 +47,22 @@ const displacementSlider = function(opts) {
 
       if (direction === `ltr`) {
         if (parseInt(currentSlide, 10) === paginations.length - 1) {
-          state.slideId = 0;
+          slideId = 0;
         } else {
-          state.slideId = parseInt( currentSlide, 10 ) + 1;
+          slideId = parseInt( currentSlide, 10 ) + 1;
         }
       } else if (direction === `rtl`) {
         if (parseInt(currentSlide, 10) === 0) {
-          state.slideId = 2;
+          slideId = 2;
         } else {
-          state.slideId = parseInt( currentSlide, 10 ) - 1;
+          slideId = parseInt( currentSlide, 10 ) - 1;
         }
       }
 
       document.getElementById('pagination').querySelectorAll('.active')[0].classList.remove(`active`);
-      paginations[state.slideId].classList.add(`active`);
+      paginations[slideId].classList.add(`active`);
 
-      animationSlide(state.slideId);
+      animationSlide(slideId);
       isAnimatingStatus = false;
     }
   };
@@ -173,6 +173,8 @@ const displacementSlider = function(opts) {
       slideId: 0
     };
 
+    setInterval(changeSlide, 4000, isAnimating, touchState.slideId, pagButtons, `ltr`);
+
     slider.addEventListener(`touchstart`, (evt) => {
       touchState.start = evt.targetTouches[0].screenX;
     }, {
@@ -181,9 +183,9 @@ const displacementSlider = function(opts) {
     slider.addEventListener(`touchend`, (evt) => {
       touchState.end = evt.changedTouches[0].screenX;
       if (touchState.end > touchState.start) {
-        changeSlide(isAnimating, touchState, pagButtons, `ltr`);
+        changeSlide(isAnimating, touchState.slideId, pagButtons, `ltr`);
       } else if (touchState.end < touchState.start) {
-        changeSlide(isAnimating, touchState, pagButtons, `rtl`);
+        changeSlide(isAnimating, touchState.slideId, pagButtons, `rtl`);
       }
     }, {
       passive: true
@@ -214,7 +216,6 @@ const displacementSlider = function(opts) {
 
   let animate = function() {
       requestAnimationFrame(animate);
-
       renderer.render(scene, camera);
   };
   animate();
