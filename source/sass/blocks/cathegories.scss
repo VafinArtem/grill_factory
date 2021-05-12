@@ -28,7 +28,7 @@
 
 .cathegories__list {
   display: flex;
-  justify-content: space-between;
+  // justify-content: space-between;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -116,13 +116,13 @@
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
-  .cathegories__list {
-    justify-content: space-between;
-  }
+  // .cathegories__list {
+  //   justify-content: space-between;
+  // }
 
   .cathegories__item {
     &:not(:last-child) {
-      margin-right: 30px;
+      margin-right: 28px;
     }
   }
 }
