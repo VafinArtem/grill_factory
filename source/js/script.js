@@ -3,6 +3,7 @@ import MenuOpen from './menu-open';
 import displacementSlider from './displacementSlider';
 import ShowElements from './showElements';
 import AddScrollPadding from './addScrollPadding';
+import DatePicker from './datePicker';
 
 const mobileDetect = new MobileDetect(window.navigator.userAgent);
 
@@ -76,3 +77,5 @@ if (document.querySelector(`#instafeed`)) {
   });
   feed.run();
 }
+
+DatePicker(mobileDetect);
