@@ -5,10 +5,13 @@
 }
 
 .instagramm__list {
-  display: flex;
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 251px);
 }
 
 .instagramm__item {
+  grid-row: 1/-1;
   position: relative;
   min-width: 251px;
   max-width: 251px;
@@ -95,7 +98,12 @@
     font-size: 42px;
   }
 
+  .instagramm__list {
+    grid-template-columns: repeat(3, 360px);
+  }
+
   .instagramm__item {
+    display: flex;
     width: 360px;
     max-width: none;
     height: 555px;
