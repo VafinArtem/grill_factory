@@ -107,7 +107,7 @@
   .advantages {
     &::after {
       padding-left: var(--tablet-padding);
-      padding-right: var(--tablet-padding);
+      padding-right: var(--tablet-padding-right);
     }
   }
 
@@ -125,7 +125,7 @@
   .advantages {
     &::after {
       padding-left: var(--desktop-padding);
-      padding-right: var(--desktop-padding);
+      padding-right: var(--desktop-padding-right);
     }
   }
 }

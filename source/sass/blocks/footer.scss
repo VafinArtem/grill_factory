@@ -84,7 +84,7 @@
     &--booking {
       &::before {
         padding-left: var(--tablet-padding);
-        padding-right: var(--tablet-padding);
+        padding-right: var(--tablet-padding-right);
       }
     }
   }
@@ -96,7 +96,7 @@
     &--booking {
       &::before {
         padding-left: var(--desktop-padding);
-        padding-right: var(--desktop-padding);
+        padding-right: var(--desktop-padding-right);
       }
     }
   }

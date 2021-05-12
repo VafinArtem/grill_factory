@@ -2,8 +2,12 @@
 import MenuOpen from './menu-open';
 import displacementSlider from './displacementSlider';
 import ShowElements from './showElements';
+import AddScrollPadding from './addScrollPadding';
 
 const mobileDetect = new MobileDetect(window.navigator.userAgent);
+
+// Добавляем Padding
+AddScrollPadding();
 
 // Открытие меню
 MenuOpen();

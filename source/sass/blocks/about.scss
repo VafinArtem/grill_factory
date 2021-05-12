@@ -83,7 +83,7 @@
     column-gap: 60px;
     &::after {
       padding-left: var(--tablet-padding);
-      padding-right: var(--tablet-padding);
+      padding-right: var(--tablet-padding-right);
     }
   }
 
@@ -141,7 +141,7 @@
   .about {
     &::after {
       padding-left: var(--desktop-padding);
-      padding-right: var(--desktop-padding);
+      padding-right: var(--desktop-padding-right);
     }
   }
 }

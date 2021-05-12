@@ -1,5 +1,3 @@
-
-
 const MenuOpen = () => {
   const openMenuElement = document.querySelector(`.js-menu-open`);
 

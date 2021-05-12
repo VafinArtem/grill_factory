@@ -133,7 +133,7 @@
   .header__wrapper {
     &::after {
       padding-left: var(--tablet-padding);
-      padding-right: var(--tablet-padding);
+      padding-right: var(--tablet-padding-right);
     }
   }
 
@@ -149,7 +149,7 @@
   .header__wrapper {
     &::after {
       padding-left: var(--desktop-padding);
-      padding-right: var(--desktop-padding);
+      padding-right: var(--desktop-padding-right);
     }
   }
 }

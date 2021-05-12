@@ -161,7 +161,7 @@
   .container {
     max-width: 1440px;
     padding-left: var(--tablet-padding);
-    padding-right: var(--tablet-padding);
+    padding-right: var(--tablet-padding-right);
   }
 }
 
@@ -170,7 +170,7 @@
   .container {
     max-width: 1440px;
     padding-left: var(--desktop-padding);
-    padding-right: var(--desktop-padding);
+    padding-right: var(--desktop-padding-right);
   }
 }
 

@@ -133,7 +133,7 @@
     max-width: 1440px;
     &::after {
       padding-left: var(--tablet-padding);
-      padding-right: var(--tablet-padding);
+      padding-right: var(--tablet-padding-right);
     }
   }
 
@@ -163,7 +163,7 @@
   .cathegories {
     &::after {
       padding-left: var(--desktop-padding);
-      padding-right: var(--desktop-padding);
+      padding-right: var(--desktop-padding-right);
     }
   }
 }
