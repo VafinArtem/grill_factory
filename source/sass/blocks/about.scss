@@ -51,7 +51,7 @@
 }
 
 .about__img-box {
-  display: flex;
+  display: block;
   margin-bottom: 45px;
 }
 
@@ -73,6 +73,9 @@
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
+  .about__img {
+    height: auto;
+  }
 }
 
 // Large devices (desktops, 992px and up)
