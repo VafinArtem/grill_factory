@@ -156,9 +156,7 @@
 }
 
 .main__instagramm {
-  // max-width: 100vw;
   padding-bottom: 50px;
-  // overflow: hidden;
 }
 
 @media (min-width: 320px) {
@@ -186,10 +184,6 @@
       padding-bottom: 120px;
       background-image: url("/img/pages/booking/booking-bg-desk.jpg");
     }
-
-    // &--promo {
-    //   margin-top: 0;
-    // }
 
     &--promo-page {
       padding-bottom: 210px;
@@ -284,8 +278,7 @@
   }
 
   .main__instagramm {
-    // width: 100%;
-    // max-width: 1440px;
+    padding-bottom: 100px;
   }
 }
 

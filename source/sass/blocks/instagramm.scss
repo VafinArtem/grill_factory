@@ -14,6 +14,7 @@
 
 .instagramm__item {
   position: relative;
+  overflow: hidden;
   // max-height: 336px;
   // max-height: 251px;
   // max-width: 251px;
@@ -21,13 +22,6 @@
   // padding-left: 17px;
   // padding-right: 17px;
   // overflow: hidden;
-  // background-color: var(--basic-white);
-  // &:first-child {
-  //   background-image: url("/img/pages/about/icon-iphone.svg");
-  //   background-repeat: no-repeat;
-  //   background-size: 110%;
-  //   background-position-x: center;
-  // }
 }
 
 .instagramm__img {
@@ -45,7 +39,7 @@
   align-items: center;
   width: 100%;
   height: 100%;
-  // font-family: var(--inst-font);
+  overflow: hidden;
 
   &:hover,
   &:focus {
@@ -153,6 +147,9 @@
 
 // X-Large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
+  .instagramm__img {
+    object-position: center;
+  }
 }
 
 // XX-Large devices (larger desktops, 1400px and up)
