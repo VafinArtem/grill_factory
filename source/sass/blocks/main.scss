@@ -19,9 +19,9 @@
     background-position: bottom;
   }
 
-  &--promo {
-    margin-top: 0;
-  }
+  // &--promo {
+  //   margin-top: 0;
+  // }
 
   &--promo-page {
     padding-bottom: 145px;
@@ -44,8 +44,8 @@
   }
 
   &--about {
-    min-height: 512px;
-    max-height: 512px;
+    min-height: 480px;
+    max-height: 480px;
     background-image: url("/img/pages/about/head-about-mob.jpg");
     margin-bottom: 45px;
   }
@@ -57,7 +57,10 @@
   }
 
   &--promo {
-    margin-bottom: 0;
+    min-height: 480px;
+    max-height: 480px;
+    background-image: url("/img/pages/promo/head-promo-mob.jpg");
+    margin-bottom: 45px;
   }
 }
 
@@ -183,9 +186,9 @@
       background-image: url("/img/pages/booking/booking-bg-desk.jpg");
     }
 
-    &--promo {
-      margin-top: 0;
-    }
+    // &--promo {
+    //   margin-top: 0;
+    // }
 
     &--promo-page {
       padding-bottom: 210px;
@@ -202,8 +205,8 @@
     }
 
     &--about {
-      min-height: 654px;
-      max-height: 654px;
+      min-height: 500px;
+      max-height: 500px;
       background-image: url("/img/pages/about/head-about-desk.jpg");
     }
 
@@ -213,7 +216,10 @@
     }
 
     &--promo {
-      margin-bottom: 0;
+      margin-bottom: 89px;
+      min-height: 500px;
+      max-height: 500px;
+      background-image: url("/img/pages/promo/head-promo-desk.jpg");
     }
   }
 
