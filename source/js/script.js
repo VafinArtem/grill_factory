@@ -73,7 +73,7 @@ if (document.querySelector(`#instafeed`)) {
   var feed = new Instafeed({
     accessToken: 'IGQVJXRU1xUWVUUGF0ZA25Gemc4WHRTaHNKSnl2ZADZAqOV9wSzhWbTFrWlhTTjNyNkNVTk43dEhEZAUdfMUVwMEtuaGxXOEVjcmxkMVVlY3RsRERZAeFNmMGhFSjRTdlZAvU3RFTkg3RkxSelk2QXA5RkFrRwZDZD',
     limit: 6,
-    template: '<div class="instagramm__item"><a href="{{link}}" class="instagramm__link"><img src="{{image}}" alt="{{caption}}" class="instagramm__img" width="354" height="369"><div class="instagramm__wrapper"><p class="instagramm__text"><span class="instagramm__author">@{{model.username}}</span> {{caption}}</p></div></a></div>',
+    template: '<div class="instagramm__item"><a href="{{link}}" target="_blank" rel="noreferrer" class="instagramm__link"><img src="{{image}}" alt="{{caption}}" class="instagramm__img" width="354" height="369"><div class="instagramm__wrapper"><p class="instagramm__text"><span class="instagramm__author">@{{model.username}}</span> {{caption}}</p></div></a></div>',
   });
   feed.run();
 }
