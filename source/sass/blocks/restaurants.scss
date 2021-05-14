@@ -117,6 +117,13 @@
   }
 }
 
+.slider-container {
+  grid-column: 1/-1;
+  grid-row: 1/-1;
+  z-index: 2;
+  overflow: hidden;
+}
+
 @media (min-width: 320px) {
 }
 
@@ -158,5 +165,25 @@
       width: 100vw;
       max-width: 100% !important;
     }
+  }
+}
+
+@media (min-width: 2500px) {
+  #slider {
+    grid-template-rows: 900px;
+
+    img {
+      height: 100%;
+    }
+
+    canvas {
+      position: relative;
+      top: -20%;
+      left: -34%;
+    }
+  }
+
+  .slider-inner {
+    height: 100%;
   }
 }

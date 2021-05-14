@@ -115,7 +115,11 @@ const displacementSlider = function(opts) {
 
   renderer.setPixelRatio( window.devicePixelRatio );
   renderer.setClearColor( 0x23272A, 1.0 );
-  renderer.setSize( renderW, renderH );
+  if (window.matchMedia("(min-width: 2500px)").matches) {
+    renderer.setSize( renderW * 1.5, renderH * 1.5 );
+  } else {
+    renderer.setSize( renderW, renderH );
+  }
   parent.appendChild( renderer.domElement );
 
   let loader = new THREE.TextureLoader();
@@ -223,10 +227,11 @@ const displacementSlider = function(opts) {
 
 (() => {
   const el = document.getElementById('slider');
+  const slider = document.querySelector(`.slider-container`);
   if (el) {
     const imgs = Array.from(el.querySelectorAll('img'));
     new displacementSlider({
-        parent: el,
+        parent: slider,
         images: imgs
     });
   }
