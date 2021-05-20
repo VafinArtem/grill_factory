@@ -1,0 +1,112 @@
+.other-dish__title {
+  margin-top: 0;
+  margin-bottom: 23px;
+  font-size: 15px;
+  font-weight: normal;
+}
+
+.other-dish__wrapper {
+  overflow-y: scroll;
+  width: calc(100vw - var(--mobile-padding));
+  width: 100vw;
+  margin-left: calc(0px - var(--mobile-padding));
+  margin-right: calc(0px - var(--mobile-padding));
+  padding-left: var(--mobile-padding);
+}
+
+.other-dish__list {
+  display: flex;
+  width: fit-content;
+  margin: 0;
+  padding: 0;
+  padding-right: 15px;
+  list-style: none;
+}
+
+.other-dish__item {
+  position: relative;
+  min-width: 292px;
+  min-height: 166px;
+  margin-right: 17px;
+  background-color: var(--third-black);
+  overflow: hidden;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &::after {
+    position: absolute;
+    right: -36px;
+    bottom: -8px;
+    content: "";
+    width: 103px;
+    height: 160px;
+    background-image: url("/img/pages/dish/icon-fire-hover.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+    z-index: 1;
+  }
+
+  &:hover,
+  &:focus-within {
+    &::after {
+      opacity: 1;
+    }
+  }
+}
+
+.other-dish__link {
+  display: flex;
+  color: var(--basic-white);
+}
+
+.other-dish__name {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-weight: normal;
+  font-size: 14px;
+}
+
+.other-dish__price {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-weight: bold;
+  font-size: 17px;
+}
+
+.other-dish__inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  padding-top: 25px;
+  padding-bottom: 19px;
+  padding-left: 15px;
+  padding-right: 18px;
+}
+
+@media (min-width: 320px) {
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+}
+
+// X-Large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+}
+
+// XX-Large devices (larger desktops, 1400px and up)
+@media (min-width: 1400px) {
+}
