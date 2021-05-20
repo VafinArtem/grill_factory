@@ -35,6 +35,12 @@
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
+  .footer {
+    &--dish {
+      display: none;
+    }
+  }
+
   .footer__wrapper {
     position: relative;
     flex-direction: row;

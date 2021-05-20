@@ -55,6 +55,9 @@
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
+  .combination__list {
+    grid-template-columns: repeat(2, 192px);
+  }
 }
 
 // Large devices (desktops, 992px and up)
