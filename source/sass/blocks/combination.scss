@@ -56,7 +56,8 @@
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
   .combination__list {
-    grid-template-columns: repeat(2, 192px);
+    grid-template-columns: repeat(auto-fit, minmax(192px, 1fr));
+    row-gap: 70px;
   }
 }
 
@@ -66,8 +67,14 @@
 
 // X-Large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
+  .combination__list {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 // XX-Large devices (larger desktops, 1400px and up)
 @media (min-width: 1400px) {
+  .combination__list {
+    grid-template-columns: repeat(2, 192px);
+  }
 }
