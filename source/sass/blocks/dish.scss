@@ -87,7 +87,7 @@
   grid-template-columns: repeat(auto-fit, 59px);
   gap: 7px;
   margin-top: 0;
-  margin-bottom: 35px;
+  margin-bottom: 45px;
 }
 
 .dish__desc-wrap {
@@ -141,10 +141,8 @@
   width: 100%;
   margin: 0 auto;
   margin-bottom: 39px;
-  margin-top: -104px;
   padding-left: var(--mobile-padding);
   padding-right: var(--mobile-padding);
-  z-index: 1;
 }
 
 .dish__img {
@@ -154,10 +152,45 @@
 }
 
 .dish__price {
+  position: relative;
+  top: 5px;
+  display: flex;
   margin-top: 0;
   margin-bottom: 0;
   font-size: 50px;
   font-weight: bold;
+  line-height: 1;
+}
+
+.dish__badge {
+  position: absolute;
+  top: 23px;
+  left: 12px;
+  display: flex;
+  align-items: center;
+  min-height: 32px;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  padding-left: 34px;
+  padding-right: 11px;
+  font-size: 11px;
+  background-color: var(--badge-bg);
+  border-radius: 8px;
+
+  &--cheef {
+    &::before {
+      position: absolute;
+      left: 11px;
+      content: "";
+      width: 15px;
+      height: 13px;
+      background-image: url("/img/pages/dish/icon-heart.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+  }
 }
 
 @media (min-width: 320px) {
@@ -198,27 +231,12 @@
   }
 
   .dish__back-link {
-    display: flex;
-    align-items: center;
-    min-height: 26px;
-    padding-left: 24px;
-    padding-top: 2px;
-    padding-bottom: 2px;
-    padding-right: 14px;
-    font-size: 10px;
-    background: rgba(255, 255, 255, 0.24);
-    border-radius: 30px;
+    padding-left: 21px;
+    font-size: 14px;
 
     &::before {
-      left: 11px;
-      top: 8px;
-      width: 5px;
-      height: 10px;
+      top: 2px;
     }
-  }
-
-  .dish__inner {
-    margin-top: -99px;
   }
 
   .dish__title {
@@ -237,10 +255,6 @@
   .dish__wrapper {
     margin-left: 0;
     margin-right: 0;
-  }
-
-  .dish__price {
-    line-height: 1.2;
   }
 }
 

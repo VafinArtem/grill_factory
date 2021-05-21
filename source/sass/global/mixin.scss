@@ -2,6 +2,15 @@
   display: none;
 }
 
+.above-tablet {
+  display: none;
+}
+
+.rouble {
+  font-family: var(--rouble);
+  line-height: 0.8;
+}
+
 .link {
   font-size: 15px;
   color: var(--basic-white);
@@ -133,10 +142,6 @@
   }
 
   .below-mobile {
-    display: none;
-  }
-
-  .above-tablet {
     display: none;
   }
 

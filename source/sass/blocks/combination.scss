@@ -63,6 +63,19 @@
 
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
+  .combination {
+    width: fit-content;
+  }
+
+  .combination__text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    border-bottom: 1px solid var(--line-gray-two);
+    border-top: 1px solid var(--line-gray-two);
+  }
 }
 
 // X-Large devices (large desktops, 1200px and up)
