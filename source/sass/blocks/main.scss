@@ -19,6 +19,10 @@
     background-position: bottom;
   }
 
+  &--contacts {
+    padding-bottom: 93px;
+  }
+
   &--dish {
     margin-top: 0;
   }
@@ -56,6 +60,12 @@
     margin-bottom: 59px;
   }
 
+  &--contacts {
+    min-height: 176px;
+    max-height: 176px;
+    margin-bottom: 59px;
+  }
+
   &--promo {
     min-height: 480px;
     max-height: 480px;
@@ -86,6 +96,10 @@
     padding-bottom: 0;
   }
 
+  &--contacts {
+    padding-bottom: 0;
+  }
+
   &--promo {
     padding-top: 45px;
     padding-bottom: 55px;
@@ -106,6 +120,11 @@
   }
 
   &--booking {
+    padding-left: 13px;
+    margin-bottom: 0;
+  }
+
+  &--contacts {
     padding-left: 13px;
     margin-bottom: 0;
   }
@@ -190,6 +209,12 @@
       background-image: url("/img/pages/booking/booking-bg-desk.jpg");
     }
 
+    &--contacts {
+      margin-bottom: -110px;
+      padding-top: 113px;
+      padding-bottom: 120px;
+    }
+
     &--promo-page {
       padding-bottom: 210px;
     }
@@ -223,6 +248,11 @@
       max-height: none;
     }
 
+    &--contacts {
+      min-height: auto;
+      max-height: none;
+    }
+
     &--promo {
       margin-bottom: 89px;
       min-height: 500px;
@@ -235,6 +265,10 @@
     padding-bottom: 80px;
 
     &--booking {
+      padding-bottom: 0;
+    }
+
+    &--contacts {
       padding-bottom: 0;
     }
 
@@ -254,6 +288,11 @@
     }
 
     &--booking {
+      font-size: 60px;
+      padding-left: 0;
+    }
+
+    &--contacts {
       font-size: 60px;
       padding-left: 0;
     }

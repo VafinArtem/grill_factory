@@ -4,6 +4,7 @@ import displacementSlider from './displacementSlider';
 import ShowElements from './showElements';
 import AddScrollPadding from './addScrollPadding';
 import DatePicker from './datePicker';
+import gmap from './gmap';
 
 const mobileDetect = new MobileDetect(window.navigator.userAgent);
 
@@ -79,3 +80,24 @@ if (document.querySelector(`#instafeed`)) {
 }
 
 DatePicker(mobileDetect);
+
+// gmap();
+
+// let map;
+
+// function initMap() {
+//   map = new google.maps.Map(document.getElementById('map'), {
+//     center: {lat: 59.936, lng: 30.314},
+//     zoom: 12,
+//     mapId: 'd42291912907a704'
+//   });
+// }
+
+// let map;
+
+// function initMap() {
+//   map = new google.maps.Map(document.getElementById("map"), {
+//     center: { lat: -34.397, lng: 150.644 },
+//     zoom: 8,
+//   });
+// }
