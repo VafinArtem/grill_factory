@@ -251,6 +251,7 @@
     &--contacts {
       min-height: auto;
       max-height: none;
+      padding-top: 94px;
     }
 
     &--promo {
@@ -293,8 +294,10 @@
     }
 
     &--contacts {
-      font-size: 60px;
+      font-size: 54px;
       padding-left: 0;
+      padding-bottom: 60px;
+      text-transform: initial;
     }
   }
 
