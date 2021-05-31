@@ -23,6 +23,10 @@
     position: relative;
   }
 
+  &--pay-delivery {
+    position: relative;
+  }
+
   &--dish {
     margin-top: 0;
   }
@@ -65,6 +69,11 @@
     max-height: 200px;
   }
 
+  &--pay-delivery {
+    min-height: 200px;
+    max-height: 200px;
+  }
+
   &--promo {
     min-height: 480px;
     max-height: 480px;
@@ -103,6 +112,10 @@
     padding-bottom: 0;
   }
 
+  &--pay-delivery {
+    padding-bottom: 0;
+  }
+
   &--promo {
     padding-top: 45px;
     padding-bottom: 55px;
@@ -128,7 +141,11 @@
   }
 
   &--contacts {
-    padding-left: 13px;
+    margin-bottom: 0;
+    text-transform: initial;
+  }
+
+  &--pay-delivery {
     margin-bottom: 0;
     text-transform: initial;
   }
@@ -220,6 +237,13 @@
       padding-bottom: 120px;
     }
 
+    &--pay-delivery {
+      position: static;
+      margin-bottom: -110px;
+      padding-top: 113px;
+      padding-bottom: 120px;
+    }
+
     &--promo-page {
       padding-bottom: 210px;
     }
@@ -259,6 +283,12 @@
       padding-top: 94px;
     }
 
+    &--pay-delivery {
+      min-height: auto;
+      max-height: none;
+      padding-top: 94px;
+    }
+
     &--promo {
       margin-bottom: 89px;
       min-height: 500px;
@@ -275,6 +305,10 @@
     }
 
     &--contacts {
+      padding-bottom: 0;
+    }
+
+    &--pay-delivery {
       padding-bottom: 0;
     }
 
@@ -299,6 +333,12 @@
     }
 
     &--contacts {
+      font-size: 54px;
+      padding-left: 0;
+      padding-bottom: 60px;
+    }
+
+    &--pay-delivery {
       font-size: 54px;
       padding-left: 0;
       padding-bottom: 60px;

@@ -14,6 +14,14 @@
     background-clip: content-box;
     transform: translate(-50%, 0);
   }
+
+  &--delivery {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    &::after {
+      display: none;
+    }
+  }
 }
 
 .advantages__list {
@@ -30,6 +38,29 @@
   &:not(:last-child) {
     margin-bottom: 66px;
   }
+
+  &--delivery {
+    position: relative;
+    padding-bottom: 16px;
+    margin-bottom: 36px;
+    border-bottom: 1px solid var(--line-gray);
+
+    &:not(:last-child) {
+      margin-bottom: 46px;
+    }
+
+    &::after {
+      position: absolute;
+      right: 0;
+      bottom: 16px;
+      width: 24px;
+      height: 36px;
+      background-image: url("/img/common/icon-fire-stroke.svg");
+      background-size: contain;
+      background-repeat: no-repeat;
+      content: "";
+    }
+  }
 }
 
 .advantages__termin {
@@ -38,6 +69,12 @@
   font-family: var(--third-font);
   font-size: 18px;
   line-height: 1.4;
+
+  &--delivery {
+    max-width: 210px;
+    min-height: 42px;
+    font-size: 15px;
+  }
 }
 
 .advantages__definition {
@@ -59,6 +96,16 @@
     height: 19px;
     background-color: var(--third-gray);
     z-index: -1;
+  }
+
+  &--delivery {
+    margin-bottom: 28px;
+    font-size: 25px;
+    text-transform: initial;
+
+    &::after {
+      display: none;
+    }
   }
 }
 

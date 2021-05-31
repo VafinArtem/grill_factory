@@ -1,0 +1,61 @@
+<main class="main main--pay-delivery">
+  <header class="main__header main__header--pay-delivery">
+    <div class="main__header-wrap main__header-wrap--pay-delivery container">
+      <h1 class="main__title main__title--pay-delivery">Оплата и доставка</h1>
+    </div>
+  </header>
+  <section class="main__pay-delivery pay-delivery container">
+    <h2 class="visually-hidden">Заказ</h2>
+    <form action="/" class="pay-delivery__form">
+      <label for="address" class="pay-delivery__title">введите адрес доставки</label>
+      <div class="pay-delivery__input-box">
+        <input type="text" name="address" id="address"
+          class="pay-delivery__input input input--text">
+        <p class="pay-delivery__status pay-delivery__status--succes show">Отлично, ваш адрес входит
+          в
+          зону доставки.</p>
+        <p class="pay-delivery__status pay-delivery__status--error">К сожалению, ваш адрес не входит
+          в зону доставки.</p>
+      </div>
+      <button type="submit" class="main__link link-reserv">заказать</button>
+    </form>
+    <div class="pay-delivery__overlay"></div>
+    <div id="map" class="pay-delivery__map"></div>
+  </section>
+  <section class="main__advantages advantages advantages--delivery container">
+    <dl class="advantages__list advantages__list--delivery">
+      <div class="advantages__item advantages__item--delivery">
+        <dt class="advantages__termin advantages__termin--delivery">
+          Время принятия заказов
+        </dt>
+        <dd class="advantages__definition advantages__definition--delivery">
+          11:00 — 22:29
+        </dd>
+      </div>
+      <div class="advantages__item advantages__item--delivery">
+        <dt class="advantages__termin advantages__termin--delivery">
+          Время доставки заказов
+        </dt>
+        <dd class="advantages__definition advantages__definition--delivery">
+          от 60 мин.
+        </dd>
+      </div>
+      <div class="advantages__item advantages__item--delivery">
+        <dt class="advantages__termin advantages__termin--delivery">
+          при получении картой или наличными курьеру
+        </dt>
+        <dd class="advantages__definition advantages__definition--delivery">
+          Оплата
+        </dd>
+      </div>
+      <div class="advantages__item advantages__item--delivery">
+        <dt class="advantages__termin advantages__termin--delivery">
+          Бесплатная доставка заказов
+        </dt>
+        <dd class="advantages__definition advantages__definition--delivery">
+          от 700 руб.
+        </dd>
+      </div>
+    </dl>
+  </section>
+</main>
