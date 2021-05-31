@@ -8,12 +8,31 @@
     <form action="/" class="booking__form">
       <div class="booking__wrapper">
         <fieldset class="booking__inner">
+          <label for="name" class="booking__label">ваше имя</label>
+          <input name="name" id="name" type="text" class="booking__input input input--text"
+            required>
+        </fieldset>
+        <fieldset class="booking__inner">
+          <label for="phone" class="booking__label">ваш телефон</label>
+          <input name="phone" id="phone" type="tel" class="booking__input input input--text"
+            placeholder="+7 (  )" pattern="[+0-9]{1}[(0-9]{2}[0-9]{2}[)0-9]{2}[0-9]{4,7}" required>
+        </fieldset>
+        <fieldset class="booking__inner">
+          <label for="visitors" class="booking__label">выберите ресторан</label>
+          <select name="time" id="time" class="booking__input input" required>
+            <option class="booking__option" value="nevsky">Невский пр. 48</option>
+            <option class="booking__option" value="tribuca">ул. Адмирала Трибуца 6 </option>
+            <option class="booking__option" value="kadetskaya">Кадетская линия В.О. 25</option>
+          </select>
+        </fieldset>
+        <fieldset class="booking__inner">
           <label for="date" class="booking__label">Дата</label>
-          <input type="text" name="date" id="date" class="booking__input booking__input--date js-datepicker">
+          <input type="text" name="date" id="date"
+            class="booking__input input input--date js-datepicker" required>
         </fieldset>
         <fieldset class="booking__inner">
           <label for="time" class="booking__label">время</label>
-          <select name="time" id="time" class="booking__input">
+          <select name="time" id="time" class="booking__input input" required>
             <option class="booking__option" value="11-00">11:00</option>
             <option class="booking__option" value="12-00">12:00</option>
             <option class="booking__option" value="13-00">13:00</option>
@@ -30,8 +49,8 @@
         </fieldset>
         <fieldset class="booking__inner">
           <label for="visitors" class="booking__label">Гости</label>
-          <input name="visitors" id="visitors" class="booking__input booking__input--visitors"
-            placeholder="Укажите количество">
+          <input name="visitors" type="text" id="visitors" class="booking__input input input--text"
+            placeholder="Укажите количество" required>
         </fieldset>
       </div>
       <button type="submit" class="booking__submit link-reserv">забронировать</button>
