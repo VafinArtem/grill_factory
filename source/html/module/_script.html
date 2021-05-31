@@ -64,14 +64,20 @@
     const markers = locations.map(({ location, title, img }) => {
       const marker = new google.maps.Marker({
         position: location,
-        icon: `/sources/js/icon-dot.svg`,
+        icon: `/img/common/icon-dot.svg`,
         title: `${title}`,
         map
       });
 
       const infowindow = createInfoWindow(title, img);
 
-      console.log(infowindow);
+      marker.addListener("click", () => {
+        infowindow.open(map, marker);
+      });
+
+      map.addListener("click", () => {
+        infowindow.close(map, marker);
+      })
 
       marker.addListener("mouseover", () => {
         infowindow.open(map, marker);

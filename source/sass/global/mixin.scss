@@ -1,9 +1,9 @@
 .above-mobile {
-  display: none;
+  display: none !important;
 }
 
 .above-tablet {
-  display: none;
+  display: none !important;
 }
 
 .rouble {
@@ -138,11 +138,11 @@
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
   .above-mobile {
-    display: block;
+    display: block !important;
   }
 
   .below-mobile {
-    display: none;
+    display: none !important;
   }
 
   .link {
@@ -175,7 +175,7 @@
   }
 
   .below-tablet {
-    display: none;
+    display: none !important;
   }
 
   .link {
