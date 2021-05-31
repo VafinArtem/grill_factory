@@ -9,6 +9,7 @@
 
   &--about {
     margin-bottom: 35px;
+    margin-top: 0;
   }
 
   &--booking {
@@ -52,10 +53,8 @@
   }
 
   &--about {
-    min-height: 480px;
-    max-height: 480px;
-    background-image: url("/img/pages/about/head-about-mob.jpg");
-    margin-bottom: 45px;
+    padding-top: 64px;
+    margin-bottom: 0;
   }
 
   &--booking {
@@ -103,6 +102,10 @@
   justify-content: flex-end;
   width: 100%;
   padding-bottom: 29px;
+
+  &--about {
+    padding-bottom: 65px;
+  }
 
   &--booking {
     padding-bottom: 0;
@@ -192,7 +195,7 @@
 }
 
 .main__about {
-  padding-bottom: 76px;
+  padding-bottom: 32px;
   margin-bottom: 62px;
 }
 
@@ -219,6 +222,7 @@
 
     &--about {
       margin-bottom: 50px;
+      margin-top: 0;
     }
 
     &--booking {
@@ -270,11 +274,11 @@
       background-image: url("/img/pages/index/head-index-desk.jpg");
     }
 
-    &--about {
-      min-height: 500px;
-      max-height: 500px;
-      background-image: url("/img/pages/about/head-about-desk.jpg");
-    }
+    // &--about {
+    //   min-height: 500px;
+    //   max-height: 500px;
+    //   background-image: url("/img/pages/about/head-about-desk.jpg");
+    // }
 
     &--booking {
       min-height: auto;
@@ -355,6 +359,10 @@
     margin-bottom: 72px;
   }
 
+  .main__about {
+    padding-bottom: 90px;
+  }
+
   .main__promo {
     margin-bottom: 110px;
 
@@ -382,12 +390,23 @@
 @media (min-width: 992px) {
   .main__header {
     &--about {
-      margin-bottom: 109px;
+      padding-top: 71px;
+      margin-bottom: 0;
     }
   }
 
   .main__instagramm {
     padding-bottom: 100px;
+  }
+
+  .main__about {
+    padding-top: 71px;
+  }
+
+  .main__header-wrap {
+    &--about {
+      padding-bottom: 0;
+    }
   }
 }
 

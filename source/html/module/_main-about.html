@@ -1,48 +1,48 @@
 <main class="main main--about">
-  <header class="main__header main__header--about">
-    <div class="main__header-wrap container">
-      <h1 class="main__title main__title--about">О ресторане</h1>
-    </div>
-    <div class="main__header-gradient"></div>
-  </header>
   <section class="main__about about container">
-    <h2 class="visually-hidden">Подробности</h2>
-    <p class="about__description js-show">
-      <span class="about__count">4</span><br>
-      ресторана
-      в спб
-    </p>
     <div class="about__wrapper">
-      <div class="about__video video js-show">
-        <div class="video__preview">
-          <picture>
-            <source media="(min-width: 768px)" srcset="/img/pages/about/video-preview-desk.jpg">
-            <img src="/img/pages/about/video-preview-mob.jpg" alt="" width="385" height="285" class="video__img">
-          </picture>
-          <button class="video__play" aria-label="Проиграть видео"></button>
-        </div>
-        <video id="vid1" class="video__video video-js" controls poster="/img/pages/about/video-preview-desk.jpg"
-          data-setup='{ "techOrder": ["youtube"], "sources": [{ "type": "video/youtube", "src": "https://www.youtube.com/watch?v=Hk3ry-qmOzM"}], "youtube": { "iv_load_policy": 1 } }'>
-        </video>
+      <h1 class="about__title main__title--about">О ресторане</h1>
+      <p class="about__text js-show">В&nbsp;нашем меню вы&nbsp;найдете классику итальянской
+        и&nbsp;европейской кухни, блюда на&nbsp;гриле, пиццу и&nbsp;роллы. Для гурманов блюда
+        от&nbsp;нашего шефа. И&nbsp;все это по&nbsp;демократичным ценам! Мы&nbsp;гуляем
+        с&nbsp;размахом ваши дни рождения и&nbsp;праздники, устраиваем вечеринки и&nbsp;корпоративы.
+        В&nbsp;фокусе вы&nbsp;&mdash; наши гости и&nbsp;ваше отличное настроение.</p>
+      <a href="#" class="about__btn link-reserv js-show">забронировать</a>
+    </div>
+    <div class="about__video video js-show">
+      <div class="video__preview">
+        <picture>
+          <source media="(min-width: 768px)" srcset="/img/pages/about/video-preview-desk.jpg">
+          <img src="/img/pages/about/video-preview-mob.jpg" alt="" width="385" height="285"
+            class="video__img">
+        </picture>
+        <button class="video__play" aria-label="Проиграть видео"></button>
       </div>
-      <h3 class="about__title js-show">Мы всегда ждем вас в&nbsp;гости!</h3>
-      <p class="about__text js-show">В&nbsp;нашем меню вы&nbsp;найдете классику итальянской и&nbsp;европейской кухни,
-        блюда
-        на&nbsp;гриле, пиццу и&nbsp;роллы. Для гурманов блюда от&nbsp;нашего шефа. И&nbsp;все это по&nbsp;демократичным
-        ценам! Мы&nbsp;гуляем с&nbsp;размахом ваши дни рождения и&nbsp;праздники, устраиваем вечеринки
-        и&nbsp;корпоративы.
-        В&nbsp;фокусе вы&nbsp;&mdash; наши гости
-        и&nbsp;ваше отличное настроение.</p>
+      <video id="vid1" class="video__video video-js" controls
+        poster="/img/pages/about/video-preview-desk.jpg"
+        data-setup='{ "techOrder": ["youtube"], "sources": [{ "type": "video/youtube", "src": "https://www.youtube.com/watch?v=Hk3ry-qmOzM"}], "youtube": { "iv_load_policy": 1 } }'>
+      </video>
+    </div>
+    <p class="about__desc-card js-show">
+      <span class="about__count">4</span>
+      <span class="about__desc">ресторана
+        в&nbsp;спб</span>
+    </p>
+    <div class="about__img-wrap">
       <picture class="about__img-box js-show">
         <source media="(min-width: 768px)" srcset="/img/pages/about/about-img-desk.jpg">
-        <img src="/img/pages/about/about-img-mob.jpg" alt="Фото одного из наших залов" width="385" height="271"
-          class="about__img">
+        <img src="/img/pages/about/about-img-mob.jpg" alt="Фото одного из наших залов" width="385"
+          height="271" class="about__img">
       </picture>
-      <a href="#" class="about__btn link-reserv js-show">забронировать</a>
+      <picture class="about__img-box js-show">
+        <source media="(min-width: 768px)" srcset="/img/pages/about/about-img-desk-2.jpg">
+        <img src="/img/pages/about/about-img-mob-2.jpg" alt="Фото одного из наших залов" width="385"
+          height="271" class="about__img">
+      </picture>
     </div>
   </section>
   <section class="main__instagramm instagramm container">
-    <h2 class="instagramm__title js-show">Мы в социальных сетях</h2>
+    <h2 class="instagramm__title js-show">Мы в Instagram</h2>
     <div id="instafeed" class="instagramm__list js-show">
     </div>
   </section>
