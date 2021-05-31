@@ -121,17 +121,32 @@
   .advantages {
     display: flex;
     justify-content: center;
+
+    &--delivery {
+      pointer-events: none;
+    }
   }
 
   .advantages__list {
     flex-direction: row;
     justify-content: space-between;
+    flex-wrap: wrap;
     max-width: 90%;
     width: 100%;
+
+    &--delivery {
+      max-width: none;
+      width: 100%;
+    }
   }
 
   .advantages__termin {
     font-size: 17px;
+
+    &--delivery {
+      max-width: 185px;
+      font-size: 14px;
+    }
   }
 
   .advantages__definition {
@@ -140,11 +155,51 @@
     &::after {
       bottom: -6px;
     }
+
+    &--delivery {
+      margin-bottom: 25px;
+      font-size: 23px;
+    }
   }
 
   .advantages__item {
     &:not(:last-child) {
       margin-bottom: 0;
+    }
+
+    &--delivery {
+      position: relative;
+      display: flex;
+      width: calc(100% / 4 - 3.8%);
+      // width: 274px;
+      height: auto;
+      padding-left: 17px;
+      padding-right: 17px;
+      padding-bottom: 16px;
+      padding-top: 16px;
+      margin-bottom: 0;
+      border: none;
+      background: rgba(0, 0, 0, 0.5);
+      border-radius: 24px;
+      box-shadow: 0px 3.31236px 20px rgba(0, 0, 0, 0.4);
+      overflow: hidden;
+
+      &::after {
+        position: absolute;
+        right: -21px;
+        bottom: -14px;
+        width: 77px;
+        height: 119px;
+        background-image: url("/img/common/icon-fire-hover.svg");
+        background-repeat: no-repeat;
+        background-size: contain;
+        z-index: 1;
+        content: "";
+      }
+
+      &:not(:last-child) {
+        margin-right: 3.8%;
+      }
     }
   }
 }
@@ -164,6 +219,10 @@
     &::after {
       bottom: -3px;
     }
+
+    &--delivery {
+      font-size: 23px;
+    }
   }
 }
 
@@ -182,5 +241,10 @@
   .advantages__list {
     max-width: none;
     width: 1096px;
+
+    &--delivery {
+      max-width: none;
+      width: 100%;
+    }
   }
 }

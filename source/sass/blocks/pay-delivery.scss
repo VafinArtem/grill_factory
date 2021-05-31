@@ -15,8 +15,10 @@
   margin-bottom: 15px;
   font-size: 10px;
   text-transform: uppercase;
+  letter-spacing: 1px;
   color: var(--basic-white);
   opacity: 0.5;
+  pointer-events: none;
 }
 
 .pay-delivery__input-box {
@@ -29,6 +31,7 @@
   margin-bottom: 0;
   font-family: var(--third-font);
   font-size: 12px;
+  pointer-events: none;
 
   &--succes {
     color: var(--second-green);
@@ -161,15 +164,44 @@
 @media (min-width: 768px) {
   .pay-delivery {
     height: auto;
+    width: 100%;
     margin-top: 0;
+    padding-top: 0;
   }
 
   .pay-delivery__map {
     height: 100%;
   }
 
+  .pay-delivery__input-box {
+    display: flex;
+  }
+
+  .pay-delivery__form {
+    pointer-events: none;
+  }
+
+  .pay-delivery__input {
+    margin-right: 33px;
+    margin-bottom: 0;
+    pointer-events: all;
+  }
+
+  .pay-delivery__button {
+    pointer-events: all;
+  }
+
+  .pay-delivery__status {
+    align-items: flex-end;
+    max-width: 175px;
+  }
+
   .pay-delivery__overlay {
     height: 100%;
+  }
+
+  .pay-delivery__input {
+    width: 340px;
   }
 }
 
