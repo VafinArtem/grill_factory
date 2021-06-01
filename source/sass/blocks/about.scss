@@ -25,6 +25,7 @@
   font-size: 28px;
   font-weight: bold;
   text-transform: uppercase;
+  visibility: hidden;
   z-index: 2;
 
   &::after {
@@ -37,6 +38,10 @@
     background-size: contain;
     background-repeat: no-repeat;
     content: "";
+  }
+
+  &.play-animation-title {
+    visibility: visible;
   }
 }
 
@@ -136,7 +141,7 @@
     &::after {
       right: 0;
       left: auto;
-      width: 352px;
+      width: 84%;
       height: 18px;
     }
   }

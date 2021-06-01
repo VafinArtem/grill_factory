@@ -55,8 +55,8 @@ a {
 }
 
 .play-animation-title {
-  animation-name: fadeInRight;
-  animation-duration: 1s;
+  animation-name: slideInUp;
+  animation-duration: 0.5s;
   animation-fill-mode: both;
 }
 
@@ -65,5 +65,6 @@ a {
 }
 
 .js-head-show {
-  opacity: 0;
+  // opacity: 0;
+  animation-delay: 0s;
 }
