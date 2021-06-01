@@ -3,6 +3,19 @@
   flex-direction: column;
 }
 
+.footer__map {
+  height: 473px;
+}
+
+.footer__map-frame {
+  height: 100%;
+  width: 100%;
+
+  & div {
+    border: none !important;
+  }
+}
+
 .footer__wrapper {
   display: flex;
   flex-direction: column;
