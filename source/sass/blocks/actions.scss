@@ -3,33 +3,21 @@
   flex-direction: column;
 }
 
-.actions__text {
-  margin-top: 0;
-  margin-bottom: 38px;
-  font-weight: bold;
-  font-size: 22px;
-}
-
-.actions__inner {
-  display: flex;
-  flex-direction: column;
-}
-
 .actions__link {
   position: relative;
   display: flex;
-  align-items: flex-end;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
-  height: 230px;
-  padding-left: 24px;
-  padding-bottom: 23px;
-  font-weight: bold;
-  font-size: 14px;
-  text-transform: uppercase;
+  height: 317px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 62px;
+  padding-top: 55px;
   overflow: hidden;
 
   &:not(:last-child) {
-    margin-bottom: 17px;
+    margin-bottom: 23px;
   }
 
   &:hover {
@@ -37,6 +25,51 @@
       transform: scale(1.05);
     }
   }
+}
+
+.actions__inner {
+  display: flex;
+  flex-direction: column;
+  margin-left: calc(0px - var(--mobile-padding));
+  margin-right: calc(0px - var(--mobile-padding));
+}
+
+.actions__title {
+  position: relative;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-weight: bold;
+  font-size: 10px;
+  text-align: center;
+
+  &::before {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    width: 32px;
+    height: 33px;
+    background-image: url("/img/common/icon-fire-half.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    transform: translate(-50%, 0);
+    content: "";
+  }
+}
+
+.actions__subtitle {
+  margin-top: auto;
+  margin-bottom: 25px;
+  font-weight: bold;
+  font-size: 24px;
+  text-align: center;
+}
+
+.actions__text {
+  max-width: 280px;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 13px;
+  text-align: center;
 }
 
 .actions__bg {
@@ -93,7 +126,6 @@
     height: 354px;
     padding-left: 48px;
     padding-bottom: 30px;
-    font-size: 20px;
 
     &:not(:last-child) {
       margin-right: 58px;

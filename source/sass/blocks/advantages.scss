@@ -1,20 +1,6 @@
 .advantages {
   position: relative;
 
-  &::after {
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    content: "";
-    width: 100%;
-    padding-left: var(--mobile-padding);
-    padding-right: var(--mobile-padding);
-    height: 1px;
-    background-color: var(--line-gray);
-    background-clip: content-box;
-    transform: translate(-50%, 0);
-  }
-
   &--delivery {
     margin-bottom: 0;
     padding-bottom: 0;
@@ -32,8 +18,11 @@
 }
 
 .advantages__item {
+  position: relative;
   display: flex;
   flex-direction: column;
+  padding-bottom: 21px;
+  border-bottom: 1px solid var(--line-gray);
 
   &:not(:last-child) {
     margin-bottom: 66px;
@@ -67,7 +56,7 @@
   order: 2;
   max-width: 208px;
   font-family: var(--third-font);
-  font-size: 18px;
+  font-size: 17px;
   line-height: 1.4;
 
   &--delivery {
@@ -84,28 +73,11 @@
   margin-left: 0;
   margin-bottom: 30px;
   font-weight: bold;
-  font-size: 26px;
-  text-transform: uppercase;
-
-  &::after {
-    position: absolute;
-    bottom: -8px;
-    content: "";
-    display: block;
-    width: 100%;
-    height: 19px;
-    background-color: var(--third-gray);
-    z-index: -1;
-  }
+  font-size: 34px;
 
   &--delivery {
     margin-bottom: 28px;
     font-size: 25px;
-    text-transform: initial;
-
-    &::after {
-      display: none;
-    }
   }
 }
 
@@ -207,13 +179,6 @@
 
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
-  .advantages {
-    &::after {
-      padding-left: var(--tablet-padding);
-      padding-right: var(--tablet-padding-right);
-    }
-  }
-
   .advantages__definition {
     font-size: 30px;
 
@@ -229,12 +194,6 @@
 
 // X-Large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
-  .advantages {
-    &::after {
-      padding-left: var(--desktop-padding);
-      padding-right: var(--desktop-padding-right);
-    }
-  }
 }
 
 // XX-Large devices (larger desktops, 1400px and up)
