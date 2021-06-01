@@ -104,13 +104,7 @@
     flex-direction: row;
     justify-content: space-between;
     flex-wrap: wrap;
-    max-width: 90%;
     width: 100%;
-
-    &--delivery {
-      max-width: none;
-      width: 100%;
-    }
   }
 
   .advantages__termin {
@@ -136,7 +130,10 @@
   }
 
   .advantages__item {
+    width: calc(100% / 3 - 3.8%);
+
     &:not(:last-child) {
+      margin-right: 3.8%;
       margin-bottom: 0;
     }
 
@@ -144,7 +141,6 @@
       position: relative;
       display: flex;
       width: calc(100% / 4 - 3.8%);
-      // width: 274px;
       height: auto;
       padding-left: 17px;
       padding-right: 17px;
@@ -180,7 +176,7 @@
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
   .advantages__definition {
-    font-size: 30px;
+    font-size: 34px;
 
     &::after {
       bottom: -3px;
@@ -199,12 +195,6 @@
 // XX-Large devices (larger desktops, 1400px and up)
 @media (min-width: 1400px) {
   .advantages__list {
-    max-width: none;
-    width: 1096px;
-
-    &--delivery {
-      max-width: none;
-      width: 100%;
-    }
+    width: 100%;
   }
 }
