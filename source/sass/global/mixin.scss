@@ -203,7 +203,7 @@
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
   .above-tablet {
-    display: block;
+    display: block !important;
   }
 
   .below-tablet {
