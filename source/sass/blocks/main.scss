@@ -154,19 +154,6 @@
     margin-bottom: auto;
     font-size: 27px;
     text-align: center;
-
-    &::after {
-      position: absolute;
-      top: -77px;
-      right: -28px;
-      width: 135px;
-      height: 200px;
-      background-image: url("/img/common/icon-fire-stroke-min.svg");
-      background-repeat: no-repeat;
-      background-size: contain;
-      content: "";
-      z-index: -1;
-    }
   }
 
   &--booking {
@@ -389,13 +376,6 @@
     &--index {
       margin-bottom: auto;
       font-size: 40px;
-
-      &::after {
-        top: -111px;
-        right: -40px;
-        width: 198px;
-        height: 297px;
-      }
     }
 
     &--booking {

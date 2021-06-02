@@ -48,19 +48,15 @@
   font-weight: bold;
   font-size: 10px;
   text-align: center;
+}
 
-  &::before {
-    position: absolute;
-    bottom: 100%;
-    left: 50%;
-    width: 32px;
-    height: 33px;
-    background-image: url("/img/common/icon-fire-half.svg");
-    background-repeat: no-repeat;
-    background-size: contain;
-    transform: translate(-50%, 0);
-    content: "";
-  }
+.actions__flame {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  width: 32px;
+  height: 33px;
+  transform: translate(-50%, 0);
 }
 
 .actions__subtitle {

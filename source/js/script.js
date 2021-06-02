@@ -5,12 +5,34 @@ import ShowElements from "./showElements";
 import AddScrollPadding from "./addScrollPadding";
 import DatePicker from "./datePicker";
 
-lottie.loadAnimation({
-  container: document.querySelector(`.js-flame-min`),
-  renderer: "svg",
-  loop: true,
-  autoplay: true,
-  path: "/sources/js/plugins/lottie/animations/small_flame.json",
+document.querySelectorAll(`.js-flame-min`).forEach((element) => {
+  lottie.loadAnimation({
+    container: element,
+    renderer: "svg",
+    loop: true,
+    autoplay: true,
+    path: "/sources/js/plugins/lottie/animations/title_flame.json",
+  });
+});
+
+document.querySelectorAll(`.js-flame-title`).forEach((element) => {
+  lottie.loadAnimation({
+    container: element,
+    renderer: "svg",
+    loop: true,
+    autoplay: true,
+    path: "/sources/js/plugins/lottie/animations/title_flame.json",
+  });
+});
+
+document.querySelectorAll(`.js-half-flame`).forEach((element) => {
+  lottie.loadAnimation({
+    container: element,
+    renderer: "svg",
+    loop: true,
+    autoplay: true,
+    path: "/sources/js/plugins/lottie/animations/small_flame_half.json",
+  });
 });
 
 const mobileDetect = new MobileDetect(window.navigator.userAgent);
@@ -91,24 +113,3 @@ if (document.querySelector(`#instafeed`)) {
 }
 
 DatePicker(mobileDetect);
-
-// gmap();
-
-// let map;
-
-// function initMap() {
-//   map = new google.maps.Map(document.getElementById('map'), {
-//     center: {lat: 59.936, lng: 30.314},
-//     zoom: 12,
-//     mapId: 'd42291912907a704'
-//   });
-// }
-
-// let map;
-
-// function initMap() {
-//   map = new google.maps.Map(document.getElementById("map"), {
-//     center: { lat: -34.397, lng: 150.644 },
-//     zoom: 8,
-//   });
-// }
