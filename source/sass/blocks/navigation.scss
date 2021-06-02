@@ -44,6 +44,7 @@
     &::after {
       position: absolute;
       right: -24px;
+      top: 5px;
       content: "";
       width: 20px;
       height: 16px;
@@ -118,7 +119,6 @@
   position: relative;
   transition-delay: 0.8s;
   opacity: 0;
-  // overflow: hidden;
   transform: translate(100px, 0%);
   transition: opacity 0.2s ease, transform 0.3s ease;
   margin-top: 0;
@@ -184,10 +184,18 @@
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
-}
+  .navigation__link {
+    font-size: 30px;
+    line-height: 1.3;
 
-// Large devices (desktops, 992px and up)
-@media (min-width: 992px) {
+    &:hover,
+    &:focus {
+      &::after {
+        right: -30px;
+      }
+    }
+  }
+
   .navigation {
     &::after {
       background-color: transparent;
@@ -208,22 +216,25 @@
   .navigation__list {
     padding-left: 0;
   }
+}
 
-  .navigation__link {
-    font-size: 30px;
-    line-height: 1.3;
-
-    &:hover,
-    &:focus {
-      &::after {
-        right: -30px;
-      }
-    }
-  }
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
 }
 
 // X-Large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
+  .navigation__link {
+    font-size: 48px;
+    line-height: 1;
+
+    &:hover,
+    &:focus {
+      &::after {
+        top: 9px;
+      }
+    }
+  }
 }
 
 // XX-Large devices (larger desktops, 1400px and up)
@@ -232,11 +243,6 @@
     width: 100vw;
     max-width: 100%;
     padding-top: 215px;
-  }
-
-  .navigation__link {
-    font-size: 48px;
-    line-height: 1;
   }
 
   .navigation__item {
