@@ -292,10 +292,10 @@
       position: static;
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: flex-end;
       margin-bottom: -110px;
       padding-top: 113px;
-      padding-bottom: 120px;
+      padding-bottom: 145px;
     }
 
     &--promo-page {
@@ -336,6 +336,7 @@
       max-height: none;
       padding-top: 0;
       margin-bottom: 54px;
+      margin-top: auto;
       pointer-events: none;
     }
 

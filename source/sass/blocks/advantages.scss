@@ -87,6 +87,28 @@
       animation: slideInLeft 1s ease-in-out forwards;
     }
   }
+
+  &--delivery {
+    &.js-show {
+      opacity: 1;
+
+      & .advantages__termin,
+      & .advantages__definition {
+        opacity: 0;
+      }
+    }
+
+    &.play-animation {
+      animation: none;
+      transform: none;
+
+      & .advantages__termin,
+      & .advantages__definition {
+        opacity: 1;
+        animation: slideInUp 1s ease-in-out forwards;
+      }
+    }
+  }
 }
 
 .advantages__termin {
@@ -150,6 +172,7 @@
     &--delivery {
       max-width: 185px;
       font-size: 14px;
+      color: var(--line-gray);
     }
   }
 
@@ -201,6 +224,10 @@
         background-size: contain;
         z-index: 1;
         content: "";
+      }
+
+      &::before {
+        display: none;
       }
 
       &:not(:last-child) {

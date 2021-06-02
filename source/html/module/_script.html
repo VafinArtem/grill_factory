@@ -62,12 +62,17 @@
         });
       };
 
+      const directionsDisplay = new google.maps.DirectionsRenderer({
+        suppressInfoWindows: true,
+        map: map
+      });
+
       const markers = locations.map(({ location, title, img }, index) => {
         const marker = new google.maps.Marker({
           position: location,
           icon: `/img/common/icon-dot-test.svg`,
           title: `${title}`,
-          map
+          map,
         });
 
         const infowindow = createInfoWindow(title, img);
@@ -92,6 +97,7 @@
 
         return marker;
       });
+
       if (mapElement.classList.contains(`isContactsPage`)) {
         let index = 0;
         let length = markers.length;
