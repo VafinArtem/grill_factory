@@ -34,31 +34,3 @@ const DatePicker = (mobileDetect) => {
 };
 
 export default DatePicker;
-
-// (() => {
-//   let urls = [
-//     "http://mylink1",
-//     "http://mylink2",
-//     "http://mylink3",
-//     "http://mylink4",
-//   ];
-
-//   let idx = 0;
-//   let length = urls.length;
-
-//   const doNext = () => {
-//     let entry = urls[idx];
-
-//     console.log(idx + ":" + entry);
-//     idx++;
-//     console.log([idx, length]);
-//     if (idx < length) {
-//       // Don't do anything special
-//     } else {
-//       idx = 0;
-//     }
-//     setTimeout(doNext, 300);
-//   };
-
-//   doNext();
-// })();
