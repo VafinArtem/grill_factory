@@ -10,6 +10,8 @@
 <script>
   let map;
 
+  let infoWindows = [];
+
   const locations = [
     {
       location: { lat: 59.934, lng: 30.333 },
@@ -60,7 +62,7 @@
         });
       };
 
-      const markers = locations.map(({ location, title, img }) => {
+      const markers = locations.map(({ location, title, img }, index) => {
         const marker = new google.maps.Marker({
           position: location,
           icon: `/img/common/icon-dot-test.svg`,
@@ -76,7 +78,7 @@
 
         map.addListener("click", () => {
           infowindow.close(map, marker);
-        })
+        });
 
         marker.addListener("mouseover", () => {
           infowindow.open(map, marker);
@@ -86,8 +88,33 @@
           infowindow.close(map, marker);
         });
 
+        infoWindows = [...infoWindows, infowindow]
+
         return marker;
       });
+      if (mapElement.classList.contains(`isContactsPage`)) {
+        let index = 0;
+        let length = markers.length;
+
+        const getPreviusIndex = () => index - 1 === -1 ? markers.length - 1 : index - 1;
+
+        const doNext = () => {
+          let entry = markers[index];
+
+          infoWindows[getPreviusIndex()].close(map, markers[getPreviusIndex()]);
+          infoWindows[index].open(map, markers[index]);
+
+          index++;
+
+          if (index < markers.length) {
+          } else {
+            index = 0;
+          }
+          setTimeout(doNext, 2000);
+        };
+
+        doNext();
+      }
     }
   }
 </script>

@@ -133,6 +133,10 @@
 
 .main__link {
   align-self: center;
+
+  &--contacts {
+    align-self: flex-start;
+  }
 }
 
 .main__title {
