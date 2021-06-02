@@ -20,9 +20,16 @@
     margin-bottom: 23px;
   }
 
-  &:hover {
-    .actions__bg {
+  &:hover,
+  &:focus {
+    & .actions__bg {
       transform: scale(1.05);
+    }
+
+    & .actions__subtitle,
+    & .actions__text {
+      animation: slideInUp 1s;
+      visibility: visible;
     }
   }
 }
@@ -62,6 +69,7 @@
   font-weight: bold;
   font-size: 24px;
   text-align: center;
+  visibility: hidden;
 }
 
 .actions__text {
@@ -70,6 +78,7 @@
   margin-bottom: 0;
   font-size: 13px;
   text-align: center;
+  visibility: hidden;
 }
 
 .actions__bg {
