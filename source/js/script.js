@@ -16,14 +16,26 @@ document.querySelectorAll(`.js-flame-min`).forEach((element) => {
   });
 });
 
-document.querySelectorAll(`.js-flame-title`).forEach((element) => {
+document.querySelectorAll(`.js-title`).forEach((element) => {
   lottie.loadAnimation({
     container: element,
     renderer: "svg",
-    loop: true,
+    loop: false,
     autoplay: true,
-    path: "/sources/js/plugins/lottie/animations/title_flame.json",
+    path: "/sources/js/plugins/lottie/animations/title.json",
   });
+});
+
+document.querySelectorAll(`.js-flame-title`).forEach((element) => {
+  setTimeout(() => {
+    lottie.loadAnimation({
+      container: element,
+      renderer: "svg",
+      loop: true,
+      autoplay: true,
+      path: "/sources/js/plugins/lottie/animations/big_flame.json",
+    });
+  }, 200);
 });
 
 document.querySelectorAll(`.js-half-flame`).forEach((element) => {

@@ -154,6 +154,14 @@
     margin-bottom: auto;
     font-size: 27px;
     text-align: center;
+
+    & .main__flame {
+      position: absolute;
+      top: -73px;
+      right: -21px;
+      width: 161px;
+      z-index: -1;
+    }
   }
 
   &--booking {
@@ -378,6 +386,12 @@
     &--index {
       margin-bottom: auto;
       font-size: 40px;
+
+      & .main__flame {
+        top: -93px;
+        right: -40px;
+        width: 198px;
+      }
     }
 
     &--booking {
