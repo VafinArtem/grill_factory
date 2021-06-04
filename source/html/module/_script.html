@@ -33,7 +33,7 @@
 
   const MapCenters = {
     FOOTER: { lat: 59.910, lng: 30.237 },
-    OTHER: { lat: 59.936, lng: 30.314 }
+    OTHER: { lat: 59.897, lng: 30.171 }
   };
 
   const MapZooms = {
@@ -47,7 +47,7 @@
       map = new google.maps.Map(mapElement, {
         center: mapElement.classList.contains(`isFooterMap`) ? MapCenters.FOOTER : MapCenters.OTHER,
 
-        zoom: mapElement.classList.contains(`isFooterMap`) ? MapZooms.FOOTER : MapZooms.OTHER,
+        zoom: MapZooms.FOOTER,
         mapId: 'd42291912907a704',
         disableDefaultUI: true,
       });

@@ -4,6 +4,7 @@ import displacementSlider from "./displacementSlider";
 import ShowElements from "./showElements";
 import AddScrollPadding from "./addScrollPadding";
 import DatePicker from "./datePicker";
+import showDeliveryMessage from "./showDeliveryMessage";
 
 document.querySelectorAll(`.js-flame-min`).forEach((element) => {
   lottie.loadAnimation({
@@ -113,3 +114,5 @@ if (document.querySelector(`#instafeed`)) {
 }
 
 DatePicker(mobileDetect);
+
+showDeliveryMessage();
