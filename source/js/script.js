@@ -11,7 +11,7 @@ document.querySelectorAll(`.js-flame-min`).forEach((element) => {
     renderer: "svg",
     loop: true,
     autoplay: true,
-    path: "/sources/js/plugins/lottie/animations/title_flame.json",
+    path: "/sources/js/plugins/lottie/animations/small_flame.json",
   });
 });
 

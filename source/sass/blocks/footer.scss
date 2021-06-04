@@ -61,6 +61,7 @@
     z-index: 2;
 
     &--navigation {
+      min-height: 110px;
       &::before {
         position: absolute;
         bottom: 100%;

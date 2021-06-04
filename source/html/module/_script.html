@@ -13,7 +13,7 @@
 
   let infoWindows = [];
 
-  const locations = [
+  const Locations = [
     {
       location: { lat: 59.934, lng: 30.333 },
       title: `Невский пр. 48`,
@@ -31,15 +31,29 @@
     },
   ];
 
+  const MapCenters = {
+    FOOTER: { lat: 59.910, lng: 30.237 },
+    OTHER: { lat: 59.936, lng: 30.314 }
+  };
+
+  const MapZooms = {
+    FOOTER: 11,
+    OTHER: 12
+  }
+
   function initMap() {
     const mapElement = document.querySelector(`#map`);
     if (mapElement) {
       map = new google.maps.Map(mapElement, {
-        center: { lat: 59.936, lng: 30.314 },
-        zoom: 12,
+        center: mapElement.classList.contains(`isFooterMap`) ? MapCenters.FOOTER : MapCenters.OTHER,
+
+        zoom: mapElement.classList.contains(`isFooterMap`) ? MapZooms.FOOTER : MapZooms.OTHER,
         mapId: 'd42291912907a704',
         disableDefaultUI: true,
       });
+
+      console.log(mapElement.classList.contains(`isFooterMap`));
+      console.log(map.zoom);
 
       const getContentTemplate = (title, imgUrl) => {
         return `
@@ -68,7 +82,7 @@
         map: map
       });
 
-      const markers = locations.map(({ location, title, img }, index) => {
+      const markers = Locations.map(({ location, title, img }, index) => {
         const marker = new google.maps.Marker({
           position: location,
           icon: `/img/common/icon-dot-test.svg`,
