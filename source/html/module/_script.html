@@ -9,6 +9,7 @@
 <script src="/sources/js/plugins/datepicker/datepicker.min.js"></script>
 <script src="/sources/js/bundle.js"></script>
 <script>
+  const mapElement = document.querySelector(`#map`);
   let map;
 
   let infoWindows = [];
@@ -33,21 +34,43 @@
 
   const MapCenters = {
     FOOTER: { lat: 59.910, lng: 30.237 },
-    OTHER: { lat: 59.897, lng: 30.171 }
+    OTHER: { lat: 59.897, lng: 30.171 },
+    MOBILE: { lat: 59.925, lng: 30.251 }
   };
 
   const MapZooms = {
     FOOTER: 11,
-    OTHER: 12
+    OTHER: 12,
+    MOBILE: 10
+  }
+
+  const isMobile = window.matchMedia("(max-width: 767px)").matches
+
+  const getZoomValue = () => {
+    if (mapElement.classList.contains(`isPayDelivery`) && isMobile) {
+      return MapZooms.MOBILE
+    }
+
+    return MapZooms.FOOTER
+  }
+
+  const getLocationValue = () => {
+    if (mapElement.classList.contains(`isFooterMap`)) {
+      return MapCenters.FOOTER
+    }
+
+    if (mapElement.classList.contains(`isPayDelivery`) && isMobile) {
+      return MapCenters.MOBILE
+    }
+
+    return MapCenters.OTHER
   }
 
   function initMap() {
-    const mapElement = document.querySelector(`#map`);
     if (mapElement) {
       map = new google.maps.Map(mapElement, {
-        center: mapElement.classList.contains(`isFooterMap`) ? MapCenters.FOOTER : MapCenters.OTHER,
-
-        zoom: MapZooms.FOOTER,
+        center: getLocationValue(),
+        zoom: getZoomValue(),
         mapId: 'd42291912907a704',
         disableDefaultUI: true,
       });

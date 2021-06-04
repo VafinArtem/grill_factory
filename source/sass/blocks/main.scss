@@ -26,6 +26,7 @@
 
   &--pay-delivery {
     position: relative;
+    margin-top: 0;
   }
 
   &--dish {
@@ -40,7 +41,6 @@
 .main__header {
   position: relative;
   display: flex;
-  margin-bottom: 26px;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: bottom;
@@ -70,8 +70,8 @@
   }
 
   &--pay-delivery {
-    min-height: 200px;
-    max-height: 200px;
+    padding-top: 62px;
+    margin-bottom: 62px;
   }
 
   &--promo {
@@ -241,6 +241,10 @@
   margin-bottom: 56px;
 }
 
+.main__pay-delivery {
+  margin-bottom: 39px;
+}
+
 @media (min-width: 320px) {
 }
 
@@ -319,8 +323,6 @@
     }
 
     &--pay-delivery {
-      min-height: auto;
-      max-height: none;
       padding-top: 0;
       margin-bottom: 54px;
       margin-top: auto;
@@ -432,6 +434,10 @@
   .main__dish {
     padding-top: 0;
     margin-bottom: 0;
+  }
+
+  .main__pay-delivery {
+    margin-bottom: auto;
   }
 }
 
