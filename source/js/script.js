@@ -5,6 +5,9 @@ import ShowElements from "./showElements";
 import AddScrollPadding from "./addScrollPadding";
 import DatePicker from "./datePicker";
 import showDeliveryMessage from "./showDeliveryMessage";
+import menuInit from "./menu-init";
+
+menuInit();
 
 document.querySelectorAll(`.js-flame-min`).forEach((element) => {
   lottie.loadAnimation({

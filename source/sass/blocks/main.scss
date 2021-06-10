@@ -36,6 +36,10 @@
   &--promo-page {
     padding-bottom: 145px;
   }
+
+  &--menu {
+    margin-top: 0;
+  }
 }
 
 .main__header {
@@ -306,6 +310,10 @@
       display: grid;
       grid-template-columns: 1fr min-content;
       column-gap: 12px;
+      margin-top: 0;
+    }
+
+    &--menu {
       margin-top: 0;
     }
   }
