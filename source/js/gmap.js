@@ -1,9 +1,10 @@
 const gmap = () => {
+  const mapElement = document.querySelector(`#map`);
   let map;
 
   let infoWindows = [];
 
-  const locations = [
+  const Locations = [
     {
       location: { lat: 59.934, lng: 30.333 },
       title: `Невский пр. 48`,
@@ -21,29 +22,64 @@ const gmap = () => {
     },
   ];
 
+  const MapCenters = {
+    FOOTER: { lat: 59.91, lng: 30.237 },
+    OTHER: { lat: 59.897, lng: 30.171 },
+    MOBILE: { lat: 59.925, lng: 30.251 },
+  };
+
+  const MapZooms = {
+    FOOTER: 11,
+    OTHER: 12,
+    MOBILE: 10,
+  };
+
+  const isMobile = window.matchMedia("(max-width: 767px)").matches;
+
+  const getZoomValue = () => {
+    if (mapElement.classList.contains(`isPayDelivery`) && isMobile) {
+      return MapZooms.MOBILE;
+    }
+
+    return MapZooms.FOOTER;
+  };
+
+  const getLocationValue = () => {
+    if (mapElement.classList.contains(`isFooterMap`)) {
+      return MapCenters.FOOTER;
+    }
+
+    if (mapElement.classList.contains(`isPayDelivery`) && isMobile) {
+      return MapCenters.MOBILE;
+    }
+
+    return MapCenters.OTHER;
+  };
+
   function initMap() {
-    const mapElement = document.querySelector(`#map`);
     if (mapElement) {
       map = new google.maps.Map(mapElement, {
-        center: { lat: 59.936, lng: 30.314 },
-        zoom: 12,
+        center: getLocationValue(),
+        zoom: getZoomValue(),
         mapId: "d42291912907a704",
         disableDefaultUI: true,
       });
 
       const getContentTemplate = (title, imgUrl) => {
-        return `<div class="contacts-page__card">
-        <div class="contacts-page__img-box">
-          <img src="${imgUrl}" width="120" height="110" alt="Ресторан на ${title}"
-            class="contacts-page__img">
+        return `
+        <div class="contacts-page__card">
+          <div class="contacts-page__img-box">
+            <img src="${imgUrl}" width="120" height="110" alt="Ресторан на ${title}"
+              class="contacts-page__img">
+          </div>
+          <div class="contacts-page__adress-box">
+            <p class="contacts-page__adress">
+              ${title}
+            </p>
+            <a href="tel:+78124078000 " class="contacts__phone">+7 (812) 407-80-00</a>
+          </div>
         </div>
-        <div class="contacts-page__adress-box">
-          <p class="contacts-page__adress">
-            ${title}
-          </p>
-          <a href="tel:+78124078000 " class="contacts__phone">+7 (812) 407-80-00</a>
-        </div>
-      </div>`;
+      `;
       };
 
       const createInfoWindow = (title, imgUrl) => {
@@ -52,12 +88,7 @@ const gmap = () => {
         });
       };
 
-      const directionsDisplay = new google.maps.DirectionsRenderer({
-        suppressInfoWindows: true,
-        map: map,
-      });
-
-      const markers = locations.map(({ location, title, img }, index) => {
+      const markers = Locations.map(({ location, title, img }, index) => {
         const marker = new google.maps.Marker({
           position: location,
           icon: `/img/common/icon-dot-test.svg`,
