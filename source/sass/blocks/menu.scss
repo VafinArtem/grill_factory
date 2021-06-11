@@ -18,11 +18,17 @@ h2.jstore-tag.h1 {
 #jstore-css {
   & .lsp-block-content {
     padding-top: 32px;
+    padding-bottom: 64px;
+  }
+
+  & .lsp-block-items-list-level-1 {
+    padding-top: 32px;
   }
 
   & .lsp-block-items-list {
     display: flex;
     flex-wrap: wrap;
+    flex-direction: column;
     margin-right: -9px;
     margin-left: -9px;
 
@@ -37,7 +43,7 @@ h2.jstore-tag.h1 {
       flex-direction: column;
       justify-content: flex-end;
       align-items: center;
-      width: 296px !important;
+      width: 292px !important;
       height: 370px !important;
       margin: 0 !important;
       margin-right: 9px !important;
@@ -83,7 +89,7 @@ h2.jstore-tag.h1 {
         left: 0 !important;
         width: 100% !important;
         height: 100% !important;
-        z-index: -1;
+        z-index: 0;
       }
 
       & img {
@@ -258,12 +264,54 @@ h2.jstore-tag.h1 {
     }
   }
 
+  & .lsp-block-item-tags {
+    & [data-id] {
+      width: 24px;
+      height: 24px;
+      margin-bottom: 0;
+      margin-right: 6px;
+      background: none;
+      background-color: var(--basic-white);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: initial;
+      border-radius: 6px;
+    }
+
+    & [data-id="aktsiya"] {
+      background-image: url("/img/pages/menu/advantages/icon-action.svg") !important;
+    }
+
+    & [data-id="vygodno"],
+    & [data-id="spetsialnaya_tsena"] {
+      background-image: url("/img/pages/menu/advantages/icon-sale.svg") !important;
+    }
+
+    & [data-id="ostryy"] {
+      background-image: url("/img/pages/menu/advantages/icon-hot.svg") !important;
+    }
+
+    & [data-id="khit"] {
+      background-image: url("/img/pages/menu/advantages/icon-hit.svg") !important;
+    }
+
+    & [data-id="vegitarianskoe"],
+    & [data-id="vegitarianskiy"] {
+      background-color: var(--basic-green);
+      background-image: url("/img/pages/menu/advantages/icon-leaf.svg") !important;
+    }
+
+    & [data-id="novinka"] {
+      background-image: url("/img/pages/menu/advantages/icon-new.svg") !important;
+    }
+  }
+
   & .lsp-block-items-list-level-2 {
     position: relative;
     padding-top: 32px;
-    padding-bottom: 32px;
 
     &:not(:last-child) {
+      padding-bottom: 32px;
       &::after {
         position: absolute;
         top: 100%;
