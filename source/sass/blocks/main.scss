@@ -38,8 +38,16 @@
   }
 
   &--menu {
+    overflow: hidden;
     margin-top: 0;
   }
+}
+
+.main__text {
+  max-width: 294px;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 16px;
 }
 
 .main__header {
@@ -84,6 +92,11 @@
     background-image: url("/img/pages/promo/head-promo-mob.jpg");
     margin-bottom: 45px;
   }
+
+  &--menu {
+    display: none;
+    margin-bottom: 30px;
+  }
 }
 
 .main__header-gradient {
@@ -105,6 +118,7 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  justify-content: space-between;
   width: 100%;
 
   &--index {
@@ -133,6 +147,41 @@
     padding-top: 45px;
     padding-bottom: 55px;
   }
+
+  &--menu {
+    flex-direction: row;
+    padding-left: var(--header-menu-padding);
+    padding-right: var(--header-menu-padding);
+    padding-top: 55px;
+  }
+}
+
+.main__header-inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.main__img-box {
+  position: relative;
+
+  &::before {
+    position: absolute;
+    top: -26px;
+    left: -61px;
+    width: 230px;
+    height: 350px;
+    background-image: url("/img/common/icon-fire-stroke-min.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    content: "";
+    z-index: -1;
+  }
+}
+
+.main__img {
+  display: flex;
 }
 
 .main__link {
@@ -186,6 +235,27 @@
 
   &--promo {
     margin-bottom: 0;
+  }
+
+  &--menu {
+    margin-bottom: 40px;
+    font-size: 40px;
+  }
+
+  &--line {
+    position: relative;
+
+    &::after {
+      position: absolute;
+      top: 87%;
+      left: 0;
+      width: 100%;
+      height: 14px;
+      background-image: url("/img/common/icon-line.svg");
+      background-size: contain;
+      background-repeat: no-repeat;
+      content: "";
+    }
   }
 }
 
@@ -351,6 +421,11 @@
       max-height: 500px;
       background-image: url("/img/pages/promo/head-promo-desk.jpg");
     }
+
+    &--menu {
+      display: flex;
+      margin-bottom: 30px;
+    }
   }
 
   .main__header-wrap {
@@ -375,6 +450,10 @@
     &--promo {
       padding-top: 94px;
       padding-bottom: 73px;
+    }
+
+    &--menu {
+      padding-bottom: 0;
     }
   }
 
@@ -416,6 +495,11 @@
     &--pay-delivery {
       font-size: 54px;
       padding-left: 0;
+    }
+
+    &--menu {
+      margin-bottom: 40px;
+      font-size: 40px;
     }
   }
 

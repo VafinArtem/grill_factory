@@ -192,6 +192,18 @@
   .cathegories {
     &--menu {
       overflow: visible;
+
+      &::before {
+        position: absolute;
+        bottom: 99%;
+        left: 50%;
+        width: 10000px;
+        height: 1px;
+        background-color: var(--line-gray);
+        background-clip: content-box;
+        transform: translate(-50%, 0);
+        content: "";
+      }
     }
   }
   .cathegories__item {

@@ -79,6 +79,7 @@ h2.jstore-tag.h1 {
         content: "";
         pointer-events: none;
         touch-action: none;
+        z-index: 1;
       }
 
       & .lsp-block-item-description {
