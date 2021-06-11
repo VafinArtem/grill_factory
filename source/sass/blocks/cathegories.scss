@@ -21,8 +21,10 @@
     padding-bottom: 36px;
     padding-left: var(--mobile-padding);
     padding-right: var(--mobile-padding);
+    overflow: hidden;
 
     &::after {
+      top: 99%;
       max-width: none;
       padding-left: 0;
       padding-right: 0;
@@ -187,6 +189,11 @@
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
+  .cathegories {
+    &--menu {
+      overflow: visible;
+    }
+  }
   .cathegories__item {
     &:not(:last-child) {
       margin-right: 28px;
@@ -212,9 +219,10 @@
     }
 
     &--menu {
+      max-width: none;
       width: 100%;
-      padding-left: 0;
-      padding-right: 0;
+      padding-left: var(--mobile-padding);
+      padding-right: var(--mobile-padding);
 
       &::after {
         max-width: none;
