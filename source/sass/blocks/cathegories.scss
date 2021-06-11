@@ -17,6 +17,8 @@
   }
 
   &--menu {
+    position: sticky;
+    bottom: 0;
     padding-top: 34px;
     padding-bottom: 36px;
     padding-left: var(--mobile-padding);
@@ -154,12 +156,16 @@
 .cathegories__title {
   margin-top: 0;
   margin-bottom: 0;
+  padding-left: 5px;
+  padding-right: 5px;
+  text-align: center;
   font-weight: normal;
   font-size: 12px;
   color: var(--basic-white);
 
   &--menu {
     font-size: 13px;
+    text-align: initial;
   }
 }
 
@@ -295,6 +301,8 @@
   }
 
   .cathegories__title {
+    padding-left: 15px;
+    padding-right: 15px;
     font-size: 18px;
 
     &--menu {
