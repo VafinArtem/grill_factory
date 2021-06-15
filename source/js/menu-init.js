@@ -114,6 +114,8 @@ const menuInit = () => {
     const items = cathegoriesList.querySelectorAll(`.js-item`);
     const lspMenu = document.querySelector(`#lsp-block-tree`);
 
+    const location = document.location;
+
     const timerId = setInterval(() => {
       const lspItems = lspMenu.querySelectorAll(`li.jstore-tag`);
       if (lspItems.length) {
@@ -187,12 +189,29 @@ const menuInit = () => {
         let currentСategory;
 
         items.forEach((item) => {
-          item.addEventListener(`click`, () => {
+          item.addEventListener(`click`, (evt) => {
+            if (evt.currentTarget === currentСategory) {
+              evt.currentTarget.classList.remove(`checked`);
+              console.log(evt.currentTarget);
+
+              currentСategory = null;
+
+              evt.currentTarget.querySelector(
+                `.js-link`
+              ).href = `/menu.html#!/Menyu`;
+
+              renderFirstCards();
+
+              return;
+            }
+
             if (currentСategory) {
               currentСategory.classList.remove(`checked`);
             }
+
             item.classList.add(`checked`);
             currentСategory = item;
+
             renderFirstCards();
           });
         });
