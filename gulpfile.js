@@ -70,7 +70,6 @@ const images = () => {
         imagemin.svgo({
           plugins: [
             {
-              removeViewBox: false,
               removeDimensions: true,
             },
           ],
