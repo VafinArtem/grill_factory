@@ -44,8 +44,8 @@
   &--policy {
     width: 100%;
     margin-top: 0;
-    padding-top: 112px;
-    padding-bottom: 101px;
+    padding-top: 53px;
+    padding-bottom: 53px;
   }
 }
 
@@ -235,9 +235,20 @@
     }
   }
 
+  &--line-long {
+    &::after {
+      height: 18px;
+    }
+  }
+
+  &--nowrap {
+    white-space: nowrap;
+  }
+
   &--policy {
     height: fit-content;
-    font-size: 32px;
+    margin-bottom: 40px;
+    font-size: 23px;
     line-height: 1.5;
   }
 }
@@ -310,7 +321,14 @@
   margin-bottom: 39px;
 }
 
-@media (min-width: 320px) {
+// Only mobile
+
+@media (max-width: 767px) {
+  .main__title {
+    &--min-size {
+      font-size: 18px;
+    }
+  }
 }
 
 // Small devices (landscape phones, 576px and up)
@@ -372,6 +390,8 @@
 
     &--policy {
       margin-top: 0;
+      padding-top: 62px;
+      padding-bottom: 52px;
     }
   }
 
@@ -412,6 +432,10 @@
     &--menu {
       display: flex;
       margin-bottom: 30px;
+    }
+
+    &--policy {
+      margin-bottom: 0;
     }
   }
 
@@ -569,8 +593,10 @@
   .main {
     &--policy {
       display: grid;
-      grid-template-columns: 1fr 650px;
+      grid-template-columns: min-content 1fr;
       column-gap: 30px;
+      padding-top: 112px;
+      padding-bottom: 101px;
     }
   }
 
@@ -628,6 +654,13 @@
 
 // X-Large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
+  .main {
+    &--policy {
+      display: grid;
+      grid-template-columns: 1fr 650px;
+      column-gap: 30px;
+    }
+  }
 }
 
 // XX-Large devices (larger desktops, 1400px and up)
