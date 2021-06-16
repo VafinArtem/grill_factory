@@ -79,12 +79,14 @@
   &--booking {
     min-height: 176px;
     max-height: 176px;
+    padding-top: 139px;
     margin-bottom: 59px;
   }
 
   &--contacts {
     min-height: 200px;
     max-height: 200px;
+    padding-top: 139px;
   }
 
   &--pay-delivery {
@@ -407,6 +409,7 @@
     &--booking {
       min-height: auto;
       max-height: none;
+      padding-top: 0;
     }
 
     &--contacts {

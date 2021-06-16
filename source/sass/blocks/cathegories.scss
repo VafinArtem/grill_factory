@@ -126,7 +126,7 @@
   align-items: center;
   width: 75px;
   height: 75px;
-  margin-bottom: 16px;
+  margin-bottom: 10px;
   border-radius: 50%;
 
   &--menu {
@@ -164,6 +164,8 @@
   color: var(--basic-white);
 
   &--menu {
+    padding-left: 0;
+    padding-right: 0;
     font-size: 13px;
     text-align: initial;
   }
