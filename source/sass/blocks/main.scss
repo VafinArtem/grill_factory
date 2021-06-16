@@ -570,6 +570,7 @@
     &--policy {
       display: grid;
       grid-template-columns: 1fr 650px;
+      column-gap: 30px;
     }
   }
 
