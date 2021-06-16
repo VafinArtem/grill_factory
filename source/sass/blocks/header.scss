@@ -1,5 +1,13 @@
 .header {
   display: flex;
+
+  .product-page & {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: var(--basic-black);
+    z-index: 1000;
+  }
 }
 
 .header__wrapper {
@@ -22,6 +30,12 @@
     background-clip: content-box;
     transform: translate(-50%, 0);
     z-index: 6;
+  }
+
+  .product-page & {
+    &::after {
+      top: calc(100% - 1px);
+    }
   }
 }
 

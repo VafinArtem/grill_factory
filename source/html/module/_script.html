@@ -8,10 +8,166 @@
 <script src="/sources/js/plugins/mobile-detect/mobile-detect.js"></script>
 <script src="/sources/js/plugins/datepicker/datepicker.min.js"></script>
 <script src="/sources/js/bundle.js"></script>
-<script type="text/javascript">
-  window.restaurant = "fe470000-906b-0025-7534-08d8def3c45b";
+<script>
+  // window.restaurant = "fe470000-906b-0025-7534-08d8def3c45b";
+  window.jStoreConfig = {
+    'restaurant': 'fe470000-906b-0025-7534-08d8def3c45b',
+    'templates': [
+      {
+        'type': 'itemPopUp',
+        'template': '#itemPopUp'
+      }
+    ]
+  }
 </script>
 <script data-main="https://deliverywiget.iiko.ru/v2_0/app/config" src="https://deliverywiget.iiko.ru/v2_0/libs/require.js"></script>
+<script id='itemPopUp' type='text/template'>
+	<main class="main main--dish container">
+    <section class="main__dish dish">
+      <div class="dish__box">
+        <header class="dish__header">
+          <button class="dish__back-link lsp-js-popup-close">Вернуться в меню</button>
+          <ul class="dish__features">
+            <% if(tags.length){ %>
+              <% _.each(tags, function(tag){ %>
+                <li class="dish__feature">
+                  <div class="dish__icon dish__icon--<%= tag.translitName %>" aria-label="<%= tag.name %>" title="<%= tag.name %>"></div>
+                </li>
+              <% }); %>
+            <% } %>
+          </ul>
+          <h1 class="dish__title" data-jstore-value="name"></h1>
+        </header>
+        <p class="dish__text" data-jstore-value="description"></p>
+        <dl class="dish__description-list">
+          <div class="dish__desc-wrap">
+            <dt class="dish_terms">Kcal</dt>
+            <dt class="dish__desc" data-jstore-value="energyAmount"></dt>
+          </div>
+          <div class="dish__desc-wrap">
+            <dt class="dish_terms">Б</dt>
+            <dt class="dish__desc" data-jstore-value="fiberAmount"></dt>
+          </div>
+          <div class="dish__desc-wrap">
+            <dt class="dish_terms">Ж</dt>
+            <dt class="dish__desc" data-jstore-value="fatAmount"></dt>
+          </div>
+          <div class="dish__desc-wrap">
+            <dt class="dish_terms">У</dt>
+            <dt class="dish__desc" data-jstore-value="carbohydrateAmount"></dt>
+          </div>
+        </dl>
+        <div class="dish__inner">
+          <p class="dish__price"><span data-jstore-value="jStoreApp.fixMath(count * cost)"></span><span class="rouble">&nbsp;a</span></p>
+          <button class="dish__button link-reserv link-reserv--order">Заказать</button>
+        </div>
+        <div class="dish__inner">
+          <div class="dish__count-box">
+            <button class="dish__count-btn lsp-js-popup-item-minus">
+              <img src="/img/pages/dish/icon-minus.svg" width="10" height="2" alt="Минус">
+            </button>
+            <label for="count" class="visually-hidden">Количество</label>
+            <input type="number" id="count" name="count" class="dish__count lsp-js-popup-total-count" data-jstore-value="count">
+            <button class="dish__count-btn lsp-js-popup-item-plus">
+              <img src="/img/pages/dish/icon-plus.svg" width="10" height="10" alt="Плюс">
+            </button>
+          </div>
+        </div>
+        <div class="dish__wrapper">
+          <img data-jstore-src="largeImageUrl" width="414" height="530" alt="<%= name %>" class="dish__img below-tablet">
+          <div class="dish__gradient below-tablet"></div>
+        </div>
+      </div>
+      <div class="dish__img-box above-tablet">
+        <!-- <p class="dish__badge dish__badge--cheef">Выбор шеф-повара</p> -->
+        <img data-jstore-src="largeImageUrl" width="454" height="696" alt="<%= name %>" class="dish__img">
+        <div class="dish__gradient"></div>
+      </div>
+    </section>
+    <aside class="main__other-dish other-dish">
+      <h2 class="other-dish__title">Другие блюда раздела Гриль</h2>
+      <div class="other-dish__wrapper">
+        <ul class="other-dish__list">
+          <li class="other-dish__item">
+            <a href="" class="other-dish__link">
+              <img src="/img/pages/dish/other-dish-1.jpg" alt="Каре барашка" width="126" height="166" class="other-dish__img">
+              <div class="other-dish__inner">
+                <p class="other-dish__name">Каре барашка</p>
+                <p class="other-dish__price">230 <span class="rouble">a</span></p>
+              </div>
+            </a>
+          </li>
+          <li class="other-dish__item">
+            <a href="" class="other-dish__link">
+              <img src="/img/pages/dish/other-dish-2.jpg" alt="Стейк из форели" width="126" height="166" class="other-dish__img">
+              <div class="other-dish__inner">
+                <p class="other-dish__name">Стейк из форели</p>
+                <p class="other-dish__price">320 <span class="rouble">a</span></p>
+              </div>
+            </a>
+          </li>
+          <li class="other-dish__item">
+            <a href="" class="other-dish__link">
+              <img src="/img/pages/dish/other-dish-3.jpg" alt="Курица в беконе" width="126" height="166" class="other-dish__img">
+              <div class="other-dish__inner">
+                <p class="other-dish__name">Курица
+                  в беконе</p>
+                <p class="other-dish__price">260 <span class="rouble">a</span></p>
+              </div>
+            </a>
+          </li>
+          <li class="other-dish__item">
+            <a href="" class="other-dish__link">
+              <img src="/img/pages/dish/other-dish-4.jpg" alt="Овощи-гриль" width="126" height="166" class="other-dish__img">
+              <div class="other-dish__inner">
+                <p class="other-dish__name">Овощи-гриль</p>
+                <p class="other-dish__price">320 <span class="rouble">a</span></p>
+              </div>
+            </a>
+          </li>
+          <li class="other-dish__item">
+            <a href="" class="other-dish__link">
+              <img src="/img/pages/dish/other-dish-3.jpg" alt="Курица в беконе" width="126" height="166" class="other-dish__img">
+              <div class="other-dish__inner">
+                <p class="other-dish__name">Курица
+                  в беконе</p>
+                <p class="other-dish__price">260 <span class="rouble">a</span></p>
+              </div>
+            </a>
+          </li>
+          <li class="other-dish__item">
+            <a href="" class="other-dish__link">
+              <img src="/img/pages/dish/other-dish-4.jpg" alt="Овощи-гриль" width="126" height="166" class="other-dish__img">
+              <div class="other-dish__inner">
+                <p class="other-dish__name">Овощи-гриль</p>
+                <p class="other-dish__price">320 <span class="rouble">a</span></p>
+              </div>
+            </a>
+          </li>
+          <li class="other-dish__item">
+            <a href="" class="other-dish__link">
+              <img src="/img/pages/dish/other-dish-3.jpg" alt="Курица в беконе" width="126" height="166" class="other-dish__img">
+              <div class="other-dish__inner">
+                <p class="other-dish__name">Курица
+                  в беконе</p>
+                <p class="other-dish__price">260 <span class="rouble">a</span></p>
+              </div>
+            </a>
+          </li>
+          <li class="other-dish__item">
+            <a href="" class="other-dish__link">
+              <img src="/img/pages/dish/other-dish-4.jpg" alt="Овощи-гриль" width="126" height="166" class="other-dish__img">
+              <div class="other-dish__inner">
+                <p class="other-dish__name">Овощи-гриль</p>
+                <p class="other-dish__price">320 <span class="rouble">a</span></p>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </aside>
+  </main>
+</script>
 <script>
   const mapElement = document.querySelector(`#map`);
   let map;

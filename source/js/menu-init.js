@@ -27,78 +27,78 @@ const menuInit = () => {
   };
 
   const menu = {
-    "Гриль/мангал": {
-      title: `Гриль/мангал`,
+    гриль: {
+      title: `Гриль`,
       text: `Прекрасная закуска станет неотъемлемой частью любой вечеринки.`,
       background: `/img/pages/menu/cards/grill.svg`,
     },
-    Пицца: {
+    пицца: {
       title: `Пицца`,
       text: `Прекрасная закуска станет неотъемлемой частью любой вечеринки.`,
       background: `/img/pages/menu/cards/pizza.svg`,
     },
-    "Суши и роллы": {
-      title: `Суши и роллы`,
+    "суши/роллы": {
+      title: `Суши/роллы`,
       text: `Прекрасная закуска станет неотъемлемой частью любой вечеринки.`,
       background: `/img/pages/menu/cards/sushi.svg`,
     },
-    Вок: {
+    вок: {
       title: `Вок`,
       text: `Прекрасная закуска станет неотъемлемой частью любой вечеринки.`,
       background: `/img/pages/menu/cards/vok.svg`,
     },
-    Закуски: {
+    закуски: {
       title: `Закуски`,
       text: `Прекрасная закуска станет неотъемлемой частью любой вечеринки.`,
       background: `/img/pages/menu/cards/watermelon.svg`,
     },
-    Супы: {
+    супы: {
       title: `Супы`,
       text: `У нас большой выбор как традиционных супов, так и приготовленных по нашему фирменному рецепту.`,
       background: `/img/pages/menu/cards/soup.svg`,
     },
-    Десерты: {
+    десерты: {
       title: `Десерты`,
       text: `Прекрасная закуска станет неотъемлемой частью любой вечеринки.`,
       background: `/img/pages/menu/cards/cake.svg`,
     },
-    Соусы: {
+    соусы: {
       title: `Соусы`,
       text: `Прекрасная закуска станет неотъемлемой частью любой вечеринки.`,
       background: `/img/pages/menu/cards/sauce.svg`,
     },
-    Напитки: {
+    напитки: {
       title: `Напитки`,
       text: `Прекрасная закуска станет неотъемлемой частью любой вечеринки.`,
       background: `/img/pages/menu/cards/coctails.svg`,
     },
-    "Горячие блюда": {
+    "горячие блюда": {
       title: `Горячие блюда`,
       text: `Прекрасная закуска станет неотъемлемой частью любой вечеринки.`,
       background: `/img/pages/menu/cards/meat.svg`,
     },
-    Салаты: {
+    салаты: {
       title: `Салаты`,
       text: `Прекрасная закуска станет неотъемлемой частью любой вечеринки.`,
       background: `/img/pages/menu/cards/salad.svg`,
     },
-    Шашлык: {
-      title: `Шашлык`,
+    мангал: {
+      title: `Мангал`,
       text: `Прекрасная закуска станет неотъемлемой частью любой вечеринки.`,
       background: `/img/pages/menu/cards/barbecue.svg`,
     },
-    Паста: {
+    паста: {
       title: `Паста`,
       text: `Прекрасная закуска станет неотъемлемой частью любой вечеринки.`,
       background: `/img/pages/menu/cards/pasta.svg`,
     },
-    Гарниры: {
+    гарниры: {
       title: `Гарниры`,
       text: `Прекрасная закуска станет неотъемлемой частью любой вечеринки.`,
       background: `/img/pages/menu/cards/side-dishes.svg`,
     },
-    Сеты: {
-      title: `Сеты`,
+    "наборы/сеты": {
+      title: `Наборы/сеты`,
       text: `Прекрасная закуска станет неотъемлемой частью любой вечеринки.`,
       background: `/img/pages/menu/cards/sets.svg`,
     },
@@ -111,10 +111,8 @@ const menuInit = () => {
 
   if (cathegoriesList) {
     const titles = cathegoriesList.querySelectorAll(`.js-c-title`);
-    const items = cathegoriesList.querySelectorAll(`.js-item`);
+    let items = cathegoriesList.querySelectorAll(`.js-item`);
     const lspMenu = document.querySelector(`#lsp-block-tree`);
-
-    const location = document.location;
 
     const timerId = setInterval(() => {
       const lspItems = lspMenu.querySelectorAll(`li.jstore-tag`);
@@ -125,7 +123,7 @@ const menuInit = () => {
         let MenuLinks = {};
 
         for (const item of lspItems) {
-          if (item.querySelector(`a`).textContent === `Меню`) {
+          if (item.querySelector(`a`).textContent === `Меню для сайта`) {
             const parent = item.closest(`.jstore-tag`);
             mainMenuList = parent.querySelector(`.lsp-js-menu-childs`);
             break;
@@ -136,7 +134,7 @@ const menuInit = () => {
 
         lspMenulinks.forEach((item) => {
           const obj = {};
-          obj[item.textContent] = item.href;
+          obj[item.textContent.toLowerCase()] = item.href;
           MenuLinks = { ...MenuLinks, ...obj };
         });
 
@@ -147,8 +145,10 @@ const menuInit = () => {
         };
 
         titles.forEach((title) => {
-          title.closest(`.js-link`).href = MenuLinks[title.textContent]
-            ? getHref(title.textContent)
+          title.closest(`.js-link`).href = MenuLinks[
+            title.textContent.toLowerCase()
+          ]
+            ? getHref(title.textContent.toLowerCase())
             : title.closest(`.js-item`).remove();
         });
 
@@ -158,6 +158,8 @@ const menuInit = () => {
 
           cathegoriesList.append(newElement.firstChild);
         }
+
+        items = cathegoriesList.querySelectorAll(`.js-item`);
 
         const renderFirstCards = () => {
           const timerId = setInterval(() => {
@@ -174,7 +176,7 @@ const menuInit = () => {
 
                 if (menu[title]) {
                   renderFirstCard(parent, menu[title]);
-                } else if (title === `Меню`) {
+                } else if (title === `Меню для сайта`) {
                 } else {
                   menu.default.title = title;
                   renderFirstCard(parent, menu.default);
@@ -198,7 +200,7 @@ const menuInit = () => {
 
               evt.currentTarget.querySelector(
                 `.js-link`
-              ).href = `/menu.html#!/Menyu`;
+              ).href = `/menu.html#!/Menyu_dlya_sayta`;
 
               renderFirstCards();
 
@@ -214,6 +216,12 @@ const menuInit = () => {
 
             renderFirstCards();
           });
+        });
+
+        document.body.addEventListener(`click`, (evt) => {
+          if (evt.target.classList.contains(`dish__back-link`)) {
+            renderFirstCards();
+          }
         });
       }
     }, 100);

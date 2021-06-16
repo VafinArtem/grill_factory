@@ -9,14 +9,19 @@
   margin-top: 33px;
   margin-bottom: 0;
   font-size: 28px;
+  line-height: 1;
 }
 
 .dish__back-link {
   align-self: flex-end;
   position: relative;
   padding-left: 13px;
+  font-family: inherit;
   font-size: 12.5px;
   color: var(--basic-white);
+  border: none;
+  background: none;
+  cursor: pointer;
 
   &::before {
     position: absolute;
@@ -51,28 +56,57 @@
   display: flex;
   width: 24px;
   height: 24px;
+  background-color: var(--basic-white);
   background-repeat: no-repeat;
+  background-size: 15px 15px;
   background-position: center;
   border-radius: 6px;
 
-  &--hot {
-    background-color: var(--third-red);
+  &--aktsiya {
+    background-image: url("/img/pages/menu/advantages/icon-action.svg");
+  }
+
+  &--vygodno,
+  &--spetsialnaya_tsena {
+    background-image: url("/img/pages/menu/advantages/icon-sale.svg");
+  }
+
+  &--ostryy {
     background-image: url("/img/pages/menu/advantages/icon-hot.svg");
     background-size: 9px 12px;
     background-position: 7px center;
   }
 
-  &--cheef {
-    background-color: var(--basic-white);
-    background-image: url("/img/pages/menu/advantages/icon-heart.svg");
-    background-size: 12px 12px;
+  &--khit {
+    background-image: url("/img/pages/menu/advantages/icon-hit.svg");
   }
 
-  &--vegan {
+  &--vegitarianskoe,
+  &--vegitarianskiy {
     background-color: var(--basic-green);
     background-image: url("/img/pages/menu/advantages/icon-leaf.svg");
     background-size: 13px 11px;
   }
+
+  &--novinka {
+    background-image: url("/img/pages/menu/advantages/icon-new.svg");
+  }
+
+  // &--hot {
+  //   background-color: var(--third-red);
+  //   background-image: url("/img/pages/menu/advantages/icon-hot.svg");
+  // }
+
+  // &--cheef {
+  //   background-color: var(--basic-white);
+  //   background-image: url("/img/pages/menu/advantages/icon-heart.svg");
+  //   background-size: 12px 12px;
+  // }
+
+  // &--vegan {
+  //   background-color: var(--basic-green);
+  //   background-image: url("/img/pages/menu/advantages/icon-leaf.svg");
+  // }
 }
 
 .dish__text {
@@ -80,6 +114,7 @@
   margin-top: 0;
   margin-bottom: 39px;
   font-size: 15px;
+  line-height: 1.4;
 }
 
 .dish__description-list {
@@ -236,6 +271,34 @@
   border-radius: 50%;
 }
 
+#lsp-block-popup {
+  & .lsp-popup-cont {
+    width: 100% !important;
+    height: 100vh;
+    left: 0 !important;
+    margin-left: 0 !important;
+    background: var(--basic-black) !important;
+    z-index: 50 !important;
+    overflow-y: scroll !important;
+  }
+
+  & .lsp-popup-inner {
+    background: var(--basic-black) !important;
+  }
+
+  & .lsp-popup-cross {
+    display: none;
+  }
+
+  & .lsp-popup-placeholder {
+    z-index: 49 !important;
+  }
+}
+
+.product-page {
+  overflow: hidden;
+}
+
 @media (min-width: 320px) {
 }
 
@@ -257,7 +320,6 @@
   .dish__box {
     height: calc(100vh - 103px);
     padding-top: 30px;
-    padding-bottom: 71px;
     overflow-y: scroll;
 
     scrollbar-color: var(--scroll-thumb) var(--scroll-line);
