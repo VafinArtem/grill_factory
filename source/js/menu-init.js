@@ -30,82 +30,82 @@ const menuInit = () => {
     "Гриль/мангал": {
       title: `Гриль/мангал`,
       text: `Прекрасная закуска станет неотъемлемой частью любой вечеринки.`,
-      background: `/img/pages/menu/cards/icon-grill.svg`,
+      background: `/img/pages/menu/cards/grill.svg`,
     },
     Пицца: {
       title: `Пицца`,
       text: `Прекрасная закуска станет неотъемлемой частью любой вечеринки.`,
-      background: `/img/pages/menu/cards/icon-pizza.svg`,
+      background: `/img/pages/menu/cards/pizza.svg`,
     },
     "Суши и роллы": {
       title: `Суши и роллы`,
       text: `Прекрасная закуска станет неотъемлемой частью любой вечеринки.`,
-      background: `/img/pages/menu/cards/icon-sushi.svg`,
+      background: `/img/pages/menu/cards/sushi.svg`,
     },
     Вок: {
       title: `Вок`,
       text: `Прекрасная закуска станет неотъемлемой частью любой вечеринки.`,
-      background: `/img/pages/menu/cards/icon-vok.svg`,
+      background: `/img/pages/menu/cards/vok.svg`,
     },
     Закуски: {
       title: `Закуски`,
       text: `Прекрасная закуска станет неотъемлемой частью любой вечеринки.`,
-      background: `/img/pages/menu/cards/icon-watermelon.svg`,
+      background: `/img/pages/menu/cards/watermelon.svg`,
     },
     Супы: {
       title: `Супы`,
       text: `У нас большой выбор как традиционных супов, так и приготовленных по нашему фирменному рецепту.`,
-      background: `/img/pages/menu/cards/icon-soup.svg`,
+      background: `/img/pages/menu/cards/soup.svg`,
     },
     Десерты: {
       title: `Десерты`,
       text: `Прекрасная закуска станет неотъемлемой частью любой вечеринки.`,
-      background: `/img/pages/menu/cards/icon-cake.svg`,
+      background: `/img/pages/menu/cards/cake.svg`,
     },
     Соусы: {
       title: `Соусы`,
       text: `Прекрасная закуска станет неотъемлемой частью любой вечеринки.`,
-      background: `/img/pages/menu/cards/icon-sauce.svg`,
+      background: `/img/pages/menu/cards/sauce.svg`,
     },
     Напитки: {
       title: `Напитки`,
       text: `Прекрасная закуска станет неотъемлемой частью любой вечеринки.`,
-      background: `/img/pages/menu/cards/icon-coctails.svg`,
+      background: `/img/pages/menu/cards/coctails.svg`,
     },
     "Горячие блюда": {
       title: `Горячие блюда`,
       text: `Прекрасная закуска станет неотъемлемой частью любой вечеринки.`,
-      background: `/img/pages/menu/cards/icon-meat.svg`,
+      background: `/img/pages/menu/cards/meat.svg`,
     },
     Салаты: {
       title: `Салаты`,
       text: `Прекрасная закуска станет неотъемлемой частью любой вечеринки.`,
-      background: `/img/pages/menu/cards/icon-salad.svg`,
+      background: `/img/pages/menu/cards/salad.svg`,
     },
     Шашлык: {
       title: `Шашлык`,
       text: `Прекрасная закуска станет неотъемлемой частью любой вечеринки.`,
-      background: `/img/pages/menu/cards/icon-barbecue.svg`,
+      background: `/img/pages/menu/cards/barbecue.svg`,
     },
     Паста: {
       title: `Паста`,
       text: `Прекрасная закуска станет неотъемлемой частью любой вечеринки.`,
-      background: `/img/pages/menu/cards/icon-pasta.svg`,
+      background: `/img/pages/menu/cards/pasta.svg`,
     },
     Гарниры: {
       title: `Гарниры`,
       text: `Прекрасная закуска станет неотъемлемой частью любой вечеринки.`,
-      background: `/img/pages/menu/cards/icon-side-dishes.svg`,
+      background: `/img/pages/menu/cards/side-dishes.svg`,
     },
     Сеты: {
       title: `Сеты`,
       text: `Прекрасная закуска станет неотъемлемой частью любой вечеринки.`,
-      background: `/img/pages/menu/cards/icon-sets.svg`,
+      background: `/img/pages/menu/cards/sets.svg`,
     },
     default: {
       title: `Стандарт`,
       text: `Прекрасная закуска станет неотъемлемой частью любой вечеринки.`,
-      background: `/img/pages/menu/cards/icon-default.svg`,
+      background: `/img/pages/menu/cards/default.svg`,
     },
   };
 
