@@ -1,31 +1,6 @@
 const menuInit = () => {
   const cathegoriesList = document.querySelector(`.js-cathegories`);
 
-  const getCathegoryTemplate = (title, link) => {
-    return `<div class="cathegories__item cathegories__item--menu js-item">
-    <a href="${link}" class="cathegories__link cathegories__link--menu js-link">
-      <div class="cathegories__icon-box cathegories__icon-box--menu">
-        <img src="/img/pages/menu/icon-default.svg" alt="Контур огонька" class="cathegories__icon" width="50" height="50">
-      </div>
-      <h3 class="cathegories__title cathegories__title--menu js-c-title">${title}</h3>
-    </a>
-  </div>`;
-  };
-
-  const getCardTemplate = ({ title, text, background }) => {
-    return `<div class="menu__item" style="background-image: url('${background}')">
-      <h3 class="menu__title">${title}</h3>
-      <p class="menu__text">${text}</p>
-    </div>`;
-  };
-
-  const renderFirstCard = (parent, element) => {
-    const newElement = document.createElement(`div`);
-    newElement.innerHTML = getCardTemplate(element);
-
-    parent.prepend(newElement.firstChild);
-  };
-
   const menu = {
     гриль: {
       title: `Гриль`,
@@ -109,6 +84,71 @@ const menuInit = () => {
     },
   };
 
+  const getCathegoryTemplate = (title, link) => {
+    return `<div class="cathegories__item cathegories__item--menu js-item">
+    <a href="${link}" class="cathegories__link cathegories__link--menu js-link">
+      <div class="cathegories__icon-box cathegories__icon-box--menu">
+        <img src="/img/pages/menu/icon-default.svg" alt="Контур огонька" class="cathegories__icon" width="50" height="50">
+      </div>
+      <h3 class="cathegories__title cathegories__title--menu js-c-title">${title}</h3>
+    </a>
+  </div>`;
+  };
+
+  const getCardTemplate = ({title, text, background}) => {
+    return `<div class="menu__item" style="background-image: url('${background}')">
+      <h3 class="menu__title">${title}</h3>
+      <p class="menu__text">${text}</p>
+    </div>`;
+  };
+
+  const getAdditionalCardTemplate = (title, price, link, img) => {
+    return `<li class="other-dish__item">
+    <a href="${link}" class="other-dish__link">
+      <img src="${img}" alt="${title}" width="126" height="166" class="other-dish__img">
+      <div class="other-dish__inner">
+        <p class="other-dish__name">${title}</p>
+        <p class="other-dish__price">${price} <span class="rouble">a</span></p>
+      </div>
+    </a>
+  </li>`;
+  };
+
+  const renderElement = (parent, element) => {
+    const newElement = document.createElement(`div`);
+    newElement.innerHTML = element;
+
+    parent.append(newElement.firstChild);
+  };
+
+  const renderFirstCard = (parent, element) => {
+    const newElement = document.createElement(`div`);
+    newElement.innerHTML = getCardTemplate(element);
+
+    parent.prepend(newElement.firstChild);
+  };
+
+  const renderAdditionalItems = () => {
+    const timerId = setInterval(() => {
+      const otherDishesList = document.querySelector(`.js-other-dishes`);
+
+      if (otherDishesList) {
+        clearInterval(timerId);
+
+        const additionalItems = document.querySelectorAll(`.js-menu-add-item`);
+
+        additionalItems.forEach((item) => {
+          const link = item.querySelector(`.js-menu-add-link`).href;
+          const title = item.querySelector(`.js-menu-add-link`).textContent;
+          const price = item.querySelector(`.js-menu-add-price`).textContent;
+          const img = item.querySelector(`.js-menu-add-img`).src;
+
+          renderElement(otherDishesList, getAdditionalCardTemplate(title, price, link, img));
+        });
+      }
+    });
+  };
+
   if (cathegoriesList) {
     const titles = cathegoriesList.querySelectorAll(`.js-c-title`);
     let items = cathegoriesList.querySelectorAll(`.js-item`);
@@ -135,7 +175,7 @@ const menuInit = () => {
         lspMenulinks.forEach((item) => {
           const obj = {};
           obj[item.textContent.toLowerCase()] = item.href;
-          MenuLinks = { ...MenuLinks, ...obj };
+          MenuLinks = {...MenuLinks, ...obj};
         });
 
         const getHref = (title) => {
@@ -145,9 +185,7 @@ const menuInit = () => {
         };
 
         titles.forEach((title) => {
-          title.closest(`.js-link`).href = MenuLinks[
-            title.textContent.toLowerCase()
-          ]
+          title.closest(`.js-link`).href = MenuLinks[title.textContent.toLowerCase()]
             ? getHref(title.textContent.toLowerCase())
             : title.closest(`.js-item`).remove();
         });
@@ -163,9 +201,7 @@ const menuInit = () => {
 
         const renderFirstCards = () => {
           const timerId = setInterval(() => {
-            const listElements = document.querySelectorAll(
-              `.lsp-block-items-list`
-            );
+            const listElements = document.querySelectorAll(`.lsp-block-items-list`);
 
             if (listElements.length) {
               clearInterval(timerId);
@@ -189,18 +225,19 @@ const menuInit = () => {
         renderFirstCards();
 
         let currentСategory;
-
         items.forEach((item) => {
+          if (item.querySelector(`.js-link`).href === document.location.href) {
+            currentСategory = item;
+            item.classList.add(`checked`);
+          }
+
           item.addEventListener(`click`, (evt) => {
             if (evt.currentTarget === currentСategory) {
               evt.currentTarget.classList.remove(`checked`);
-              console.log(evt.currentTarget);
 
               currentСategory = null;
 
-              evt.currentTarget.querySelector(
-                `.js-link`
-              ).href = `/menu.html#!/Menyu_dlya_sayta`;
+              evt.currentTarget.querySelector(`.js-link`).href = `/menu.html#!/Menyu_dlya_sayta`;
 
               renderFirstCards();
 
@@ -222,9 +259,22 @@ const menuInit = () => {
           if (evt.target.classList.contains(`dish__back-link`)) {
             renderFirstCards();
           }
+
+          if (
+            evt.target.classList.contains(`lsp-block-item`) ||
+            evt.target.closest(`.lsp-block-item`) ||
+            evt.target.classList.contains(`other-dish__link`) ||
+            evt.target.closest(`.other-dish__link`)
+          ) {
+            renderAdditionalItems();
+          }
         });
       }
     }, 100);
+
+    if (document.location.pathname === `/menu.html` && document.location.hash.split("/").length - 1 >= 2) {
+      renderAdditionalItems();
+    }
   }
 };
 

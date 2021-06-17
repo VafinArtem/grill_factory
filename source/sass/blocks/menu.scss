@@ -50,6 +50,10 @@ h2.jstore-tag.h1 {
 }
 
 #jstore-css {
+  & .lsp-block-items-filter {
+    display: none;
+  }
+
   & .lsp-block-content {
     padding-top: 32px;
     padding-bottom: 64px;

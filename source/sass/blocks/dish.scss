@@ -361,6 +361,12 @@
     margin-left: 0;
     margin-right: 0;
   }
+
+  #lsp-block-popup {
+    & .lsp-popup-cont {
+      overflow-y: visible !important;
+    }
+  }
 }
 
 // Large devices (desktops, 992px and up)

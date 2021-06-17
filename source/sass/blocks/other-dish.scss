@@ -25,6 +25,7 @@
 
 .other-dish__item {
   position: relative;
+  display: flex;
   min-width: 292px;
   min-height: 166px;
   margin-right: 17px;
@@ -60,6 +61,7 @@
 
 .other-dish__link {
   display: flex;
+  min-height: 100%;
   color: var(--basic-white);
 }
 
@@ -75,6 +77,11 @@
   margin-bottom: 0;
   font-weight: bold;
   font-size: 17px;
+}
+
+.other-dish__img {
+  height: 100%;
+  object-fit: cover;
 }
 
 .other-dish__inner {
