@@ -128,7 +128,6 @@
 .main__header-wrap {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
   justify-content: space-between;
   width: 100%;
 
@@ -336,9 +335,9 @@
   }
 }
 
-// Small devices (landscape phones, 576px and up)
-@media (min-width: 576px) {
-}
+// // Small devices (landscape phones, 576px and up)
+// @media (min-width: 576px) {
+// }
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
@@ -665,6 +664,6 @@
   }
 }
 
-// XX-Large devices (larger desktops, 1400px and up)
-@media (min-width: 1400px) {
-}
+// // XX-Large devices (larger desktops, 1400px and up)
+// @media (min-width: 1400px) {
+// }

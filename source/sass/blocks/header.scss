@@ -66,6 +66,7 @@
     background-color: var(--basic-white);
     transition: transform 0.3s, top 0.3s 0.3s, bottom 0.3s 0.3s;
   }
+
   &::before {
     top: 10px;
   }
@@ -92,11 +93,11 @@
   }
 }
 
-@media (min-width: 320px) {
-}
+// @media (min-width: 320px) {
+// }
 
-@media (min-width: 576px) {
-}
+// @media (min-width: 576px) {
+// }
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
@@ -168,6 +169,6 @@
   }
 }
 
-// XX-Large devices (larger desktops, 1400px and up)
-@media (min-width: 1400px) {
-}
+// // XX-Large devices (larger desktops, 1400px and up)
+// @media (min-width: 1400px) {
+// }

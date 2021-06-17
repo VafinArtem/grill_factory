@@ -34,7 +34,7 @@
   padding-top: 16px;
   background: var(--basic-black);
   border-radius: 24px;
-  box-shadow: 0px 3px 20px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 3px 20px rgba(0, 0, 0, 0.4);
   overflow: hidden;
 
   &::after {
@@ -114,6 +114,7 @@
     top: 15px !important;
     right: 5px !important;
     background-color: white !important;
+
     & img {
       display: none !important;
     }
@@ -132,12 +133,12 @@
   display: none !important;
 }
 
-@media (min-width: 320px) {
-}
+// @media (min-width: 320px) {
+// }
 
-// Small devices (landscape phones, 576px and up)
-@media (min-width: 576px) {
-}
+// // Small devices (landscape phones, 576px and up)
+// @media (min-width: 576px) {
+// }
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
@@ -165,14 +166,14 @@
   }
 }
 
-// Large devices (desktops, 992px and up)
-@media (min-width: 992px) {
-}
+// // Large devices (desktops, 992px and up)
+// @media (min-width: 992px) {
+// }
 
-// X-Large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) {
-}
+// // X-Large devices (large desktops, 1200px and up)
+// @media (min-width: 1200px) {
+// }
 
-// XX-Large devices (larger desktops, 1400px and up)
-@media (min-width: 1400px) {
-}
+// // XX-Large devices (larger desktops, 1400px and up)
+// @media (min-width: 1400px) {
+// }

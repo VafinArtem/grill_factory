@@ -41,12 +41,6 @@
   height: 100%;
   z-index: 0;
 
-  &:hover {
-    background-color: transparent;
-  }
-}
-
-.video__video {
   &.video-js {
     & .vjs-big-play-button {
       position: absolute;
@@ -71,6 +65,8 @@
     }
 
     &:hover {
+      background-color: transparent;
+
       & .vjs-big-play-button {
         background-color: transparent;
       }

@@ -7,7 +7,7 @@
 
 .other-dish__wrapper {
   overflow-x: scroll;
-  width: calc(100vw - var(--mobile-padding));
+  // width: calc(100vw - var(--mobile-padding));
   width: 100vw;
   margin-left: calc(0px - var(--mobile-padding));
   margin-right: calc(0px - var(--mobile-padding));
@@ -95,12 +95,12 @@
   padding-right: 18px;
 }
 
-@media (min-width: 320px) {
-}
+// @media (min-width: 320px) {
+// }
 
-// Small devices (landscape phones, 576px and up)
-@media (min-width: 576px) {
-}
+// // Small devices (landscape phones, 576px and up)
+// @media (min-width: 576px) {
+// }
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
@@ -147,14 +147,14 @@
   }
 }
 
-// Large devices (desktops, 992px and up)
-@media (min-width: 992px) {
-}
+// // Large devices (desktops, 992px and up)
+// @media (min-width: 992px) {
+// }
 
-// X-Large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) {
-}
+// // X-Large devices (large desktops, 1200px and up)
+// @media (min-width: 1200px) {
+// }
 
-// XX-Large devices (larger desktops, 1400px and up)
-@media (min-width: 1400px) {
-}
+// // XX-Large devices (larger desktops, 1400px and up)
+// @media (min-width: 1400px) {
+// }

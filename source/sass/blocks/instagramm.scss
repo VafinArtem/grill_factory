@@ -15,13 +15,6 @@
 .instagramm__item {
   position: relative;
   overflow: hidden;
-  // max-height: 336px;
-  // max-height: 251px;
-  // max-width: 251px;
-  // padding-top: 43px;
-  // padding-left: 17px;
-  // padding-right: 17px;
-  // overflow: hidden;
 }
 
 .instagramm__img {
@@ -109,21 +102,18 @@
   overflow: hidden;
 }
 
-@media (min-width: 320px) {
-}
+// @media (min-width: 320px) {
+// }
 
-// Small devices (landscape phones, 576px and up)
-@media (min-width: 576px) {
-}
+// // Small devices (landscape phones, 576px and up)
+// @media (min-width: 576px) {
+// }
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
   .instagramm__item {
     display: flex;
-    // width: 360px;
     max-height: 336px;
-    // padding-left: 24px;
-    // padding-right: 24px;
   }
 }
 
@@ -152,6 +142,6 @@
   }
 }
 
-// XX-Large devices (larger desktops, 1400px and up)
-@media (min-width: 1400px) {
-}
+// // XX-Large devices (larger desktops, 1400px and up)
+// @media (min-width: 1400px) {
+// }
