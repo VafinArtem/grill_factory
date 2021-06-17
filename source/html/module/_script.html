@@ -127,17 +127,17 @@
     {
       location: { lat: 59.934, lng: 30.333 },
       title: `Невский пр. 48`,
-      img: `/img/pages/contacts/contacts-1.jpg`
+      img: `/img/pages/contacts/nevskyi.jpg`
     },
     {
       location: { lat: 59.852, lng: 30.147 },
       title: `ул. Адмирала Трибуца 6`,
-      img: `/img/pages/contacts/contacts-1.jpg`
+      img: `/img/pages/contacts/tribuca.jpg`
     },
     {
       location: { lat: 59.945, lng: 30.286 },
       title: `Кадетская линия В.О. 25`,
-      img: `/img/pages/contacts/contacts-1.jpg`
+      img: `/img/pages/contacts/kadetskaya.jpg`
     },
   ];
 
@@ -183,9 +183,6 @@
         mapId: 'd42291912907a704',
         disableDefaultUI: true,
       });
-
-      console.log(mapElement.classList.contains(`isFooterMap`));
-      console.log(map.zoom);
 
       const getContentTemplate = (title, imgUrl) => {
         return `
