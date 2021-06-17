@@ -1,6 +1,10 @@
 const menuInit = () => {
   const cathegoriesList = document.querySelector(`.js-cathegories`);
 
+  const MENU_PATH = `/menu.html`;
+  const MENU_HASH = `#!/Menyu_dlya_sayta`;
+  const MENU_TITLE = `Меню для сайта`;
+
   const menu = {
     гриль: {
       title: `Гриль`,
@@ -84,13 +88,33 @@ const menuInit = () => {
     },
   };
 
+  const setFirstLetterUppercase = (string) => {
+    if (!string) {
+      return string;
+    }
+
+    return string[0].toUpperCase() + string.slice(1);
+  };
+
   const getCathegoryTemplate = (title, link) => {
     return `<div class="cathegories__item cathegories__item--menu js-item">
     <a href="${link}" class="cathegories__link cathegories__link--menu js-link">
       <div class="cathegories__icon-box cathegories__icon-box--menu">
         <img src="/img/pages/menu/icon-default.svg" alt="Контур огонька" class="cathegories__icon" width="50" height="50">
       </div>
-      <h3 class="cathegories__title cathegories__title--menu js-c-title">${title}</h3>
+      <h3 class="cathegories__title cathegories__title--menu js-c-title">${setFirstLetterUppercase(title)}</h3>
+    </a>
+  </div>`;
+  };
+
+  const getMainCathegoryTemplate = (title, link) => {
+    return `<div class=" cathegories__item js-item swiper-slide">
+    <a href="${link}" class="cathegories__link js-link">
+      <div class="cathegories__icon-box">
+        <div class="cathegories__amount">42</div>
+        <img src="/img/pages/menu/icon-default.svg" alt="Контур огонька" class="cathegories__icon" width="118" height="118">
+      </div>
+      <h3 class="cathegories__title js-c-title">${setFirstLetterUppercase(title)}</h3>
     </a>
   </div>`;
   };
@@ -163,7 +187,7 @@ const menuInit = () => {
         let MenuLinks = {};
 
         for (const item of lspItems) {
-          if (item.querySelector(`a`).textContent === `Меню для сайта`) {
+          if (item.querySelector(`a`).textContent === MENU_TITLE) {
             const parent = item.closest(`.jstore-tag`);
             mainMenuList = parent.querySelector(`.lsp-js-menu-childs`);
             break;
@@ -180,8 +204,9 @@ const menuInit = () => {
 
         const getHref = (title) => {
           const href = MenuLinks[title];
+          const hashInddex = href.indexOf(`#`);
           delete MenuLinks[title];
-          return href;
+          return `${MENU_PATH}${href.slice(hashInddex, href.length)}`;
         };
 
         titles.forEach((title) => {
@@ -192,7 +217,11 @@ const menuInit = () => {
 
         for (let [key, value] of Object.entries(MenuLinks)) {
           const newElement = document.createElement(`div`);
-          newElement.innerHTML = getCathegoryTemplate(key, value);
+          if (document.location.pathname === MENU_PATH) {
+            newElement.innerHTML = getCathegoryTemplate(key, value);
+          } else {
+            newElement.innerHTML = getMainCathegoryTemplate(key, value);
+          }
 
           cathegoriesList.append(newElement.firstChild);
         }
@@ -212,7 +241,7 @@ const menuInit = () => {
 
                 if (menu[title]) {
                   renderFirstCard(parent, menu[title]);
-                } else if (title === `Меню для сайта`) {
+                } else if (title === MENU_TITLE) {
                 } else {
                   menu.default.title = title;
                   renderFirstCard(parent, menu.default);
@@ -237,7 +266,7 @@ const menuInit = () => {
 
               currentСategory = null;
 
-              evt.currentTarget.querySelector(`.js-link`).href = `/menu.html#!/Menyu_dlya_sayta`;
+              evt.currentTarget.querySelector(`.js-link`).href = `${MENU_PATH}${MENU_HASH}`;
 
               renderFirstCards();
 
@@ -269,12 +298,26 @@ const menuInit = () => {
             renderAdditionalItems();
           }
         });
+
+        if (document.location.pathname === MENU_PATH && document.location.hash.split(`/`).length - 1 >= 2) {
+          renderAdditionalItems();
+        }
+
+        if (document.location.pathname !== MENU_PATH) {
+          let cathegoryMenyElements = document.querySelectorAll(`.lsp-block-items-list-child`);
+
+          console.log(cathegoryMenyElements);
+
+          cathegoryMenyElements = cathegoryMenyElements.map((element) => {
+            console.log(element.nextSibling);
+            // if (element.nextSibling) {
+            //   element
+            // }
+          });
+          console.log(cathegoryMenyElements);
+        }
       }
     }, 100);
-
-    if (document.location.pathname === `/menu.html` && document.location.hash.split("/").length - 1 >= 2) {
-      renderAdditionalItems();
-    }
   }
 };
 
