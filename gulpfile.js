@@ -104,7 +104,7 @@ exports.webp = iwebp;
 
 const copy = () => {
   return gulp
-    .src(["source/fonts/**/*.{woff,woff2}", "source/img/**", "source/favicon/**", "source/js/plugins/**", "source/favicon.ico"], {
+    .src(["source/fonts/**/*.{woff,woff2}", "source/img/**", "source/favicon/**", "source/js/plugins/**"], {
       base: "source",
     })
     .pipe(gulp.dest("build"));

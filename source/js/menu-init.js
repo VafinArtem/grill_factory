@@ -127,9 +127,10 @@ const menuInit = () => {
   };
 
   const getAdditionalCardTemplate = (title, price, link, img) => {
+    const DEFAULT_IMAGE_URL = `/img/pages/dish/default-dish-min.svg`;
     return `<li class="other-dish__item">
     <a href="${link}" class="other-dish__link">
-      <img src="${img}" alt="${title}" width="126" height="166" class="other-dish__img">
+      <img src="${!img ? DEFAULT_IMAGE_URL : img}" alt="${title}" width="126" height="166" class="other-dish__img">
       <div class="other-dish__inner">
         <p class="other-dish__name">${title}</p>
         <p class="other-dish__price">${price} <span class="rouble">a</span></p>
