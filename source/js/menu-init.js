@@ -11,13 +11,13 @@ const menuInit = () => {
       text: `Прекрасная закуска станет неотъемлемой частью любой вечеринки.`,
       background: `/img/pages/menu/cards/grill.svg`,
     },
-    пицца: {
-      title: `Пицца`,
+    пиццы: {
+      title: `Пиццы`,
       text: `Прекрасная закуска станет неотъемлемой частью любой вечеринки.`,
       background: `/img/pages/menu/cards/pizza.svg`,
     },
-    "суши/роллы": {
-      title: `Суши/роллы`,
+    "суши, роллы": {
+      title: `Суши, роллы`,
       text: `Прекрасная закуска станет неотъемлемой частью любой вечеринки.`,
       background: `/img/pages/menu/cards/sushi.svg`,
     },
@@ -51,8 +51,8 @@ const menuInit = () => {
       text: `Прекрасная закуска станет неотъемлемой частью любой вечеринки.`,
       background: `/img/pages/menu/cards/coctails.svg`,
     },
-    "горячие блюда": {
-      title: `Горячие блюда`,
+    горячее: {
+      title: `Горячее`,
       text: `Прекрасная закуска станет неотъемлемой частью любой вечеринки.`,
       background: `/img/pages/menu/cards/meat.svg`,
     },
@@ -66,18 +66,18 @@ const menuInit = () => {
       text: `Прекрасная закуска станет неотъемлемой частью любой вечеринки.`,
       background: `/img/pages/menu/cards/barbecue.svg`,
     },
-    паста: {
-      title: `Паста`,
+    "паста, вок": {
+      title: `Паста, вок`,
       text: `Прекрасная закуска станет неотъемлемой частью любой вечеринки.`,
       background: `/img/pages/menu/cards/pasta.svg`,
     },
-    гарниры: {
-      title: `Гарниры`,
+    "гарниры, cоусы": {
+      title: `Гарниры, cоусы`,
       text: `Прекрасная закуска станет неотъемлемой частью любой вечеринки.`,
       background: `/img/pages/menu/cards/side-dishes.svg`,
     },
-    "наборы/сеты": {
-      title: `Наборы/сеты`,
+    наборы: {
+      title: `Наборы`,
       text: `Прекрасная закуска станет неотъемлемой частью любой вечеринки.`,
       background: `/img/pages/menu/cards/sets.svg`,
     },
@@ -198,7 +198,17 @@ const menuInit = () => {
 
         lspMenulinks.forEach((item) => {
           const obj = {};
-          obj[item.textContent.toLowerCase()] = item.href;
+          let title;
+
+          if (item.textContent.endsWith(` . `)) {
+            title = item.textContent.slice(0, length - 3).toLowerCase();
+          } else if (item.textContent.endsWith(` .`)) {
+            title = item.textContent.slice(0, length - 2).toLowerCase();
+          } else {
+            title = item.textContent.toLowerCase();
+          }
+
+          obj[title] = item.href;
           MenuLinks = {...MenuLinks, ...obj};
         });
 
@@ -226,8 +236,6 @@ const menuInit = () => {
           cathegoriesList.append(newElement.firstChild);
         }
 
-        items = cathegoriesList.querySelectorAll(`.js-item`);
-
         const renderFirstCards = () => {
           const timerId = setInterval(() => {
             const listElements = document.querySelectorAll(`.lsp-block-items-list`);
@@ -236,12 +244,20 @@ const menuInit = () => {
               clearInterval(timerId);
 
               listElements.forEach((list) => {
-                const title = list.querySelector(`.jstore-tag.h1`).textContent;
+                let title = list.querySelector(`.jstore-tag.h1`);
                 const parent = list.querySelector(`.lsp-block-items`);
+
+                if (title.textContent.endsWith(` . `)) {
+                  title = title.textContent.slice(0, length - 3).toLowerCase();
+                } else if (title.textContent.endsWith(` .`)) {
+                  title = title.textContent.slice(0, length - 2).toLowerCase();
+                } else {
+                  title = title.textContent.toLowerCase();
+                }
 
                 if (menu[title]) {
                   renderFirstCard(parent, menu[title]);
-                } else if (title === MENU_TITLE) {
+                } else if (title === MENU_TITLE.toLowerCase()) {
                 } else {
                   menu.default.title = title;
                   renderFirstCard(parent, menu.default);
@@ -253,7 +269,10 @@ const menuInit = () => {
 
         renderFirstCards();
 
+        items = cathegoriesList.querySelectorAll(`.js-item`);
+
         let currentСategory;
+
         items.forEach((item) => {
           if (item.querySelector(`.js-link`).href === document.location.href) {
             currentСategory = item;
