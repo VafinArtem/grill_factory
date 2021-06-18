@@ -61,6 +61,7 @@
   margin-top: 0;
   margin-bottom: 0;
   font-size: 16px;
+  line-height: 1.4;
 }
 
 .main__header {
@@ -188,14 +189,6 @@
     margin-bottom: auto;
     font-size: 27px;
     text-align: center;
-
-    & .main__flame {
-      position: absolute;
-      top: -73px;
-      right: -21px;
-      width: 161px;
-      z-index: -1;
-    }
   }
 
   &--booking {
@@ -221,6 +214,7 @@
   &--menu {
     margin-bottom: 40px;
     font-size: 40px;
+    line-height: 1.2;
   }
 
   &--line {
@@ -231,7 +225,7 @@
       top: 87%;
       left: 0;
       width: 100%;
-      height: 14px;
+      height: 16px;
       background-image: url("/img/common/icon-line.svg");
       background-size: contain;
       background-repeat: no-repeat;
@@ -255,6 +249,14 @@
     font-size: 23px;
     line-height: 1.5;
   }
+}
+
+.main__flame {
+  position: absolute;
+  top: -73px;
+  right: -21px;
+  width: 161px;
+  z-index: -1;
 }
 
 .main__title-row {
@@ -446,18 +448,18 @@
 
   .main__img-box {
     position: relative;
+  }
 
-    &::before {
-      position: absolute;
+  .main__flame {
+    top: -93px;
+    right: -40px;
+    width: 198px;
+
+    &--menu {
       top: -38px;
       left: -61px;
       width: 190px;
       height: 270px;
-      background-image: url("/img/common/icon-fire-stroke-min.svg");
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: contain;
-      content: "";
       z-index: -1;
     }
   }
@@ -512,9 +514,6 @@
       font-size: 40px;
 
       & .main__flame {
-        top: -93px;
-        right: -40px;
-        width: 198px;
       }
     }
 
@@ -536,7 +535,7 @@
 
     &--menu {
       margin-bottom: 40px;
-      font-size: 40px;
+      font-size: 48px;
     }
 
     &--policy {
@@ -629,20 +628,12 @@
     }
   }
 
-  .main__img-box {
-    position: relative;
-
-    &::before {
-      position: absolute;
+  .main__flame {
+    &--menu {
       top: -26px;
       left: -61px;
       width: 230px;
       height: 350px;
-      background-image: url("/img/common/icon-fire-stroke-min.svg");
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: contain;
-      content: "";
       z-index: -1;
     }
   }
