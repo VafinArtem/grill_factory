@@ -320,6 +320,7 @@ const menuInit = () => {
         });
 
         if (document.location.pathname === MENU_PATH && document.location.hash.split(`/`).length - 1 >= 2) {
+          document.body.classList.add(`menu-open`);
           renderAdditionalItems();
         }
 
