@@ -1,4 +1,5 @@
 .main {
+  width: 100%;
   margin-top: -86px;
   opacity: 1;
 
@@ -40,6 +41,11 @@
 
   &--menu {
     margin-top: 0;
+  }
+
+  &--cart {
+    margin-top: 0;
+    padding-bottom: 30px;
   }
 
   &--policy {
@@ -112,6 +118,11 @@
   &--menu {
     display: none;
     margin-bottom: 30px;
+  }
+
+  &--cart {
+    padding-top: 55px;
+    margin-bottom: 60px;
   }
 }
 
@@ -215,6 +226,12 @@
     margin-bottom: 40px;
     font-size: 40px;
     line-height: 1.2;
+  }
+
+  &--cart {
+    margin-bottom: 0;
+    font-size: 42px;
+    text-transform: initial;
   }
 
   &--line {
@@ -394,6 +411,10 @@
       margin-top: 0;
     }
 
+    &--cart {
+      margin-top: 0;
+    }
+
     &--policy {
       margin-top: 0;
       padding-top: 62px;
@@ -442,6 +463,10 @@
 
     &--policy {
       margin-bottom: 0;
+    }
+
+    &--cart {
+      margin-bottom: 60px;
     }
   }
 
