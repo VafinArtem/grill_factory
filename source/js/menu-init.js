@@ -6,18 +6,18 @@ const menuInit = () => {
   const MENU_TITLE = `Меню для сайта`;
 
   const menu = {
-    гриль: {
-      title: `Гриль`,
+    "гриль/мангал": {
+      title: `Гриль/мангал`,
       text: `Прекрасная закуска станет неотъемлемой частью любой вечеринки.`,
       background: `/img/pages/menu/cards/grill.svg`,
     },
-    пиццы: {
-      title: `Пиццы`,
+    пицца: {
+      title: `Пицца`,
       text: `Прекрасная закуска станет неотъемлемой частью любой вечеринки.`,
       background: `/img/pages/menu/cards/pizza.svg`,
     },
-    "суши, роллы": {
-      title: `Суши, роллы`,
+    "суши/роллы": {
+      title: `Суши/роллы`,
       text: `Прекрасная закуска станет неотъемлемой частью любой вечеринки.`,
       background: `/img/pages/menu/cards/sushi.svg`,
     },
@@ -51,8 +51,8 @@ const menuInit = () => {
       text: `Прекрасная закуска станет неотъемлемой частью любой вечеринки.`,
       background: `/img/pages/menu/cards/coctails.svg`,
     },
-    горячее: {
-      title: `Горячее`,
+    "горячие блюда": {
+      title: `Горячие блюда`,
       text: `Прекрасная закуска станет неотъемлемой частью любой вечеринки.`,
       background: `/img/pages/menu/cards/meat.svg`,
     },
@@ -61,23 +61,23 @@ const menuInit = () => {
       text: `Прекрасная закуска станет неотъемлемой частью любой вечеринки.`,
       background: `/img/pages/menu/cards/salad.svg`,
     },
-    мангал: {
-      title: `Мангал`,
+    шашлыки: {
+      title: `Шашлыки`,
       text: `Прекрасная закуска станет неотъемлемой частью любой вечеринки.`,
       background: `/img/pages/menu/cards/barbecue.svg`,
     },
-    "паста, вок": {
-      title: `Паста, вок`,
+    паста: {
+      title: `Паста`,
       text: `Прекрасная закуска станет неотъемлемой частью любой вечеринки.`,
       background: `/img/pages/menu/cards/pasta.svg`,
     },
-    "гарниры, cоусы": {
-      title: `Гарниры, cоусы`,
+    гарниры: {
+      title: `Гарниры`,
       text: `Прекрасная закуска станет неотъемлемой частью любой вечеринки.`,
       background: `/img/pages/menu/cards/side-dishes.svg`,
     },
-    наборы: {
-      title: `Наборы`,
+    сеты: {
+      title: `Сеты`,
       text: `Прекрасная закуска станет неотъемлемой частью любой вечеринки.`,
       background: `/img/pages/menu/cards/sets.svg`,
     },
@@ -184,27 +184,19 @@ const menuInit = () => {
       if (lspItems.length) {
         clearInterval(timerId);
 
-        let mainMenuList;
         let MenuLinks = {};
 
-        for (const item of lspItems) {
-          if (item.querySelector(`a`).textContent === MENU_TITLE) {
-            const parent = item.closest(`.jstore-tag`);
-            mainMenuList = parent.querySelector(`.lsp-js-menu-childs`);
-            break;
-          }
-        }
-
-        const lspMenulinks = mainMenuList.querySelectorAll(`a`);
+        const lspMenulinks = lspMenu.querySelectorAll(`a`);
 
         lspMenulinks.forEach((item) => {
           const obj = {};
+          const length = item.textContent.length;
           let title;
 
-          if (item.textContent.endsWith(` . `)) {
-            title = item.textContent.slice(0, length - 3).toLowerCase();
-          } else if (item.textContent.endsWith(` .`)) {
+          if (item.textContent.endsWith(`  `)) {
             title = item.textContent.slice(0, length - 2).toLowerCase();
+          } else if (item.textContent.endsWith(` `)) {
+            title = item.textContent.slice(0, length - 1).toLowerCase();
           } else {
             title = item.textContent.toLowerCase();
           }
@@ -231,6 +223,7 @@ const menuInit = () => {
           if (document.location.pathname === MENU_PATH) {
             newElement.innerHTML = getCathegoryTemplate(key, value);
           } else {
+            console.log(key, value);
             newElement.innerHTML = getMainCathegoryTemplate(key, value);
           }
 
@@ -247,11 +240,12 @@ const menuInit = () => {
               listElements.forEach((list) => {
                 let title = list.querySelector(`.jstore-tag.h1`);
                 const parent = list.querySelector(`.lsp-block-items`);
+                const length = title.textContent.length;
 
-                if (title.textContent.endsWith(` . `)) {
-                  title = title.textContent.slice(0, length - 3).toLowerCase();
-                } else if (title.textContent.endsWith(` .`)) {
+                if (title.textContent.endsWith(`  `)) {
                   title = title.textContent.slice(0, length - 2).toLowerCase();
+                } else if (title.textContent.endsWith(` `)) {
+                  title = title.textContent.slice(0, length - 1).toLowerCase();
                 } else {
                   title = title.textContent.toLowerCase();
                 }
@@ -286,7 +280,7 @@ const menuInit = () => {
 
               currentСategory = null;
 
-              evt.currentTarget.querySelector(`.js-link`).href = `${MENU_PATH}${MENU_HASH}`;
+              evt.currentTarget.querySelector(`.js-link`).href = `${MENU_PATH}`;
 
               renderFirstCards();
 
@@ -324,19 +318,19 @@ const menuInit = () => {
           renderAdditionalItems();
         }
 
-        if (document.location.pathname !== MENU_PATH) {
-          let cathegoryMenyElements = document.querySelectorAll(`.lsp-block-items-list-child`);
+        // if (document.location.pathname !== MENU_PATH) {
+        //   let cathegoryMenyElements = document.querySelectorAll(`.lsp-block-items-list-child`);
 
-          console.log(cathegoryMenyElements);
+        //   console.log(cathegoryMenyElements);
 
-          cathegoryMenyElements = cathegoryMenyElements.map((element) => {
-            console.log(element.nextSibling);
-            // if (element.nextSibling) {
-            //   element
-            // }
-          });
-          console.log(cathegoryMenyElements);
-        }
+        // cathegoryMenyElements = cathegoryMenyElements.map((element) => {
+        //   console.log(element.nextSibling);
+        //   if (element.nextSibling) {
+        //     element
+        //   }
+        // });
+        // console.log(cathegoryMenyElements);
+        // }
       }
     }, 100);
   }
