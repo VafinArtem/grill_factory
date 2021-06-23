@@ -57,6 +57,7 @@
 .cart__name {
   margin-top: 0;
   margin-bottom: 0;
+  padding-top: 5px;
   font-weight: normal;
   font-size: 14px;
 }
@@ -135,6 +136,7 @@
   margin-bottom: 0;
   font-weight: bold;
   font-size: 50px;
+  line-height: 1;
 }
 
 .cart__button {
@@ -149,6 +151,100 @@
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
+  .cart__items {
+    margin-bottom: 47px;
+  }
+
+  .cart__titles {
+    display: grid;
+    grid-template-columns: 1fr 120px 200px;
+    column-gap: 15px;
+  }
+
+  .cart__title {
+    &--amount {
+      display: block;
+      text-align: center;
+    }
+
+    &--price {
+      display: block;
+      text-align: center;
+    }
+  }
+
+  .cart__item {
+    grid-template-rows: auto;
+    grid-template-columns: 1fr 120px 200px;
+    column-gap: 15px;
+    align-items: center;
+  }
+
+  .cart__amount-box {
+    justify-self: center;
+  }
+
+  .cart__desc {
+    grid-column: auto;
+  }
+
+  .cart__price {
+    text-align: center;
+  }
+
+  .cart__name {
+    max-width: 323px;
+  }
+
+  .cart__total {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .cart__link-to-menu {
+    position: relative;
+    display: block;
+    align-self: flex-end;
+    padding-left: 23px;
+    margin-bottom: 3px;
+    font-family: inherit;
+    font-size: 14px;
+    color: var(--seven-gray);
+    border: none;
+    background: none;
+    cursor: pointer;
+
+    &::before {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 15px;
+      height: 7px;
+      margin-top: -3.5px;
+      background-image: url("/img/common/icon-back-2.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
+      content: "";
+    }
+  }
+
+  .cart__inner {
+    display: flex;
+
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .cart__total-text {
+    align-self: flex-end;
+    width: auto;
+    margin-right: 18px;
+    margin-bottom: 3px;
+  }
+
+  .cart__total-price {
+    margin-right: 31px;
+  }
 }
 
 // // Large devices (desktops, 992px and up)
