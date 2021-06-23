@@ -698,8 +698,7 @@
   }
 
   .main__img {
-    display: flex;
-    width: auto;
+    width: 385px;
   }
 }
 
@@ -712,8 +711,39 @@
       column-gap: 30px;
     }
   }
+
+  .main__header {
+    &--menu {
+      margin-bottom: 0;
+    }
+  }
+
+  .main__img {
+    position: relative;
+    display: flex;
+    margin-top: -95px;
+    right: -80px;
+    width: auto;
+    z-index: 6;
+  }
+
+  .main__flame {
+    &--menu {
+      left: 0;
+    }
+  }
 }
 
 // // XX-Large devices (larger desktops, 1400px and up)
-// @media (min-width: 1400px) {
-// }
+@media (min-width: 1400px) {
+  .main__img {
+    right: 0;
+  }
+
+  .main__flame {
+    &--menu {
+      left: -20px;
+      top: -68px;
+    }
+  }
+}
