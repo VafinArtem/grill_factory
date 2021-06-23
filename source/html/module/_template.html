@@ -1,0 +1,153 @@
+<script id='itemPopUp' type="text/template">
+  <main class="main main--dish container">
+    <section class="main__dish dish">
+      <div class="dish__box">
+        <header class="dish__header">
+          <button class="dish__back-link lsp-js-popup-close">Вернуться в меню</button>
+          <ul class="dish__features">
+            <% if(tags.length){ %>
+              <% _.each(tags, function(tag){ %>
+                <li class="dish__feature">
+                  <div class="dish__icon dish__icon--<%= tag.translitName %>" aria-label="<%= tag.name %>" title="<%= tag.name %>"></div>
+                </li>
+                <% }); %>
+                  <% } %>
+          </ul>
+          <h1 class="dish__title" data-jstore-value="name"></h1>
+        </header>
+        <p class="dish__text" data-jstore-value="description"></p>
+        <dl class="dish__description-list">
+          <div class="dish__desc-wrap">
+            <dt class="dish_terms">Kcal</dt>
+            <dt class="dish__desc" data-jstore-value="energyAmount"></dt>
+          </div>
+          <div class="dish__desc-wrap">
+            <dt class="dish_terms">Б</dt>
+            <dt class="dish__desc" data-jstore-value="fiberAmount"></dt>
+          </div>
+          <div class="dish__desc-wrap">
+            <dt class="dish_terms">Ж</dt>
+            <dt class="dish__desc" data-jstore-value="fatAmount"></dt>
+          </div>
+          <div class="dish__desc-wrap">
+            <dt class="dish_terms">У</dt>
+            <dt class="dish__desc" data-jstore-value="carbohydrateAmount"></dt>
+          </div>
+        </dl>
+        <div class="dish__inner">
+          <p class="dish__price"><span data-jstore-value="jStoreApp.fixMath(count * cost)"></span><span class="rouble">&nbsp;a</span></p>
+          <button class="dish__button link-reserv link-reserv--order lsp-js-popup-tocart">Заказать</button>
+        </div>
+        <div class="dish__inner">
+          <div class="dish__count-box">
+            <button class="dish__count-btn lsp-js-popup-item-minus">
+              <img src="/img/pages/dish/icon-minus.svg" width="10" height="2" alt="Минус">
+            </button>
+            <label for="count" class="visually-hidden">Количество</label>
+            <input type="number" id="count" name="count" class="dish__count lsp-js-popup-total-count" data-jstore-value="count">
+            <button class="dish__count-btn lsp-js-popup-item-plus">
+              <img src="/img/pages/dish/icon-plus.svg" width="10" height="10" alt="Плюс">
+            </button>
+          </div>
+        </div>
+        <div class="dish__wrapper below-tablet">
+          <img data-jstore-src="largeImageUrl" width="414" height="530" alt="<%= name %>" class="dish__img">
+          <div class="dish__gradient"></div>
+        </div>
+      </div>
+      <div class="dish__img-box above-tablet">
+        <!-- <p class="dish__badge dish__badge--cheef">Выбор шеф-повара</p> -->
+        <img data-jstore-src="largeImageUrl" width="454" height="696" alt="<%= name %>" class="dish__img">
+        <div class="dish__gradient"></div>
+      </div>
+    </section>
+    <aside class="main__other-dish other-dish">
+      <h2 class="other-dish__title">Другие блюда раздела Гриль</h2>
+      <div class="other-dish__wrapper">
+        <ul class="other-dish__list js-other-dishes">
+        </ul>
+      </div>
+    </aside>
+  </main>
+</script>
+<script id="custom-block-item-template" type="text/template">
+  <div class="js-menu-add-item">
+    <a href="<%= url %>" class="js-menu-add-link">
+      <%= name %>
+    </a>
+    <div class="lsp-block-item-price">
+      <span class="js-menu-add-price" data-jstore-value="cost">
+        <%= cost %>
+      </span>
+    </div>
+    <img class="js-menu-add-img" title="<%= name %>" data-jstore-src="mediumImageUrl">
+  </div>
+</script>
+<script id='my-cart-template' type="text/template">
+  <div class="cart__items">
+    <div class="cart__titles">
+      <p class="cart__title cart__title--name">Ваш заказ</p>
+      <p class="cart__title cart__title--amount">Количество</p>
+      <p class="cart__title cart__title--price">Цена</p>
+    </div>
+    <div class="cart__list lsp-cart-items-list">
+    </div>
+  </div>
+  <div class="cart__total">
+    <a href="/" class="cart__link-to-menu">Вернуться в меню</a>
+    <div class="cart__inner">
+      <p class="cart__total-text">
+        Итого:
+      </p>
+      <div class="cart__total-wrap">
+        <p class="cart__total-price cart__total-price--price">
+          <span class="jstore-js-cart-total-value">
+            <%= totalCost %><span>
+        </p>
+        <p class="cart__total-price cart__total-price--currency">
+          <span class="rouble">a</span>
+        </p>
+      </div>
+      <a href="<%= urls.order %>" class="cart__button link-reserv link-reserv--order">Оформить заказ</a>
+    </div>
+  </div>
+</script>
+<script id='my-cart-item-template' type="text/template">
+  <div class="cart__item">
+    <div class="cart__desc">
+      <div class="cart__img-box">
+        <img src="<%= smallImageUrl %>" alt="<%= name %>" class="cart__img" width="70" height="70">
+      </div>
+      <h2 class="cart__name">
+        <%= name %>
+      </h2>
+    </div>
+    <div class="cart__amount-box">
+      <button class="cart__amount-btn lsp-js-item-minus" aria-label="Минус">
+        <svg class="cart__icon" width="14" height="4">
+          <use xlink:href="/img/sprite.svg#icon-minus"></use>
+        </svg>
+      </button>
+      <label for="count" class="visually-hidden">Количество</label>
+      <input type="number" id="count" name="count" class="cart__amount" value="<%= amount %>">
+      <button class="cart__amount-btn lsp-js-item-plus" aria-label="Плюс">
+        <svg class="cart__icon" width="14" height="14">
+          <use xlink:href="/img/sprite.svg#icon-plus"></use>
+        </svg>
+      </button>
+    </div>
+    <p class="cart__price">
+      <span class="lsp-js-price">
+        <%= price %>
+      </span>
+      <span class="rouble">a</span>
+    </p>
+  </div>
+</script>
+<script id='my-info-cart-template' type="text/template">
+  <a href="#" class="header__link header__link--cart link above-mobile">
+    Корзина <span class="header__cart-count jstore-js-cart-total-count">
+      <%= totalItems %>
+    </span>
+  </a>
+</script>
