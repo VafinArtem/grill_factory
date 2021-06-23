@@ -133,7 +133,7 @@
 
 .cart__total-price {
   margin-top: 0;
-  margin-bottom: 0;
+  margin-bottom: 15px;
   font-weight: bold;
   font-size: 50px;
   line-height: 1;
@@ -244,6 +244,7 @@
 
   .cart__total-price {
     margin-right: 31px;
+    margin-bottom: 0;
   }
 }
 

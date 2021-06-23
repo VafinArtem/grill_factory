@@ -102,8 +102,8 @@
   .contacts__item {
     &--header {
       &:not(:first-child) {
-        margin-left: 22px;
-        padding-left: 22px;
+        margin-left: 15px;
+        padding-left: 15px;
       }
     }
 
@@ -117,6 +117,14 @@
 
 // X-Large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
+  .contacts__item {
+    &--header {
+      &:not(:first-child) {
+        margin-left: 22px;
+        padding-left: 22px;
+      }
+    }
+  }
 }
 
 // XX-Large devices (larger desktops, 1400px and up)
