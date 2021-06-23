@@ -48,6 +48,11 @@
     padding-bottom: 30px;
   }
 
+  &--order {
+    margin-top: 0;
+    padding-bottom: 30px;
+  }
+
   &--policy {
     width: 100%;
     margin-top: 0;
@@ -121,6 +126,11 @@
   }
 
   &--cart {
+    padding-top: 35px;
+    margin-bottom: 35px;
+  }
+
+  &--order {
     padding-top: 35px;
     margin-bottom: 35px;
   }
@@ -229,6 +239,12 @@
   }
 
   &--cart {
+    margin-bottom: 0;
+    font-size: 28px;
+    text-transform: initial;
+  }
+
+  &--order {
     margin-bottom: 0;
     font-size: 28px;
     text-transform: initial;
@@ -357,6 +373,12 @@
       font-size: 42px;
       text-transform: initial;
     }
+
+    &--order {
+      margin-bottom: 0;
+      font-size: 42px;
+      text-transform: initial;
+    }
   }
 }
 
@@ -421,6 +443,10 @@
       margin-top: 0;
     }
 
+    &--order {
+      margin-top: 0;
+    }
+
     &--policy {
       margin-top: 0;
       padding-top: 62px;
@@ -472,6 +498,11 @@
     }
 
     &--cart {
+      padding-top: 55px;
+      margin-bottom: 60px;
+    }
+
+    &--order {
       padding-top: 55px;
       margin-bottom: 60px;
     }

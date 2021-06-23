@@ -1,0 +1,294 @@
+.order {
+  & #jstore-css {
+    & .lsp-block-content {
+      padding-top: 0;
+    }
+  }
+}
+
+#lsp-block-content {
+  & .lsp-form {
+    display: grid;
+    row-gap: 15px;
+  }
+
+  & .lsp-js-delivery-type-cont {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 30px;
+    row-gap: 15px;
+
+    &.lsp-js-delivery-type-cont-takeaway {
+      grid-row: span 2;
+    }
+
+    &.lsp-js-delivery-type-cont-delivery {
+      grid-row: span 6;
+    }
+
+    & .label-row {
+      grid-column: auto;
+    }
+
+    & .lsp-js-form-field-delivery_street,
+    & .lsp-js-form-field-delivery_city,
+    & .lsp-js-form-field-delivery_date,
+    & .lsp-js-form-field-takeaway_terminal {
+      grid-column: 1/-1;
+    }
+  }
+
+  & .label-row-half {
+    width: 100% !important;
+  }
+
+  & .label-row {
+    display: flex !important;
+    flex-direction: column;
+    margin: 0 !important;
+
+    &.has-error {
+      & input {
+        border: 1px solid var(--fourth-red) !important;
+      }
+
+      & .label-row-field {
+        position: relative;
+
+        &::before {
+          position: absolute;
+          right: 24px;
+          top: 50%;
+          width: 3px;
+          height: 18px;
+          margin-top: -9px;
+          background-image: url("/img/common/icon-exclamation.svg");
+          background-repeat: no-repeat;
+          background-size: contain;
+          content: "";
+        }
+      }
+    }
+  }
+
+  & .label-row-text {
+    height: auto !important;
+    width: auto !important;
+    margin-bottom: 5px;
+    text-align: left !important;
+    font-size: 14px;
+    line-height: 1.3 !important;
+  }
+
+  & .label-row-field {
+    display: flex !important;
+    flex-direction: column;
+    margin: 0 !important;
+    padding: 0 !important;
+
+    & input,
+    & select,
+    & textarea {
+      height: 40px !important;
+      padding-left: 15px !important;
+      padding-right: 30px !important;
+      color: var(--basic-white) !important;
+      background-color: transparent !important;
+      border: 1px solid var(--five-gray) !important;
+      border-radius: 5px;
+    }
+
+    & select {
+      appearance: none;
+      background-image: url("/img/pages/booking/icon-select.svg") !important;
+      background-repeat: no-repeat !important;
+      background-size: 16px 8px !important;
+      background-position-x: calc(100% - 15px) !important;
+      background-position-y: center !important;
+    }
+
+    & textarea {
+      height: 97px !important;
+    }
+
+    & [type="radio"] {
+      margin-left: 0 !important;
+      height: auto !important;
+    }
+
+    & [type="number"] {
+      appearance: textfield;
+
+      &::-webkit-outer-spin-button,
+      &::-webkit-inner-spin-button {
+        appearance: none;
+        margin: 0;
+      }
+    }
+
+    & option {
+      color: var(--black) !important;
+    }
+
+    & label {
+      line-height: 1.3 !important;
+      margin-bottom: 18px !important;
+    }
+  }
+
+  & .lsp-form-error-mess {
+    margin: 0 !important;
+    margin-top: 2px !important;
+    padding: 0 !important;
+    font-style: normal !important;
+    text-align: left !important;
+    color: var(--fourth-red) !important;
+  }
+
+  & .lsp-order-paymenttype-variant-fields {
+    display: none;
+  }
+
+  & .lsp-block-order-totalCost {
+    grid-column: 2/3;
+    display: flex;
+    font-size: 50px;
+    line-height: 1;
+    text-transform: uppercase;
+  }
+
+  & .jstore-js-cart-order-sum-value {
+    margin-right: 13px;
+  }
+
+  & .lsp-js-hidden {
+    display: none !important;
+  }
+
+  & .lsp-button {
+    align-self: flex-start;
+    display: flex;
+    align-items: center;
+    padding-top: 18px;
+    padding-bottom: 18px;
+    padding-left: 31px;
+    padding-right: 31px;
+    font-family: var(--main-font) !important;
+    font-weight: bold;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: var(--second-black) !important;
+    background-color: var(--basic-white);
+    border: none;
+    cursor: pointer;
+    z-index: 2;
+    transition: all 500ms ease;
+
+    &:hover,
+    &:focus {
+      color: var(--basic-white) !important;
+      background-color: transparent !important;
+      box-shadow: inset 0 0 0 2px var(--basic-white) !important;
+    }
+  }
+
+  & .lsp-js-form-field-payment_type,
+  & .lsp-js-form-field-delivery_type {
+    & .label-row-text {
+      font-weight: 700 !important;
+      font-size: 16px !important;
+      margin-bottom: 22px;
+    }
+  }
+}
+
+// #lsp-block-content .lsp-form .label-row {
+// }
+
+// @media (min-width: 320px) {
+// }
+
+// // Small devices (landscape phones, 576px and up)
+// @media (min-width: 576px) {
+// }
+
+// // Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  #lsp-block-content {
+    & .lsp-form {
+      grid-template-columns: repeat(2, 1fr);
+      grid-auto-rows: 63px;
+      column-gap: 10%;
+    }
+
+    & .label-row {
+      grid-column: 2/3;
+    }
+
+    & .lsp-js-form-field-phone,
+    & .lsp-js-form-field-name,
+    & .lsp-js-form-field-email {
+      grid-column: 1/2;
+    }
+
+    & .lsp-js-form-field-payment_type,
+    & .lsp-js-form-field-delivery_type {
+      grid-column: 2/3;
+      grid-row: 1/3;
+      width: 50%;
+    }
+
+    & .lsp-js-form-field-person_count,
+    & .lsp-js-form-field-coupon {
+      grid-column: 2/3;
+    }
+
+    & .lsp-js-form-field-person_count {
+      grid-row: 3/4;
+    }
+
+    & .lsp-js-form-field-message {
+      grid-column: 2/3;
+      grid-row: span 2;
+    }
+
+    & .lsp-js-form-field-delivery_type {
+      margin-left: auto !important;
+    }
+
+    & .lsp-js-form-field-bonusPay {
+      display: none !important;
+    }
+
+    & .label-row-text-info {
+      display: none !important;
+    }
+
+    & .lsp-js-form-field-totalCost {
+      & .label-row-text {
+        margin-bottom: 0px;
+      }
+    }
+
+    & .lsp-block-order-totalCost {
+      grid-column: 2/3;
+    }
+
+    & .lsp-js-delivery-type-cont {
+      grid-column: 1/2;
+      grid-auto-rows: 63px;
+    }
+  }
+}
+
+// // Large devices (desktops, 992px and up)
+// @media (min-width: 992px) {
+// }
+
+// // X-Large devices (large desktops, 1200px and up)
+// @media (min-width: 1200px) {
+// }
+
+// // XX-Large devices (larger desktops, 1400px and up)
+// @media (min-width: 1400px) {
+// }
