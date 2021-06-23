@@ -121,8 +121,8 @@
   }
 
   &--cart {
-    padding-top: 55px;
-    margin-bottom: 60px;
+    padding-top: 35px;
+    margin-bottom: 35px;
   }
 }
 
@@ -230,7 +230,7 @@
 
   &--cart {
     margin-bottom: 0;
-    font-size: 42px;
+    font-size: 28px;
     text-transform: initial;
   }
 
@@ -351,6 +351,12 @@
     &--min-size {
       font-size: 18px;
     }
+
+    &--cart {
+      margin-bottom: 0;
+      font-size: 42px;
+      text-transform: initial;
+    }
   }
 }
 
@@ -466,6 +472,7 @@
     }
 
     &--cart {
+      padding-top: 55px;
       margin-bottom: 60px;
     }
   }
@@ -536,9 +543,6 @@
     &--index {
       margin-bottom: auto;
       font-size: 40px;
-
-      & .main__flame {
-      }
     }
 
     &--booking {

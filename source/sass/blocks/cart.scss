@@ -81,6 +81,14 @@
   text-align: center;
   border: none;
   background: transparent;
+  opacity: 0.8;
+  appearance: textfield;
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    appearance: none;
+    margin: 0;
+  }
 }
 
 .cart__amount-btn {
@@ -90,8 +98,10 @@
   width: 20px;
   height: 20px;
   padding: 0;
+  color: var(--seven-gray);
   border: none;
   background-color: transparent;
+  cursor: pointer;
 }
 
 .cart__price {
@@ -137,9 +147,9 @@
 // @media (min-width: 576px) {
 // }
 
-// // Medium devices (tablets, 768px and up)
-// @media (min-width: 768px) {
-// }
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+}
 
 // // Large devices (desktops, 992px and up)
 // @media (min-width: 992px) {
