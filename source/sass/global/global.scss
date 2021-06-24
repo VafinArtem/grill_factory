@@ -30,6 +30,10 @@ body {
   &.menu-open {
     overflow: hidden;
   }
+
+  &.item-show {
+    overflow: hidden;
+  }
 }
 
 img {

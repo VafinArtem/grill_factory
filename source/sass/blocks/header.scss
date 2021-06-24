@@ -1,7 +1,7 @@
 .header {
   display: flex;
 
-  .product-page & {
+  .item-show & {
     position: fixed;
     top: 0;
     width: 100%;
@@ -32,7 +32,7 @@
     z-index: 6;
   }
 
-  .product-page & {
+  .item-show & {
     &::after {
       top: calc(100% - 1px);
     }

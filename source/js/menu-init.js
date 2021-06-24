@@ -286,6 +286,7 @@ const menuInit = () => {
 
         document.body.addEventListener(`click`, (evt) => {
           if (evt.target.classList.contains(`dish__back-link`)) {
+            document.body.classList.remove(`item-show`);
             renderFirstCards();
           }
 
@@ -295,12 +296,13 @@ const menuInit = () => {
             evt.target.classList.contains(`other-dish__link`) ||
             evt.target.closest(`.other-dish__link`)
           ) {
+            document.body.classList.add(`item-show`);
             renderAdditionalItems();
           }
         });
 
         if (document.location.pathname === MENU_PATH && document.location.hash.split(`/`).length - 1 >= 2) {
-          document.body.classList.add(`menu-open`);
+          document.body.classList.add(`item-show`);
           renderAdditionalItems();
         }
 
@@ -317,7 +319,6 @@ const menuInit = () => {
 
             amountItems = {...amountItems, ...obj};
           });
-          console.log(amountItems);
 
           titles.forEach((title) => {
             title.closest(`.js-link`).querySelector(`.js-amount`).textContent = amountItems[title.textContent.toLowerCase()];
