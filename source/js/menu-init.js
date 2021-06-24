@@ -2,8 +2,6 @@ const menuInit = () => {
   const cathegoriesList = document.querySelector(`.js-cathegories`);
 
   const MENU_PATH = `/menu.html`;
-  const MENU_HASH = `#!/Menyu_dlya_sayta`;
-  const MENU_TITLE = `Меню для сайта`;
 
   const menu = {
     "гриль/мангал": {
@@ -111,7 +109,7 @@ const menuInit = () => {
     return `<div class=" cathegories__item js-item swiper-slide">
     <a href="${link}" class="cathegories__link js-link">
       <div class="cathegories__icon-box">
-        <div class="cathegories__amount">42</div>
+        <div class="cathegories__amount js-amount">0</div>
         <img src="/img/pages/menu/icon-default.svg" alt="Контур огонька" class="cathegories__icon" width="118" height="118">
       </div>
       <h3 class="cathegories__title js-c-title">${setFirstLetterUppercase(title)}</h3>
@@ -190,16 +188,8 @@ const menuInit = () => {
 
         lspMenulinks.forEach((item) => {
           const obj = {};
-          const length = item.textContent.length;
-          let title;
 
-          if (item.textContent.endsWith(`  `)) {
-            title = item.textContent.slice(0, length - 2).toLowerCase();
-          } else if (item.textContent.endsWith(` `)) {
-            title = item.textContent.slice(0, length - 1).toLowerCase();
-          } else {
-            title = item.textContent.toLowerCase();
-          }
+          let title = item.textContent.trim().toLowerCase();
 
           obj[title] = item.href;
           MenuLinks = {...MenuLinks, ...obj};
@@ -207,9 +197,9 @@ const menuInit = () => {
 
         const getHref = (title) => {
           const href = MenuLinks[title];
-          const hashInddex = href.indexOf(`#`);
+          const hashIndex = href.indexOf(`#`);
           delete MenuLinks[title];
-          return `${MENU_PATH}${href.slice(hashInddex, href.length)}`;
+          return `${MENU_PATH}${href.slice(hashIndex, href.length)}`;
         };
 
         titles.forEach((title) => {
@@ -240,19 +230,11 @@ const menuInit = () => {
               listElements.forEach((list) => {
                 let title = list.querySelector(`.jstore-tag.h1`);
                 const parent = list.querySelector(`.lsp-block-items`);
-                const length = title.textContent.length;
 
-                if (title.textContent.endsWith(`  `)) {
-                  title = title.textContent.slice(0, length - 2).toLowerCase();
-                } else if (title.textContent.endsWith(` `)) {
-                  title = title.textContent.slice(0, length - 1).toLowerCase();
-                } else {
-                  title = title.textContent.toLowerCase();
-                }
+                title = title.textContent.trim().toLowerCase();
 
                 if (menu[title]) {
                   renderFirstCard(parent, menu[title]);
-                } else if (title === MENU_TITLE.toLowerCase()) {
                 } else {
                   menu.default.title = title;
                   renderFirstCard(parent, menu.default);
@@ -318,19 +300,25 @@ const menuInit = () => {
           renderAdditionalItems();
         }
 
-        // if (document.location.pathname !== MENU_PATH) {
-        //   let cathegoryMenyElements = document.querySelectorAll(`.lsp-block-items-list-child`);
+        if (document.location.pathname !== MENU_PATH) {
+          let amountItems = {};
+          let cathegoryMenyElements = document.querySelectorAll(`.jstore-tag.h1`);
 
-        //   console.log(cathegoryMenyElements);
+          cathegoryMenyElements.forEach((element) => {
+            let obj = {};
+            const title = element.textContent.trim().toLowerCase();
+            const amount = element.nextElementSibling.childNodes.length;
 
-        // cathegoryMenyElements = cathegoryMenyElements.map((element) => {
-        //   console.log(element.nextSibling);
-        //   if (element.nextSibling) {
-        //     element
-        //   }
-        // });
-        // console.log(cathegoryMenyElements);
-        // }
+            obj[title] = amount;
+
+            amountItems = {...amountItems, ...obj};
+          });
+          console.log(amountItems);
+
+          titles.forEach((title) => {
+            title.closest(`.js-link`).querySelector(`.js-amount`).textContent = amountItems[title.textContent.toLowerCase()];
+          });
+        }
       }
     }, 100);
   }
