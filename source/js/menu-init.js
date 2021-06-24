@@ -118,7 +118,7 @@ const menuInit = () => {
   };
 
   const getCardTemplate = ({title, text, background}) => {
-    return `<div class="menu__item" style="background-image: url('${background}')">
+    return `<div class="menu__item js-first-card" style="background-image: url('${background}')">
       <h3 class="menu__title">${title}</h3>
       <p class="menu__text">${text}</p>
     </div>`;
@@ -228,16 +228,20 @@ const menuInit = () => {
               clearInterval(timerId);
 
               listElements.forEach((list) => {
-                let title = list.querySelector(`.jstore-tag.h1`);
-                const parent = list.querySelector(`.lsp-block-items`);
+                const firstCard = list.querySelector(`.js-first-card`);
 
-                title = title.textContent.trim().toLowerCase();
+                if (!firstCard) {
+                  let title = list.querySelector(`.jstore-tag.h1`);
+                  const parent = list.querySelector(`.lsp-block-items`);
 
-                if (menu[title]) {
-                  renderFirstCard(parent, menu[title]);
-                } else {
-                  menu.default.title = title;
-                  renderFirstCard(parent, menu.default);
+                  title = title.textContent.trim().toLowerCase();
+
+                  if (menu[title]) {
+                    renderFirstCard(parent, menu[title]);
+                  } else {
+                    menu.default.title = title;
+                    renderFirstCard(parent, menu.default);
+                  }
                 }
               });
             }
