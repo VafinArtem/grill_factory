@@ -7,7 +7,6 @@
 
 .other-dish__wrapper {
   overflow-x: scroll;
-  // width: calc(100vw - var(--mobile-padding));
   width: 100vw;
   margin-left: calc(0px - var(--mobile-padding));
   margin-right: calc(0px - var(--mobile-padding));
@@ -70,6 +69,7 @@
   margin-bottom: 0;
   font-weight: normal;
   font-size: 14px;
+  line-height: 1.5;
 }
 
 .other-dish__price {

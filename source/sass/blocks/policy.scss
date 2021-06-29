@@ -51,6 +51,11 @@
   .policy__wrapper {
     grid-template-columns: repeat(4, 1fr);
   }
+
+  .policy__text {
+    font-size: 15px;
+    line-height: 1.6;
+  }
 }
 
 // // XX-Large devices (larger desktops, 1400px and up)

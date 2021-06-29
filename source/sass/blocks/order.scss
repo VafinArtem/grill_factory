@@ -200,6 +200,36 @@
       margin-bottom: 22px;
     }
   }
+
+  & .lsp-form-field-order-sum {
+    & .label-row-field {
+      height: auto !important;
+    }
+  }
+
+  & .lsp-block-success-order,
+  & .lsp-block-check-order {
+    & .lsp-form {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    & .jstore-tag.h1 {
+      display: block !important;
+    }
+
+    & .label-row {
+      flex-direction: row;
+      margin-bottom: 10px !important;
+    }
+
+    & .lsp-order-block-title,
+    & .lsp-order-sum-block-title,
+    & .lsp-order-giveChange-block-title {
+      margin-right: 5px;
+    }
+  }
 }
 
 // #lsp-block-content .lsp-form .label-row {
@@ -266,7 +296,7 @@
 
     & .lsp-js-form-field-totalCost {
       & .label-row-text {
-        margin-bottom: 0px;
+        margin-bottom: 4px;
       }
     }
 

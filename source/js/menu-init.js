@@ -285,7 +285,7 @@ const menuInit = () => {
         });
 
         document.body.addEventListener(`click`, (evt) => {
-          if (evt.target.classList.contains(`dish__back-link`)) {
+          if (evt.target.classList.contains(`dish__back-link`) || evt.target.classList.contains(`lsp-js-popup-tocart`)) {
             document.body.classList.remove(`item-show`);
             renderFirstCards();
           }
