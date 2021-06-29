@@ -126,7 +126,7 @@ const menuInit = () => {
 
   const getAdditionalCardTemplate = (title, price, link, img) => {
     const DEFAULT_IMAGE_URL = `/img/pages/dish/default-dish-min.svg`;
-    return `<li class="other-dish__item">
+    return `<li class="other-dish__item swiper-slide">
     <a href="${link}" class="other-dish__link">
       <img src="${!img ? DEFAULT_IMAGE_URL : img}" alt="${title}" width="126" height="166" class="other-dish__img">
       <div class="other-dish__inner">
@@ -160,13 +160,34 @@ const menuInit = () => {
 
         const additionalItems = document.querySelectorAll(`.js-menu-add-item`);
 
-        additionalItems.forEach((item) => {
-          const link = item.querySelector(`.js-menu-add-link`).href;
-          const title = item.querySelector(`.js-menu-add-link`).textContent;
-          const price = item.querySelector(`.js-menu-add-price`).textContent;
-          const img = item.querySelector(`.js-menu-add-img`).src;
+        const renderCards = async () => {
+          additionalItems.forEach((item) => {
+            const link = item.querySelector(`.js-menu-add-link`).href;
+            const title = item.querySelector(`.js-menu-add-link`).textContent;
+            const price = item.querySelector(`.js-menu-add-price`).textContent;
+            const img = item.querySelector(`.js-menu-add-img`).src;
 
-          renderElement(otherDishesList, getAdditionalCardTemplate(title, price, link, img));
+            renderElement(otherDishesList, getAdditionalCardTemplate(title, price, link, img));
+          });
+        };
+
+        renderCards().then(() => {
+          const swiperDish = new Swiper(".swiper-container-dish", {
+            slidesPerView: "auto",
+            freeMode: true,
+            scrollbar: {
+              el: ".swiper-scrollbar",
+              hide: false,
+            },
+            breakpoints: {
+              0: {
+                spaceBetween: 17,
+              },
+              768: {
+                spaceBetween: 30,
+              },
+            },
+          });
         });
       }
     });

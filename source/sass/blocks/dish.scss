@@ -360,9 +360,9 @@
   }
 
   .dish__box {
-    height: calc(100vh - 103px);
-    height: auto;
-    height: 574px;
+    // height: calc(100vh - 103px);
+    // height: auto;
+    // height: 574px;
     overflow-y: scroll;
 
     scrollbar-color: var(--scroll-thumb) var(--scroll-line);
@@ -398,10 +398,11 @@
 
   .dish__img-box {
     position: relative;
-    height: 574px;
+    // height: 574px;
     background-image: url("/img/pages/dish/default-dish-max.svg");
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
   }
 
   .dish__img {
