@@ -149,9 +149,10 @@
   </div>
 </script>
 <script id='my-info-cart-template' type="text/template">
-  <a href="#" class="header__link header__link--cart link above-mobile">
-    Корзина <span class="header__cart-count jstore-js-cart-total-count">
-      <%= totalItems %>
-    </span>
+  <a href="#" class="cart__informer link">
+    <img src="/img/common/icon-cart.svg" width="19" height="19" alt="Иконка корзины" class="cart__icon">
+    <span class="cart__title cart__title--informer">Корзина </span><span class="cart__price cart__price--informer <%= totalCost > 0 ? '' : 'hide' %>"><span class="jstore-js-cart-total-value">
+      <%= totalCost %>
+    </span> <span class="rouble">a</span></span>
   </a>
 </script>

@@ -40,8 +40,14 @@
 }
 
 .header__links {
+  display: flex;
   margin-left: auto;
   z-index: 6;
+}
+
+.header__cart {
+  order: -1;
+  margin-right: 18px !important;
 }
 
 .header__burger {
@@ -49,7 +55,7 @@
   display: flex;
   width: 30px;
   height: 30px;
-  margin-left: 12px;
+  margin-left: 24px;
   padding: 0;
   background-color: transparent;
   border: none;
@@ -93,8 +99,15 @@
   }
 }
 
-// @media (min-width: 320px) {
-// }
+@media (max-width: 340px) {
+  .header__burger {
+    margin-left: 12px;
+  }
+
+  .header__cart {
+    margin-right: 7px !important;
+  }
+}
 
 // @media (min-width: 576px) {
 // }
@@ -105,14 +118,10 @@
     min-height: 103px;
   }
 
-  .header__links {
-    display: flex;
-  }
-
   .header__link {
     &--reserv {
       position: relative;
-      margin-right: 17px;
+      margin-right: 25px;
 
       &::after {
         position: absolute;
@@ -127,43 +136,12 @@
         transform: rotate(-45deg);
       }
     }
-
-    &--cart {
-      position: relative;
-      margin-left: 5px;
-      padding-left: 25px;
-      border-left: 1px solid var(--line-gray);
-
-      &::after {
-        position: absolute;
-        left: 4px;
-        top: -1px;
-        width: 20px;
-        height: 20px;
-        background-image: url("/img/common/icon-cart.svg");
-        background-repeat: no-repeat;
-        background-size: contain;
-        content: "";
-      }
-    }
   }
 
-  .header__cart-count {
-    position: relative;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 20px;
-    height: 20px;
-    margin-bottom: -2px;
-    margin-top: -2px;
-    margin-left: 8px;
-    margin-left: 3px;
-    font-size: 12px;
-    line-height: 1;
-    color: var(--basic-white);
-    border-radius: 50%;
-    background-color: var(--third-green);
+  .header__cart {
+    order: 0;
+    margin-left: 10px !important;
+    margin-right: 0 !important;
   }
 }
 
@@ -198,19 +176,10 @@
         right: -17px;
       }
     }
-
-    &--cart {
-      margin-left: 15px;
-      padding-left: 40px;
-
-      &::after {
-        left: 15px;
-      }
-    }
   }
 
-  .header__cart-count {
-    margin-left: 8px;
+  .header__cart {
+    margin-left: 40px !important;
   }
 }
 
@@ -229,15 +198,6 @@
 
       &::after {
         right: -17px;
-      }
-    }
-
-    &--cart {
-      margin-left: 22px;
-      padding-left: 47px;
-
-      &::after {
-        left: 22px;
       }
     }
   }
