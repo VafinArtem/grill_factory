@@ -6,7 +6,6 @@
 }
 
 .other-dish__wrapper {
-  overflow-x: scroll;
   width: 100vw;
   margin-left: calc(0px - var(--mobile-padding));
   margin-right: calc(0px - var(--mobile-padding));
@@ -25,7 +24,7 @@
 .other-dish__item {
   position: relative;
   display: flex;
-  min-width: 292px;
+  max-width: 292px;
   min-height: 166px;
   margin-right: 17px;
   background-color: var(--third-black);
@@ -60,6 +59,7 @@
 
 .other-dish__link {
   display: flex;
+  width: 100%;
   min-height: 100%;
   color: var(--basic-white);
 }
@@ -109,26 +109,25 @@
   }
 
   .other-dish__list {
-    flex-direction: column;
+    // flex-direction: column;
     padding-right: 0;
   }
 
   .other-dish__wrapper {
+    position: relative;
+    overflow: hidden;
     width: auto;
-    height: calc(100vh - 103px);
     margin-left: 0;
     margin-right: 0;
     padding-left: 0;
-    overflow-y: scroll;
-    overflow-x: visible;
+    padding-top: 31px;
 
     scrollbar-color: var(--scroll-thumb) var(--scroll-line);
     scrollbar-width: thin;
 
     &::-webkit-scrollbar {
-      width: 1px;
       background-color: rgba(255, 255, 255, 0.18);
-      height: 0;
+      height: 1px;
     }
 
     &::-webkit-scrollbar-thumb {
@@ -139,11 +138,6 @@
 
   .other-dish__item {
     margin-right: 0;
-    margin-bottom: 12px;
-
-    &:last-child {
-      margin-bottom: 0;
-    }
   }
 }
 

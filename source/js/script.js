@@ -92,6 +92,16 @@ const swiperPromo = new Swiper(".swiper-container-promo", {
   },
 });
 
+const swiperDish = new Swiper(".swiper-container-dish", {
+  slidesPerView: "auto",
+  spaceBetween: 30,
+  freeMode: true,
+  scrollbar: {
+    el: ".swiper-scrollbar",
+    hide: false,
+  },
+});
+
 if (mobileDetect.phone()) {
   const swiperPromoPage = new Swiper(".swiper-container-promo-page", {
     effect: "fade",
@@ -105,9 +115,7 @@ if (mobileDetect.phone()) {
 }
 
 if (mobileDetect.phone()) {
-  const sliderContainer = document.querySelector(
-    `.swiper-container-promo-page`
-  );
+  const sliderContainer = document.querySelector(`.swiper-container-promo-page`);
   if (sliderContainer) {
     sliderContainer.classList.add(`js-show`);
   }

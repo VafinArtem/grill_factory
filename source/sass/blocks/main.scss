@@ -31,6 +31,7 @@
   }
 
   &--dish {
+    height: 100%;
     margin-top: 86px;
     margin-bottom: 20px;
   }
@@ -428,10 +429,9 @@
     }
 
     &--dish {
+      display: flex;
+      flex-direction: column;
       width: 100%;
-      display: grid;
-      grid-template-columns: 1fr min-content;
-      column-gap: 12px;
       margin-top: 103px;
     }
 
@@ -506,6 +506,10 @@
       padding-top: 55px;
       margin-bottom: 60px;
     }
+  }
+
+  .main__other-dish {
+    margin-top: auto;
   }
 
   .main__img-box {
