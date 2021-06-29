@@ -17,19 +17,6 @@
         'template': '#itemPopUp'
       },
       {
-        'type': 'itemsFilter',
-        'properties': {
-          'categories': [
-            "1acf50d4-6e02-4510-b100-ec0e0e0dea56" //выводим конкретную категорию
-          ]
-        }
-      },
-      {
-        'type': 'itemsFilter#custom-block->catalogItem',
-        'class': 'page-toppings',
-        'template': '#custom-block-item-template'
-      },
-      {
         'type': 'cart#my-cart',
         'template': '#my-cart-template',
       },
@@ -40,6 +27,10 @@
       {
         'type': 'cartItem',
         'template': '#my-cart-item-template',
+      },
+      {
+        'type': 'catalogItem',
+        'template': '#my-item-template'
       }
     ]
   }

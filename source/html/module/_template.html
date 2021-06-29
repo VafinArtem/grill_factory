@@ -141,3 +141,21 @@
     </span> <span class="rouble">a</span></span>
   </a>
 </script>
+<script id='my-item-template' type="text/template">
+  <div class="jstore-tag lsp-block-item-name">
+    <a href="<%= url %>" class="jstore-tag jstore-js-detailLink"><%= name %></a>
+  </div>
+  <div class="jstore-tag lsp-block-item-image" data-img="<%= mediumImageUrl %>">
+      <a class="jstore-tag lsp-block-item-image-link jstore-js-detailLink" href="<%= url %>">
+      <% if(tags.length){ %><div class="jstore-tag lsp-block-item-tags"><% _.each(tags, function(tag){ %><!--
+          --><span data-id="<%= tag.translitName %>" class="jstore-tag lsp-block-item-tag <%= tag.className %>" title="<%= tag.name %>"></span><!--
+      --><% }); %></div><% } %>
+      <% if (document.location.pathname !== '/menu.html') {} else { %><img class="jstore-tag"  title="<%= name %>"
+      data-jstore-src="mediumImageUrl"> <%} %>
+    </a>
+  </div>
+  <div class="jstore-tag lsp-block-item-price">
+      <span class="jstore-tag lsp-block-item-price-value"
+            data-jstore-value="cost"></span> <span class="jstore-tag lsp-block-item-measurement"><%= jStoreApp.getCurrency()%></span>
+  </div>
+</script>

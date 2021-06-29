@@ -214,7 +214,7 @@ const menuInit = () => {
               const link = item.querySelector(`.jstore-js-detailLink`).href;
               const name = item.querySelector(`a.jstore-js-detailLink`).textContent;
               const price = item.querySelector(`.lsp-block-item-price-value`).textContent;
-              const img = item.querySelector(`a.jstore-js-detailLink img`).src;
+              const img = item.querySelector(`[data-img]`).dataset.img;
               const itemObj = {link, name, price, img};
 
               obj[title].push(itemObj);
@@ -383,7 +383,7 @@ const menuInit = () => {
 
         if (document.location.pathname !== MENU_PATH) {
           titles.forEach((title) => {
-            title.closest(`.js-link`).querySelector(`.js-amount`).textContent = Object.entries(menu[title.textContent.toLowerCase()]).length;
+            title.closest(`.js-link`).querySelector(`.js-amount`).textContent = menu[title.textContent.toLowerCase()].length;
           });
         }
       }
