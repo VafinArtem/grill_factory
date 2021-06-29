@@ -1,9 +1,9 @@
 const menuInit = () => {
-  const cathegoriesList = document.querySelector(`.js-cathegories`);
+  const tagsList = document.querySelector(`.js-cathegories`);
 
   const MENU_PATH = `/menu.html`;
 
-  const menu = {
+  const Menu = {
     "гриль/мангал": {
       title: `Гриль/мангал`,
       text: `Прекрасная закуска станет неотъемлемой частью любой вечеринки.`,
@@ -127,7 +127,7 @@ const menuInit = () => {
   const getAdditionalCardTemplate = (title, price, link, img) => {
     const DEFAULT_IMAGE_URL = `/img/pages/dish/default-dish-min.svg`;
     return `<li class="other-dish__item swiper-slide">
-    <a href="${link}" class="other-dish__link">
+    <a href="${link}" class="other-dish__link jstore-js-detailLink">
       <img src="${!img ? DEFAULT_IMAGE_URL : img}" alt="${title}" width="126" height="166" class="other-dish__img">
       <div class="other-dish__inner">
         <p class="other-dish__name">${title}</p>
@@ -151,23 +151,16 @@ const menuInit = () => {
     parent.prepend(newElement.firstChild);
   };
 
-  const renderAdditionalItems = () => {
+  const renderAdditionalItems = (cathegory, menu) => {
     const timerId = setInterval(() => {
       const otherDishesList = document.querySelector(`.js-other-dishes`);
 
       if (otherDishesList) {
         clearInterval(timerId);
 
-        const additionalItems = document.querySelectorAll(`.js-menu-add-item`);
-
         const renderCards = async () => {
-          additionalItems.forEach((item) => {
-            const link = item.querySelector(`.js-menu-add-link`).href;
-            const title = item.querySelector(`.js-menu-add-link`).textContent;
-            const price = item.querySelector(`.js-menu-add-price`).textContent;
-            const img = item.querySelector(`.js-menu-add-img`).src;
-
-            renderElement(otherDishesList, getAdditionalCardTemplate(title, price, link, img));
+          menu[cathegory.trim()].forEach(({name, price, link, img}) => {
+            renderElement(otherDishesList, getAdditionalCardTemplate(name, price, link, img));
           });
         };
 
@@ -193,16 +186,50 @@ const menuInit = () => {
     });
   };
 
-  if (cathegoriesList) {
-    const titles = cathegoriesList.querySelectorAll(`.js-c-title`);
-    let items = cathegoriesList.querySelectorAll(`.js-item`);
+  if (tagsList) {
+    const titles = tagsList.querySelectorAll(`.js-c-title`);
+    let items = tagsList.querySelectorAll(`.js-item`);
     const lspMenu = document.querySelector(`#lsp-block-tree`);
 
     const timerId = setInterval(() => {
       const lspItems = lspMenu.querySelectorAll(`li.jstore-tag`);
+
       if (lspItems.length) {
         clearInterval(timerId);
 
+        // Парсим меню
+        const parsingMenu = () => {
+          const cathegoryMenyElements = document.querySelectorAll(`.jstore-tag.h1`);
+
+          let menu = {};
+
+          cathegoryMenyElements.forEach((element) => {
+            let obj = {};
+            const title = element.textContent.trim().toLowerCase();
+            const items = element.nextElementSibling.querySelectorAll(`.lsp-block-item`);
+
+            obj[title] = [];
+
+            items.forEach((item) => {
+              const link = item.querySelector(`.jstore-js-detailLink`).href;
+              const name = item.querySelector(`a.jstore-js-detailLink`).textContent;
+              const price = item.querySelector(`.lsp-block-item-price-value`).textContent;
+              const img = item.querySelector(`a.jstore-js-detailLink img`).src;
+              const itemObj = {link, name, price, img};
+
+              obj[title].push(itemObj);
+            });
+
+            menu = {...menu, ...obj};
+          });
+
+          return menu;
+        };
+
+        // Сохраняем меню
+        const menu = parsingMenu();
+
+        // Добавляем ссылки в теги категорий
         let MenuLinks = {};
 
         const lspMenulinks = lspMenu.querySelectorAll(`a`);
@@ -238,9 +265,10 @@ const menuInit = () => {
             newElement.innerHTML = getMainCathegoryTemplate(key, value);
           }
 
-          cathegoriesList.append(newElement.firstChild);
+          tagsList.append(newElement.firstChild);
         }
 
+        // Рендерим карточки с заголовками
         const renderFirstCards = () => {
           const timerId = setInterval(() => {
             const listElements = document.querySelectorAll(`.lsp-block-items-list`);
@@ -257,11 +285,11 @@ const menuInit = () => {
 
                   title = title.textContent.trim().toLowerCase();
 
-                  if (menu[title]) {
-                    renderFirstCard(parent, menu[title]);
+                  if (Menu[title]) {
+                    renderFirstCard(parent, Menu[title]);
                   } else {
-                    menu.default.title = title;
-                    renderFirstCard(parent, menu.default);
+                    Menu.default.title = title;
+                    renderFirstCard(parent, Menu.default);
                   }
                 }
               });
@@ -271,21 +299,22 @@ const menuInit = () => {
 
         renderFirstCards();
 
-        items = cathegoriesList.querySelectorAll(`.js-item`);
+        // Обрабатываем клики на тегах и добавляем к ним классы активности
+        items = tagsList.querySelectorAll(`.js-item`);
 
-        let currentСategory;
+        let currentTag;
 
         items.forEach((item) => {
           if (item.querySelector(`.js-link`).href === document.location.href) {
-            currentСategory = item;
+            currentTag = item;
             item.classList.add(`checked`);
           }
 
           item.addEventListener(`click`, (evt) => {
-            if (evt.currentTarget === currentСategory) {
+            if (evt.currentTarget === currentTag) {
               evt.currentTarget.classList.remove(`checked`);
 
-              currentСategory = null;
+              currentTag = null;
 
               evt.currentTarget.querySelector(`.js-link`).href = `${MENU_PATH}`;
 
@@ -294,16 +323,18 @@ const menuInit = () => {
               return;
             }
 
-            if (currentСategory) {
-              currentСategory.classList.remove(`checked`);
+            if (currentTag) {
+              currentTag.classList.remove(`checked`);
             }
 
             item.classList.add(`checked`);
-            currentСategory = item;
+            currentTag = item;
 
             renderFirstCards();
           });
         });
+
+        let currentCathegory;
 
         document.body.addEventListener(`click`, (evt) => {
           if (evt.target.classList.contains(`dish__back-link`) || evt.target.classList.contains(`lsp-js-popup-tocart`)) {
@@ -318,31 +349,41 @@ const menuInit = () => {
             evt.target.closest(`.other-dish__link`)
           ) {
             document.body.classList.add(`item-show`);
-            renderAdditionalItems();
+            let cathegory;
+
+            if (evt.target.closest(`.lsp-js-block-items`)) {
+              cathegory = evt.target.closest(`.lsp-js-block-items`).previousElementSibling.textContent;
+              currentCathegory = cathegory;
+            } else {
+              if (currentCathegory) {
+                cathegory = currentCathegory;
+              } else {
+                cathegory = document.querySelector(`.jstore-tag.h1`).textContent;
+              }
+            }
+
+            renderAdditionalItems(cathegory, menu);
           }
         });
 
         if (document.location.pathname === MENU_PATH && document.location.hash.split(`/`).length - 1 >= 2) {
+          const cathegory = document.querySelector(`.jstore-tag.h1`).textContent;
+
+          items.forEach((item) => {
+            if (item.querySelector(`.js-c-title`).textContent.toLowerCase() === cathegory) {
+              currentTag = item;
+              item.classList.add(`checked`);
+            }
+          });
+
           document.body.classList.add(`item-show`);
-          renderAdditionalItems();
+
+          renderAdditionalItems(cathegory, menu);
         }
 
         if (document.location.pathname !== MENU_PATH) {
-          let amountItems = {};
-          let cathegoryMenyElements = document.querySelectorAll(`.jstore-tag.h1`);
-
-          cathegoryMenyElements.forEach((element) => {
-            let obj = {};
-            const title = element.textContent.trim().toLowerCase();
-            const amount = element.nextElementSibling.childNodes.length;
-
-            obj[title] = amount;
-
-            amountItems = {...amountItems, ...obj};
-          });
-
           titles.forEach((title) => {
-            title.closest(`.js-link`).querySelector(`.js-amount`).textContent = amountItems[title.textContent.toLowerCase()];
+            title.closest(`.js-link`).querySelector(`.js-amount`).textContent = Object.entries(menu[title.textContent.toLowerCase()]).length;
           });
         }
       }
