@@ -69,14 +69,6 @@
   }
 
   .contacts__item {
-    &--header {
-      &:not(:first-child) {
-        margin-left: 10px;
-        padding-left: 10px;
-        border-left: 1px solid var(--line-gray);
-      }
-    }
-
     &--footer {
       display: flex;
       flex-direction: column;
@@ -108,6 +100,7 @@
       &:not(:first-child) {
         margin-left: 15px;
         padding-left: 15px;
+        border-left: 1px solid var(--line-gray);
       }
     }
 
