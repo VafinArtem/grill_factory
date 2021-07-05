@@ -19,12 +19,14 @@
   }
 
   &--menu {
+    position: sticky;
+    top: 0;
     padding-top: 34px;
     padding-bottom: 21px;
     padding-left: var(--mobile-padding);
     padding-right: var(--mobile-padding);
     background-color: var(--basic-black);
-    z-index: 2;
+    z-index: 3;
   }
 }
 
@@ -86,7 +88,7 @@
   &--menu {
     min-height: 66px;
     min-width: 154px;
-    max-width: none;
+    max-width: 211px;
     margin-bottom: 15px;
 
     &:not(:last-child) {
@@ -231,6 +233,10 @@
     &:not(:last-child) {
       margin-right: 14px;
     }
+
+    &--menu {
+      max-width: 224px;
+    }
   }
 }
 
@@ -248,10 +254,8 @@
     }
 
     &--menu {
-      max-width: none;
+      max-width: calc(100vw - 15px);
       width: 100%;
-      padding-left: var(--mobile-padding);
-      padding-right: var(--mobile-padding);
     }
   }
 
@@ -270,7 +274,7 @@
 
     &--menu {
       min-height: 70px;
-      max-width: none;
+      max-width: 224px;
       margin-right: 7px;
       margin-left: 7px;
 

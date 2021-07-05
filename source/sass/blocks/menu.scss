@@ -19,7 +19,7 @@ h2.jstore-tag.h1 {
   position: relative;
   display: flex;
   flex-direction: column;
-  width: 292px;
+  width: auto;
   height: 370px;
   margin: 0;
   padding: 45px 28px;
@@ -91,7 +91,7 @@ h2.jstore-tag.h1 {
       flex-direction: column;
       justify-content: flex-end;
       align-items: center;
-      width: 292px !important;
+      width: auto !important;
       height: 370px !important;
       margin: 0 !important;
       margin-right: 0 !important;
@@ -441,8 +441,21 @@ h2.jstore-tag.h1 {
       overflow: visible;
     }
   }
+}
 
+// // Large devices (desktops, 992px and up)
+// @media (min-width: 992px) {
+// }
+
+// X-Large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
   #jstore-css {
+    & .lsp-block-items-list {
+      & .lsp-block-items {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
     & .lsp-block-item {
       position: relative;
       perspective: 1000px;
@@ -506,14 +519,6 @@ h2.jstore-tag.h1 {
       transition: transform 0.35s ease-in-out;
     }
   }
-}
-
-// // Large devices (desktops, 992px and up)
-// @media (min-width: 992px) {
-// }
-
-// X-Large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) {
 }
 
 // // XX-Large devices (larger desktops, 1400px and up)

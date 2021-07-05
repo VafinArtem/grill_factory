@@ -10,7 +10,7 @@ import showCathegories from "./showCathegories";
 
 menuInit();
 
-showCathegories();
+// showCathegories();
 
 document.querySelectorAll(`.js-flame-min`).forEach((element) => {
   lottie.loadAnimation({
@@ -65,7 +65,8 @@ MenuOpen();
 // Инициализируем swiper
 
 const swiper = new Swiper(".swiper-container", {
-  slidesPerView: "3",
+  slidesPerView: document.location.pathname !== `/menu.html` ? "3" : "auto",
+  freeMode: document.location.pathname !== `/menu.html` ? false : true,
   watchOverflow: true,
   pagination: {
     el: ".swiper-pagination",
@@ -73,7 +74,7 @@ const swiper = new Swiper(".swiper-container", {
   },
   breakpoints: {
     0: {
-      spaceBetween: 20,
+      spaceBetween: document.location.pathname !== `/menu.html` ? 20 : 13,
     },
     768: {
       slidesPerView: "auto",
