@@ -91,7 +91,7 @@ h2.jstore-tag.h1 {
       flex-direction: column;
       justify-content: flex-end;
       align-items: center;
-      width: auto !important;
+      width: 292px !important;
       height: 370px !important;
       margin: 0 !important;
       margin-right: 0 !important;
@@ -443,9 +443,9 @@ h2.jstore-tag.h1 {
   }
 }
 
-// // Large devices (desktops, 992px and up)
-// @media (min-width: 992px) {
-// }
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+}
 
 // X-Large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
@@ -459,6 +459,7 @@ h2.jstore-tag.h1 {
     & .lsp-block-item {
       position: relative;
       perspective: 1000px;
+      width: auto;
 
       &::after {
         position: absolute;

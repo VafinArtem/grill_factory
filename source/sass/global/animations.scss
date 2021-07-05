@@ -111,8 +111,8 @@
     transform: scale(0.1) translateX(-4rem) translateY(10rem);
     /* Push up the object to the top right.
     This isn't a perfect solution, hence why Stripe use JS to calculate relative position to basket */
-    left: 80%;
-    bottom: 90%;
+    left: var(--left);
+    top: -10%;
     /* Hide it again, remove the offset margins declared at 50% */
     opacity: 0;
     margin-left: 0;
