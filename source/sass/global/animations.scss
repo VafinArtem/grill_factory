@@ -103,7 +103,7 @@
     transform: scale(0.75);
     /* Swing it to the left and visually delay the transition to the top */
     margin-left: -20%;
-    margin-top: 25%;
+    margin-bottom: 25%;
   }
 
   100% {
@@ -116,6 +116,6 @@
     /* Hide it again, remove the offset margins declared at 50% */
     opacity: 0;
     margin-left: 0;
-    margin-top: 0;
+    margin-bottom: 0;
   }
 }

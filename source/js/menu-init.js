@@ -3,7 +3,7 @@ const menuInit = () => {
 
   const MENU_PATH = `/menu.html`;
 
-  const Menu = {
+  const MenuTitles = {
     "гриль/мангал": {
       title: `Гриль/мангал`,
       text: `Аппетитные закуски и основные блюда: всё приготовлено с огоньком. Есть блюда для вегетарианцев!`,
@@ -287,11 +287,11 @@ const menuInit = () => {
 
                   title = title.textContent.trim().toLowerCase();
 
-                  if (Menu[title]) {
-                    renderFirstCard(parent, Menu[title]);
+                  if (MenuTitles[title]) {
+                    renderFirstCard(parent, MenuTitles[title]);
                   } else {
-                    Menu.default.title = title;
-                    renderFirstCard(parent, Menu.default);
+                    MenuTitles.default.title = title;
+                    renderFirstCard(parent, MenuTitles.default);
                   }
                 }
               });
