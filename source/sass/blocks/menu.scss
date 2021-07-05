@@ -454,12 +454,15 @@ h2.jstore-tag.h1 {
       & .lsp-block-items {
         grid-template-columns: repeat(4, 1fr);
       }
+
+      & .lsp-block-item {
+        width: auto !important;
+      }
     }
 
     & .lsp-block-item {
       position: relative;
       perspective: 1000px;
-      width: auto;
 
       &::after {
         position: absolute;

@@ -10,7 +10,7 @@ import showCathegories from "./showCathegories";
 
 menuInit();
 
-// showCathegories();
+showCathegories();
 
 document.querySelectorAll(`.js-flame-min`).forEach((element) => {
   lottie.loadAnimation({
