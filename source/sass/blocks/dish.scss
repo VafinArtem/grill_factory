@@ -292,6 +292,12 @@
 }
 
 #lsp-block-popup {
+  transition: opacity 0.4 ease-in-out;
+
+  &.hide {
+    opacity: 0;
+  }
+
   & .lsp-popup-cont {
     position: fixed !important;
     top: 0 !important;
