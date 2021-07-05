@@ -141,6 +141,9 @@
         const infowindow = createInfoWindow(title, img);
 
         marker.addListener("click", () => {
+          infoWindows.forEach((element, index) => {
+            element.close(map, markers[index]);
+          })
           infowindow.open(map, marker);
         });
 
