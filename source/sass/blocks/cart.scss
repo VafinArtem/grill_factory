@@ -2,13 +2,17 @@
   &--informer {
     display: flex;
     align-items: center;
-    height: 100%;
+    height: auto;
   }
 }
 
 .cart__informer {
   display: inline-flex;
   align-items: center;
+
+  &.added {
+    animation: basket-bounce 0.5s;
+  }
 }
 
 .cart__icon {
@@ -226,7 +230,7 @@
 
   .cart__icon {
     position: relative;
-    top: 1px;
+    // top: 0;
     width: 15px;
     height: 13px;
     margin-right: 9px;
@@ -347,9 +351,22 @@
 @media (min-width: 992px) {
 }
 
-// // X-Large devices (large desktops, 1200px and up)
-// @media (min-width: 1200px) {
-// }
+// X-Large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .cart__price {
+    &--informer {
+      line-height: 0.8;
+    }
+  }
+
+  .cart__icon {
+    position: relative;
+    top: 1px;
+    width: 15px;
+    height: 13px;
+    margin-right: 9px;
+  }
+}
 
 // // XX-Large devices (larger desktops, 1400px and up)
 // @media (min-width: 1400px) {

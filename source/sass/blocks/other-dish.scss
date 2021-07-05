@@ -53,6 +53,8 @@
     background-size: contain;
     opacity: 0;
     transition: opacity 0.2s ease-in-out;
+    pointer-events: none;
+    touch-action: none;
     z-index: 1;
   }
 
@@ -136,7 +138,7 @@
     margin-right: 0;
     padding-left: 0;
     padding-top: 31px;
-    padding-bottom: 0;
+    padding-bottom: 30px;
 
     & .swiper-scrollbar {
       display: block;

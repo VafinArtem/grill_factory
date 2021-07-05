@@ -193,6 +193,8 @@
   position: relative;
   margin-top: 0;
   margin-bottom: 0;
+  margin-right: 57px;
+  margin-bottom: 15px;
   font-size: 50px;
   font-weight: bold;
   line-height: 1;
@@ -331,6 +333,10 @@
     }
   }
 
+  .dish__inner {
+    justify-content: flex-start;
+  }
+
   .dish__title {
     margin-top: 65px;
     font-size: 35px;
@@ -387,7 +393,6 @@
 
   .dish__inner {
     flex-wrap: wrap;
-    max-width: 350px;
     margin-left: 0;
     margin-right: 0;
     margin-top: 0;
@@ -395,7 +400,6 @@
 
   .dish__img-box {
     position: relative;
-    // height: 574px;
     background-image: url("/img/pages/dish/default-dish-max.svg");
     background-repeat: no-repeat;
     background-size: cover;
@@ -417,6 +421,12 @@
 @media (min-width: 1200px) {
   .dish__title {
     margin-top: 120px;
+  }
+
+  #lsp-block-popup {
+    & .lsp-popup-cont {
+      padding-bottom: 0;
+    }
   }
 }
 

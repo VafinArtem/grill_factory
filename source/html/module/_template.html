@@ -48,9 +48,13 @@
         <img data-jstore-src="largeImageUrl" width="454" height="696" alt="<%= name %>" class="dish__img">
         <div class="dish__gradient"></div>
       </div>
+      <div class="jstore-tag lsp-modifiers-container lsp-js-modifiers-block" style="display: none">
+        <div class="jstore-tag lsp-popup-modifier-title"><%= jStoreApp.t('Additional_ing')%>:</div>
+        <div class="jstore-tag lsp-modifier-group lsp-js-modifiers-container"></div>
+      </div>
     </section>
     <aside class="main__other-dish other-dish">
-      <h2 class="other-dish__title js-dish-title">Другие блюда раздела Гриль</h2>
+      <h2 class="other-dish__title">Другие блюда раздела <span class="js-dish-title">Гриль</span></h2>
       <div class="other-dish__wrapper swiper-container-dish">
         <ul class="other-dish__list js-other-dishes swiper-wrapper">
         </ul>
@@ -83,7 +87,7 @@
     </div>
   </div>
   <div class="cart__total">
-    <a href="/" class="cart__link-to-menu">Вернуться в меню</a>
+    <a href="/menu" class="cart__link-to-menu">Вернуться в меню</a>
     <div class="cart__inner">
       <p class="cart__total-text">
         Итого:
@@ -97,7 +101,7 @@
           <span class="rouble">a</span>
         </p>
       </div>
-      <a href="<%= urls.order %>" class="cart__button link-reserv link-reserv--order">Оформить заказ</a>
+      <a href="/order#!/order" class="cart__button link-reserv link-reserv--order">Оформить заказ</a>
     </div>
   </div>
 </script>
@@ -105,7 +109,7 @@
   <div class="cart__item">
     <div class="cart__desc">
       <div class="cart__img-box">
-        <img src="<%= smallImageUrl %>" alt="<%= name %>" class="cart__img" width="70" height="70">
+        <% if (smallImageUrl) { %> <img src="<%= smallImageUrl %>" alt="<%= name %>" class="cart__img" width="70" height="70"> <%} else { %> <img src="/img/pages/dish/default-dish-min.svg" alt="<%= name %>" class="cart__img" width="70" height="70"> <%} %>
       </div>
       <h2 class="cart__name">
         <%= name %>
@@ -113,14 +117,14 @@
     </div>
     <div class="cart__amount-box">
       <button class="cart__amount-btn lsp-js-item-minus" aria-label="Минус">
-        <svg class="cart__icon" width="14" height="4">
+        <svg class="cart__ico" width="14" height="4">
           <use xlink:href="/img/sprite.svg#icon-minus"></use>
         </svg>
       </button>
       <label for="count" class="visually-hidden">Количество</label>
       <input type="number" id="count" name="count" class="cart__amount" value="<%= amount %>">
       <button class="cart__amount-btn lsp-js-item-plus" aria-label="Плюс">
-        <svg class="cart__icon" width="14" height="14">
+        <svg class="cart__ico" width="14" height="14">
           <use xlink:href="/img/sprite.svg#icon-plus"></use>
         </svg>
       </button>
@@ -134,7 +138,7 @@
   </div>
 </script>
 <script id='my-info-cart-template' type="text/template">
-  <a href="#" class="cart__informer link">
+  <a href="/cart" class="cart__informer js-cart-informer link">
     <img src="/img/common/icon-cart.svg" width="19" height="19" alt="Иконка корзины" class="cart__icon">
     <span class="cart__title cart__title--informer">Корзина </span><span class="cart__price cart__price--informer <%= totalCost > 0 ? '' : 'hide' %>"><span class="jstore-js-cart-total-value">
       <%= totalCost %>
@@ -142,20 +146,19 @@
   </a>
 </script>
 <script id='my-item-template' type="text/template">
-  <div class="jstore-tag lsp-block-item-name">
-    <a href="<%= url %>" class="jstore-tag jstore-js-detailLink"><%= name %></a>
-  </div>
   <div class="jstore-tag lsp-block-item-image" data-img="<%= mediumImageUrl %>">
-      <a class="jstore-tag lsp-block-item-image-link jstore-js-detailLink" href="<%= url %>">
+    <a class="jstore-tag lsp-block-item-image-link jstore-js-detailLink" href="<%= url %>">
       <% if(tags.length){ %><div class="jstore-tag lsp-block-item-tags"><% _.each(tags, function(tag){ %><!--
           --><span data-id="<%= tag.translitName %>" class="jstore-tag lsp-block-item-tag <%= tag.className %>" title="<%= tag.name %>"></span><!--
       --><% }); %></div><% } %>
-      <% if (document.location.pathname !== '/menu.html') {} else { %><img class="jstore-tag"  title="<%= name %>"
+      <% if (document.location.pathname !== '/menu') {} else { %><img class="jstore-tag"  title="<%= name %>"
       data-jstore-src="mediumImageUrl"> <%} %>
+      <div class="menu__item-wrap">
+        <p class="jstore-tag lsp-block-item-name"><%= name %></p>
+        <div class="jstore-tag lsp-block-item-price">
+          <span class="jstore-tag lsp-block-item-price-value" data-jstore-value="cost"></span> <span class="jstore-tag lsp-block-item-measurement"><span class="rouble">a</span></span>
+        </div>
+      </div>
     </a>
-  </div>
-  <div class="jstore-tag lsp-block-item-price">
-      <span class="jstore-tag lsp-block-item-price-value"
-            data-jstore-value="cost"></span> <span class="jstore-tag lsp-block-item-measurement"><%= jStoreApp.getCurrency()%></span>
   </div>
 </script>

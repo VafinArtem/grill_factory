@@ -714,6 +714,22 @@
       grid-template-columns: 1fr 650px;
       column-gap: 30px;
     }
+
+    &--dish {
+      overflow-y: scroll;
+
+      scrollbar-color: var(--scroll-thumb) var(--scroll-line);
+      scrollbar-width: thin;
+
+      &::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        border-radius: 30px;
+      }
+    }
   }
 
   .main__header {

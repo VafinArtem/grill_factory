@@ -1,5 +1,11 @@
 .header {
   display: flex;
+  transition: all 0.8s ease-in-out;
+
+  .item-show-remove & {
+    position: fixed;
+    top: -100%;
+  }
 
   .item-show & {
     position: fixed;

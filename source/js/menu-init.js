@@ -158,9 +158,13 @@ const menuInit = () => {
       if (otherDishesList) {
         clearInterval(timerId);
 
+        document.querySelector(`.js-dish-title`).textContent = setFirstLetterUppercase(cathegory.trim());
+
         const renderCards = async () => {
           menu[cathegory.trim()].forEach(({name, price, link, img}) => {
-            renderElement(otherDishesList, getAdditionalCardTemplate(name, price, link, img));
+            if (name !== document.querySelector(`.dish__title`).textContent) {
+              renderElement(otherDishesList, getAdditionalCardTemplate(name, price, link, img));
+            }
           });
         };
 
@@ -200,7 +204,6 @@ const menuInit = () => {
         // Парсим меню
         const parsingMenu = () => {
           const cathegoryMenyElements = document.querySelectorAll(`.jstore-tag.h1`);
-
           let menu = {};
 
           cathegoryMenyElements.forEach((element) => {
@@ -212,7 +215,7 @@ const menuInit = () => {
 
             items.forEach((item) => {
               const link = item.querySelector(`.jstore-js-detailLink`).href;
-              const name = item.querySelector(`a.jstore-js-detailLink`).textContent;
+              const name = item.querySelector(`.lsp-block-item-name`).textContent;
               const price = item.querySelector(`.lsp-block-item-price-value`).textContent;
               const img = item.querySelector(`[data-img]`).dataset.img;
               const itemObj = {link, name, price, img};
@@ -227,7 +230,7 @@ const menuInit = () => {
         };
 
         // Сохраняем меню
-        const menu = parsingMenu();
+        let menu = parsingMenu();
 
         // Добавляем ссылки в теги категорий
         let MenuLinks = {};
@@ -261,7 +264,6 @@ const menuInit = () => {
           if (document.location.pathname === MENU_PATH) {
             newElement.innerHTML = getCathegoryTemplate(key, value);
           } else {
-            console.log(key, value);
             newElement.innerHTML = getMainCathegoryTemplate(key, value);
           }
 
@@ -330,6 +332,13 @@ const menuInit = () => {
             item.classList.add(`checked`);
             currentTag = item;
 
+            const timerId = setInterval(() => {
+              if (currentTag.querySelector(`.js-link`).href === document.location.href) {
+                clearInterval(timerId);
+
+                menu = parsingMenu();
+              }
+            });
             renderFirstCards();
           });
         });
@@ -337,7 +346,21 @@ const menuInit = () => {
         let currentCathegory;
 
         document.body.addEventListener(`click`, (evt) => {
-          if (evt.target.classList.contains(`dish__back-link`) || evt.target.classList.contains(`lsp-js-popup-tocart`)) {
+          if (evt.target.classList.contains(`lsp-js-popup-tocart`)) {
+            const cartInformer = document.querySelector(`.js-cart-informer`);
+            cartInformer.classList.add(`added`);
+
+            setTimeout(() => {
+              cartInformer.classList.remove(`added`);
+            }, 400);
+
+            renderFirstCards();
+            setTimeout(() => {
+              document.body.classList.remove(`item-show`);
+            }, 500);
+          }
+
+          if (evt.target.classList.contains(`dish__back-link`)) {
             document.body.classList.remove(`item-show`);
             renderFirstCards();
           }
