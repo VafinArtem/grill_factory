@@ -90,3 +90,32 @@
     transform: none;
   }
 }
+
+@keyframes basket-fly {
+  10% {
+    /* Reveal the hidden item */
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 1;
+    /* Make it bigger */
+    transform: scale(0.75);
+    /* Swing it to the left and visually delay the transition to the top */
+    margin-left: -20%;
+    margin-top: 25%;
+  }
+
+  100% {
+    /* Scale it back down, bring it back within the window */
+    transform: scale(0.1) translateX(-4rem) translateY(10rem);
+    /* Push up the object to the top right.
+    This isn't a perfect solution, hence why Stripe use JS to calculate relative position to basket */
+    left: 80%;
+    bottom: 90%;
+    /* Hide it again, remove the offset margins declared at 50% */
+    opacity: 0;
+    margin-left: 0;
+    margin-top: 0;
+  }
+}
