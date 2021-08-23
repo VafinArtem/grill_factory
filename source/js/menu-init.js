@@ -4,8 +4,8 @@ const menuInit = () => {
   const MENU_PATH = `/menu.html`;
 
   const MenuTitles = {
-    "гриль/мангал": {
-      title: `Гриль/мангал`,
+    гриль: {
+      title: `Гриль`,
       text: `Аппетитные закуски и основные блюда: всё приготовлено с огоньком. Есть блюда для вегетарианцев!`,
       background: `/img/pages/menu/cards/grill.svg`,
     },
@@ -74,9 +74,9 @@ const menuInit = () => {
       text: `Идеальные дополнения для шашлыка и блюд на гриле. И не только!`,
       background: `/img/pages/menu/cards/side-dishes.svg`,
     },
-    сеты: {
-      title: `Сеты`,
-      text: `Сеты из роллов и суши для большой компании друзей. Отличный вариант для вечеринки!`,
+    "для компании": {
+      title: `Для компании`,
+      text: `Отличный вариант для вечеринки!`,
       background: `/img/pages/menu/cards/sets.svg`,
     },
     default: {
@@ -191,7 +191,7 @@ const menuInit = () => {
   };
 
   if (tagsList) {
-    const titles = tagsList.querySelectorAll(`.js-c-title`);
+    let titles = tagsList.querySelectorAll(`.js-c-title`);
     let items = tagsList.querySelectorAll(`.js-item`);
     const lspMenu = document.querySelector(`#lsp-block-tree`);
 
@@ -261,10 +261,11 @@ const menuInit = () => {
 
         for (let [key, value] of Object.entries(MenuLinks)) {
           const newElement = document.createElement(`div`);
+          const url = getHref(key);
           if (document.location.pathname === MENU_PATH) {
-            newElement.innerHTML = getCathegoryTemplate(key, value);
+            newElement.innerHTML = getCathegoryTemplate(key, url);
           } else {
-            newElement.innerHTML = getMainCathegoryTemplate(key, value);
+            newElement.innerHTML = getMainCathegoryTemplate(key, url);
           }
 
           tagsList.append(newElement.firstChild);
@@ -405,8 +406,11 @@ const menuInit = () => {
         }
 
         if (document.location.pathname !== MENU_PATH) {
+          titles = tagsList.querySelectorAll(`.js-c-title`);
           titles.forEach((title) => {
-            title.closest(`.js-link`).querySelector(`.js-amount`).textContent = menu[title.textContent.toLowerCase()].length;
+            if (menu[title.textContent.toLowerCase()]) {
+              title.closest(`.js-link`).querySelector(`.js-amount`).textContent = menu[title.textContent.toLowerCase()].length;
+            }
           });
         }
       }
