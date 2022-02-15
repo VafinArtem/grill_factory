@@ -1,65 +1,68 @@
-const displacementSlider = function(opts) {
+const displacementSlider = function (opts) {
   const animationSlide = (slideId) => {
     mat.uniforms.nextImage.value = sliderImages[slideId];
     mat.uniforms.nextImage.needsUpdate = true;
 
-    TweenLite.to( mat.uniforms.dispFactor, 1, {
+    TweenLite.to(mat.uniforms.dispFactor, 1, {
       value: 1,
-      ease: 'Expo.easeInOut',
+      ease: "Expo.easeInOut",
       onComplete: function () {
         mat.uniforms.currentImage.value = sliderImages[slideId];
         mat.uniforms.currentImage.needsUpdate = true;
         mat.uniforms.dispFactor.value = 0.0;
-      }
+      },
     });
 
-    let slideTitleEl = document.getElementById('slide-title');
+    let slideTitleEl = document.getElementById("slide-title");
     let nextSlideTitle = document.querySelectorAll(`[data-slide-title="${slideId}"]`)[0].innerHTML;
 
-    TweenLite.fromTo( slideTitleEl, 0.5,
+    TweenLite.fromTo(
+      slideTitleEl,
+      0.5,
       {
         autoAlpha: 1,
-        filter: 'blur(0px)',
-        y: 0
+        filter: "blur(0px)",
+        y: 0,
       },
       {
         autoAlpha: 0,
-        filter: 'blur(10px)',
+        filter: "blur(10px)",
         y: 20,
-        ease: 'Expo.easeIn',
+        ease: "Expo.easeIn",
         onComplete: function () {
-            slideTitleEl.innerHTML = nextSlideTitle;
+          slideTitleEl.innerHTML = nextSlideTitle;
 
-            TweenLite.to( slideTitleEl, 0.5, {
-                autoAlpha: 1,
-                filter: 'blur(0px)',
-                y: 0,
-            });
-        }
-    });
+          TweenLite.to(slideTitleEl, 0.5, {
+            autoAlpha: 1,
+            filter: "blur(0px)",
+            y: 0,
+          });
+        },
+      },
+    );
   };
 
   const changeSlide = (isAnimatingStatus, slideId, paginations, direction) => {
-    if(!isAnimatingStatus) {
+    if (!isAnimatingStatus) {
       isAnimatingStatus = true;
 
-      const currentSlide = document.getElementById('pagination').querySelectorAll('.active')[0].dataset.slide;
+      const currentSlide = document.getElementById("pagination").querySelectorAll(".active")[0].dataset.slide;
 
       if (direction === `ltr`) {
         if (parseInt(currentSlide, 10) === paginations.length - 1) {
           slideId = 0;
         } else {
-          slideId = parseInt( currentSlide, 10 ) + 1;
+          slideId = parseInt(currentSlide, 10) + 1;
         }
       } else if (direction === `rtl`) {
         if (parseInt(currentSlide, 10) === 0) {
           slideId = 2;
         } else {
-          slideId = parseInt( currentSlide, 10 ) - 1;
+          slideId = parseInt(currentSlide, 10) - 1;
         }
       }
 
-      document.getElementById('pagination').querySelectorAll('.active')[0].classList.remove(`active`);
+      document.getElementById("pagination").querySelectorAll(".active")[0].classList.remove(`active`);
       paginations[slideId].classList.add(`active`);
 
       animationSlide(slideId);
@@ -93,7 +96,9 @@ const displacementSlider = function(opts) {
       }
   `;
 
-  let images = opts.images, image, sliderImages = [];
+  let images = opts.images,
+    image,
+    sliderImages = [];
   let canvasWidth = images[0].clientWidth;
   let canvasHeight = images[0].clientHeight;
   let parent = opts.parent;
@@ -101,7 +106,7 @@ const displacementSlider = function(opts) {
   let renderHeight = images[0].clientHeight;
   let renderW, renderH;
 
-  if( renderWidth > canvasWidth ) {
+  if (renderWidth > canvasWidth) {
     renderW = renderWidth;
   } else {
     renderW = canvasWidth;
@@ -113,97 +118,94 @@ const displacementSlider = function(opts) {
     antialias: false,
   });
 
-  renderer.setPixelRatio( window.devicePixelRatio );
-  renderer.setClearColor( 0x23272A, 1.0 );
+  renderer.setPixelRatio(window.devicePixelRatio);
+  renderer.setClearColor(0x23272a, 1.0);
   if (window.matchMedia("(min-width: 2500px)").matches) {
-    renderer.setSize( renderW * 1.5, renderH * 1.5 );
+    renderer.setSize(renderW * 1.5, renderH * 1.5);
   } else {
-    renderer.setSize( renderW, renderH );
+    renderer.setSize(renderW, renderH);
   }
-  parent.appendChild( renderer.domElement );
+  parent.appendChild(renderer.domElement);
 
   let loader = new THREE.TextureLoader();
-   loader.crossOrigin = "anonymous";
+  loader.crossOrigin = "anonymous";
 
-  images.forEach( ( img ) => {
-    image = loader.load( img.getAttribute( 'src' ) + '?v=' + Date.now() );
+  images.forEach((img) => {
+    image = loader.load(img.getAttribute("src") + "?v=" + Date.now());
     image.magFilter = image.minFilter = THREE.LinearFilter;
     image.anisotropy = renderer.capabilities.getMaxAnisotropy();
-    sliderImages.push( image );
+    sliderImages.push(image);
   });
 
   let scene = new THREE.Scene();
-  scene.background = new THREE.Color( 0x23272A );
-  let camera = new THREE.OrthographicCamera(
-    renderWidth / -2,
-    renderWidth / 2,
-    renderHeight / 2,
-    renderHeight / -2,
-    1,
-    1000
-  );
+  scene.background = new THREE.Color(0x23272a);
+  let camera = new THREE.OrthographicCamera(renderWidth / -2, renderWidth / 2, renderHeight / 2, renderHeight / -2, 1, 1000);
 
   camera.position.z = 1;
 
   let mat = new THREE.ShaderMaterial({
     uniforms: {
-        dispFactor: { type: "f", value: 0.0 },
-        currentImage: { type: "t", value: sliderImages[0] },
-        nextImage: { type: "t", value: sliderImages[1] },
+      dispFactor: {type: "f", value: 0.0},
+      currentImage: {type: "t", value: sliderImages[0]},
+      nextImage: {type: "t", value: sliderImages[1]},
     },
     vertexShader: vertex,
     fragmentShader: fragment,
     transparent: true,
-    opacity: 1.0
+    opacity: 1.0,
   });
 
-  let geometry = new THREE.PlaneBufferGeometry(
-    renderWidth,
-    renderHeight,
-    1
-  );
+  let geometry = new THREE.PlaneBufferGeometry(renderWidth, renderHeight, 1);
   let object = new THREE.Mesh(geometry, mat);
   object.position.set(0, 0, 0);
   scene.add(object);
 
-  let addEvents = function(){
-    let pagButtons = Array.from(document.getElementById('pagination').querySelectorAll('button'));
-    const slider = document.getElementById('slider');
+  let addEvents = function () {
+    let pagButtons = Array.from(document.getElementById("pagination").querySelectorAll("button"));
+    const slider = document.getElementById("slider");
     let isAnimating = false;
 
     const touchState = {
       start: 0,
       end: 0,
-      slideId: 0
+      slideId: 0,
     };
 
-    setInterval(changeSlide, 4000, isAnimating, touchState.slideId, pagButtons, `ltr`);
+    // setInterval(changeSlide, 4000, isAnimating, touchState.slideId, pagButtons, `ltr`);
 
-    slider.addEventListener(`touchstart`, (evt) => {
-      touchState.start = evt.targetTouches[0].screenX;
-    }, {
-      passive: true
-    });
-    slider.addEventListener(`touchend`, (evt) => {
-      touchState.end = evt.changedTouches[0].screenX;
-      if (touchState.end > touchState.start) {
-        changeSlide(isAnimating, touchState.slideId, pagButtons, `ltr`);
-      } else if (touchState.end < touchState.start) {
-        changeSlide(isAnimating, touchState.slideId, pagButtons, `rtl`);
-      }
-    }, {
-      passive: true
-    });
+    slider.addEventListener(
+      `touchstart`,
+      (evt) => {
+        touchState.start = evt.targetTouches[0].screenX;
+      },
+      {
+        passive: true,
+      },
+    );
+    slider.addEventListener(
+      `touchend`,
+      (evt) => {
+        touchState.end = evt.changedTouches[0].screenX;
+        if (touchState.end > touchState.start) {
+          changeSlide(isAnimating, touchState.slideId, pagButtons, `ltr`);
+        } else if (touchState.end < touchState.start) {
+          changeSlide(isAnimating, touchState.slideId, pagButtons, `rtl`);
+        }
+      },
+      {
+        passive: true,
+      },
+    );
 
-    pagButtons.forEach( (el) => {
-      el.addEventListener('click', function() {
-        if( !isAnimating ) {
+    pagButtons.forEach((el) => {
+      el.addEventListener("click", function () {
+        if (!isAnimating) {
           isAnimating = true;
 
-          document.getElementById('pagination').querySelectorAll('.active')[0].className = '';
-          this.className = 'active';
+          document.getElementById("pagination").querySelectorAll(".active")[0].className = "";
+          this.className = "active";
 
-          let slideId = parseInt( this.dataset.slide, 10 );
+          let slideId = parseInt(this.dataset.slide, 10);
 
           animationSlide(slideId);
           isAnimating = false;
@@ -214,25 +216,25 @@ const displacementSlider = function(opts) {
 
   addEvents();
 
-  window.addEventListener( 'resize' , function(e) {
-      renderer.setSize(renderW, renderH);
+  window.addEventListener("resize", function (e) {
+    renderer.setSize(renderW, renderH);
   });
 
-  let animate = function() {
-      requestAnimationFrame(animate);
-      renderer.render(scene, camera);
+  let animate = function () {
+    requestAnimationFrame(animate);
+    renderer.render(scene, camera);
   };
   animate();
 };
 
 (() => {
-  const el = document.getElementById('slider');
+  const el = document.getElementById("slider");
   const slider = document.querySelector(`.slider-container`);
   if (el) {
-    const imgs = Array.from(el.querySelectorAll('img'));
+    const imgs = Array.from(el.querySelectorAll("img"));
     new displacementSlider({
-        parent: slider,
-        images: imgs
+      parent: slider,
+      images: imgs,
     });
   }
 })();

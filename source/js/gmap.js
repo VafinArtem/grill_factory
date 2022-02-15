@@ -5,27 +5,27 @@ const gmap = () => {
   let infoWindows = [];
 
   const Locations = [
+    // {
+    //   location: { lat: 59.934, lng: 30.333 },
+    //   title: `Невский пр. 48`,
+    //   img: `/img/pages/contacts/contacts-1.jpg`,
+    // },
     {
-      location: { lat: 59.934, lng: 30.333 },
-      title: `Невский пр. 48`,
-      img: `/img/pages/contacts/contacts-1.jpg`,
-    },
-    {
-      location: { lat: 59.852, lng: 30.147 },
+      location: {lat: 59.852, lng: 30.147},
       title: `ул. Адмирала Трибуца 6`,
       img: `/img/pages/contacts/contacts-1.jpg`,
     },
-    {
-      location: { lat: 59.945, lng: 30.286 },
-      title: `Кадетская линия В.О. 25`,
-      img: `/img/pages/contacts/contacts-1.jpg`,
-    },
+    // {
+    //   location: { lat: 59.945, lng: 30.286 },
+    //   title: `Кадетская линия В.О. 25`,
+    //   img: `/img/pages/contacts/contacts-1.jpg`,
+    // },
   ];
 
   const MapCenters = {
-    FOOTER: { lat: 59.91, lng: 30.237 },
-    OTHER: { lat: 59.897, lng: 30.171 },
-    MOBILE: { lat: 59.925, lng: 30.251 },
+    FOOTER: {lat: 59.91, lng: 30.237},
+    OTHER: {lat: 59.897, lng: 30.171},
+    MOBILE: {lat: 59.925, lng: 30.251},
   };
 
   const MapZooms = {
@@ -88,7 +88,7 @@ const gmap = () => {
         });
       };
 
-      const markers = Locations.map(({ location, title, img }, index) => {
+      const markers = Locations.map(({location, title, img}, index) => {
         const marker = new google.maps.Marker({
           position: location,
           icon: `/img/common/icon-dot-test.svg`,
@@ -123,8 +123,7 @@ const gmap = () => {
         let index = 0;
         let length = markers.length;
 
-        const getPreviusIndex = () =>
-          index - 1 === -1 ? markers.length - 1 : index - 1;
+        const getPreviusIndex = () => (index - 1 === -1 ? markers.length - 1 : index - 1);
 
         const doNext = () => {
           let entry = markers[index];
